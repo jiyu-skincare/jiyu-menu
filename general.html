@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>肌癒皮膚管理中心｜皮膚管理價目表</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f0ebe1;
+    --brown-deep: #3a2012;
+    --brown-mid: #6b3d2e;
+    --brown-light: #9c6b52;
+    --brown-pale: #c4a48a;
+    --divider: rgba(107, 61, 46, 0.18);
+    --card-bg: rgba(255,255,255,0.55);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--cream);
+    font-family: 'Noto Serif TC', serif;
+    color: var(--brown-deep);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 0 80px;
+    position: relative;
+    background: var(--cream);
+  }
+
+  .content { position: relative; z-index: 1; padding: 0 48px; }
+
+  /* Header */
+  .header {
+    background: #3a2012;
+    padding: 52px 48px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 52px;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute; top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(196,164,138,0.08);
+  }
+
+  .header::after {
+    content: '';
+    position: absolute; bottom: -30px; left: -30px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: rgba(196,164,138,0.06);
+  }
+
+  .header-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    color: var(--brown-pale);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative; z-index: 1;
+  }
+
+  .header-title {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: #f0ebe1;
+    margin-bottom: 6px;
+    position: relative; z-index: 1;
+  }
+
+  .header-subtitle {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: var(--brown-pale);
+    position: relative; z-index: 1;
+  }
+
+  .header-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 16px 0;
+    position: relative; z-index: 1;
+  }
+
+  .header-ornament::before,
+  .header-ornament::after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: rgba(196,164,138,0.4);
+  }
+
+  .header-ornament::after {
+    background: rgba(196,164,138,0.4);
+  }
+
+  .ornament-diamond {
+    width: 5px;
+    height: 5px;
+    background: var(--brown-pale);
+    transform: rotate(45deg);
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 44px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .section:nth-child(1) { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.3s; }
+  .section:nth-child(4) { animation-delay: 0.4s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    font-style: italic;
+    color: var(--brown-pale);
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+  }
+
+  .section-title {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--brown-mid);
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--divider);
+  }
+
+  /* Entry Care Cards */
+  .entry-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .entry-card {
+    background: rgba(255,255,255,0.5);
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    padding: 22px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .entry-card:hover { background: rgba(255,255,255,0.75); }
+
+  .entry-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--brown-pale);
+  }
+
+  .entry-card-name {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--brown-deep);
+    margin-bottom: 6px;
+  }
+
+  .entry-card-desc {
+    font-size: 11px;
+    color: var(--brown-light);
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .entry-card-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--brown-mid);
+    letter-spacing: 0.05em;
+  }
+
+  .entry-card-price span {
+    font-size: 13px;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 400;
+    color: var(--brown-pale);
+    margin-left: 2px;
+  }
+
+  /* Management Table */
+  .mgmt-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .mgmt-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 1fr 1fr;
+    align-items: center;
+    border-bottom: 1px solid var(--divider);
+    padding: 14px 0;
+    transition: background 0.2s;
+  }
+
+  .mgmt-row:first-child {
+    border-top: 1px solid var(--divider);
+  }
+
+  .mgmt-row:hover { background: rgba(255,255,255,0.4); }
+
+  .mgmt-category {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--brown-deep);
+    padding-right: 12px;
+  }
+
+  .mgmt-tier {
+    text-align: center;
+    padding: 0 6px;
+  }
+
+  .tier-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--brown-pale);
+    margin-bottom: 4px;
+    white-space: nowrap;
+  }
+
+  .tier-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--brown-mid);
+  }
+
+  .tier-price-basic { color: var(--brown-light); }
+  .tier-price-advanced { color: var(--brown-mid); }
+  .tier-price-premium { color: var(--brown-deep); }
+
+  /* Tier header row */
+  .mgmt-header {
+    display: grid;
+    grid-template-columns: 130px 1fr 1fr 1fr;
+    margin-bottom: 8px;
+    padding: 0 0 10px;
+    border-bottom: 1.5px solid var(--brown-pale);
+  }
+
+  .mgmt-header-cell {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--brown-light);
+    font-weight: 600;
+  }
+
+  .mgmt-header-cell:first-child { text-align: left; }
+
+  /* Tier price unified row */
+  .tier-unified {
+    background: rgba(196,164,138,0.08);
+    border-radius: 4px;
+    padding: 12px 0;
+    display: grid;
+    grid-template-columns: 130px 1fr 1fr 1fr;
+    margin-bottom: 4px;
+  }
+
+  .tier-unified-label {
+    font-size: 11px;
+    color: var(--brown-light);
+    letter-spacing: 0.15em;
+    padding-left: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Hydrafacial Section */
+  .hydra-intro {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255,255,255,0.45);
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+
+  .hydra-base-label {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--brown-light);
+    white-space: nowrap;
+  }
+
+  .hydra-base-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--brown-mid);
+    font-weight: 500;
+  }
+
+  .hydra-base-div {
+    width: 1px;
+    height: 32px;
+    background: var(--divider);
+  }
+
+  .hydra-base-note {
+    font-size: 11px;
+    color: var(--brown-pale);
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+  }
+
+  .hydra-packages { display: flex; flex-direction: column; gap: 10px; }
+
+  .hydra-pkg {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background: rgba(255,255,255,0.4);
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    padding: 14px 18px;
+    gap: 12px;
+    transition: background 0.2s;
+  }
+
+  .hydra-pkg:hover { background: rgba(255,255,255,0.65); }
+
+  .hydra-pkg-name {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--brown-deep);
+    margin-bottom: 4px;
+  }
+
+  .hydra-pkg-sub {
+    font-size: 11px;
+    color: var(--brown-light);
+    letter-spacing: 0.05em;
+  }
+
+  .hydra-pkg-prices {
+    text-align: right;
+  }
+
+  .hydra-pkg-original {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--brown-pale);
+    text-decoration: line-through;
+    margin-bottom: 2px;
+  }
+
+  .hydra-pkg-trial {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--brown-mid);
+  }
+
+  .hydra-pkg-trial-label {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--brown-pale);
+    display: block;
+    text-align: right;
+  }
+
+  /* Addon Section */
+  .addon-block {
+    background: rgba(255,255,255,0.35);
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+  }
+
+  .addon-block-title {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--brown-pale);
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .addon-block-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--divider);
+  }
+
+  .addon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .addon-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .addon-name {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--brown-deep);
+    font-weight: 500;
+  }
+
+  .addon-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--brown-light);
+    font-weight: 400;
+  }
+
+  .addon-price::before {
+    content: '+';
+    font-size: 13px;
+    margin-right: 1px;
+  }
+
+  .addon-price.no-plus::before {
+    content: '';
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 52px;
+    padding: 28px 48px;
+    text-align: center;
+    background: #3a2012;
+  }
+
+  .footer-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .footer-ornament::before,
+  .footer-ornament::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: rgba(196,164,138,0.4);
+  }
+
+  .footer-text {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--brown-pale);
+  }
+
+  /* Print styles */
+  @media print {
+    body { background: white; }
+    .page { padding: 40px 36px; }
+    .section { animation: none; }
+  }
+
+  @media (max-width: 520px) {
+    .page { padding: 40px 24px 60px; }
+    .entry-cards { grid-template-columns: 1fr; }
+    .mgmt-row, .mgmt-header, .tier-unified {
+      grid-template-columns: 110px 1fr 1fr 1fr;
+    }
+    .addon-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="content">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="header-brand">Ji Yu Skin Care Center</div>
+      <div class="header-title">肌癒皮膚管理中心</div>
+      <div class="header-ornament"><div class="ornament-diamond"></div></div>
+      <div class="header-subtitle">皮　膚　管　理　價　目　表</div>
+    </div>
+
+    <!-- Section 1: Entry -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <div class="section-title">入 門 清 潔 保 養</div>
+        <div class="section-line"></div>
+      </div>
+      <div class="entry-cards">
+        <div class="entry-card">
+          <div class="entry-card-name">經典管理</div>
+          <div class="entry-card-desc">清粉刺＋保濕導入<br>基礎清潔保養療程</div>
+          <div class="entry-card-price">2,080<span>元</span></div>
+        </div>
+        <div class="entry-card">
+          <div class="entry-card-name">超清秀　單次</div>
+          <div class="entry-card-desc">來自英國的水飛梭，敏感肌適用<br>手清粉刺 +$600・保濕導入 +$400</div>
+          <div class="entry-card-price" style="text-decoration:line-through; color:var(--brown-pale); font-size:16px;">3,000<span>元</span></div>
+          <div class="entry-card-price">2,500<span>元</span></div>
+        </div>
+        <div class="entry-card" style="grid-column: 1 / -1; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div class="entry-card-name">超清秀　四堂包堂</div>
+            <div class="entry-card-desc" style="margin-bottom:0;">平均 $2,500／次・贈手清粉刺</div>
+          </div>
+          <div class="entry-card-price" style="margin-bottom:0;">10,000<span>元</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Targeted Management -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <div class="section-title">韓 國 皮 膚 管 理</div>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="mgmt-header">
+        <div class="mgmt-header-cell">管理項目</div>
+        <div class="mgmt-header-cell">基礎</div>
+        <div class="mgmt-header-cell">進階</div>
+        <div class="mgmt-header-cell">高端</div>
+      </div>
+
+      <div class="tier-unified">
+        <div class="tier-unified-label">統一價位</div>
+        <div class="mgmt-tier"><div class="tier-price tier-price-basic">$2,880</div></div>
+        <div class="mgmt-tier"><div class="tier-price tier-price-advanced">$3,580</div></div>
+        <div class="mgmt-tier"><div class="tier-price tier-price-premium">$4,280</div></div>
+      </div>
+
+      <div class="mgmt-row">
+        <div class="mgmt-category">極潤補水管理</div>
+        <div class="mgmt-tier"><div class="tier-label">乾燥緊繃缺水</div></div>
+        <div class="mgmt-tier"><div class="tier-label">暗沉浮粉卡妝</div></div>
+        <div class="mgmt-tier"><div class="tier-label">長期脫皮乾紋</div></div>
+      </div>
+      <div class="mgmt-row">
+        <div class="mgmt-category">去痘淨膚管理</div>
+        <div class="mgmt-tier"><div class="tier-label">粉刺痘痘初期</div></div>
+        <div class="mgmt-tier"><div class="tier-label">反覆冒痘閉口</div></div>
+        <div class="mgmt-tier"><div class="tier-label">囊腫痘疤難消</div></div>
+      </div>
+      <div class="mgmt-row">
+        <div class="mgmt-category">毛孔痘疤管理</div>
+        <div class="mgmt-tier"><div class="tier-label">毛孔粗大粗糙</div></div>
+        <div class="mgmt-tier"><div class="tier-label">痘疤色印不均</div></div>
+        <div class="mgmt-tier"><div class="tier-label">凹洞疤痕深層</div></div>
+      </div>
+      <div class="mgmt-row">
+        <div class="mgmt-category">亮白淨斑管理</div>
+        <div class="mgmt-tier"><div class="tier-label">局部暗沉色差</div></div>
+        <div class="mgmt-tier"><div class="tier-label">整體膚色不均</div></div>
+        <div class="mgmt-tier"><div class="tier-label">頑固斑點色積</div></div>
+      </div>
+      <div class="mgmt-row">
+        <div class="mgmt-category">提拉塑顏管理</div>
+        <div class="mgmt-tier"><div class="tier-label">輪廓鬆散模糊</div></div>
+        <div class="mgmt-tier"><div class="tier-label">嘴角法令紋現</div></div>
+        <div class="mgmt-tier"><div class="tier-label">全臉鬆弛下垂</div></div>
+      </div>
+
+      <div style="margin-top:12px; background:rgba(255,255,255,0.5); border:1px solid var(--divider); border-radius:4px; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; position:relative; overflow:hidden;">
+        <div style="position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--brown-mid);"></div>
+        <div>
+          <div style="font-size:13px; font-weight:600; letter-spacing:0.12em; color:var(--brown-deep); margin-bottom:3px;">升級超清秀</div>
+          <div style="font-size:11px; color:var(--brown-light); letter-spacing:0.08em;">管理療程加選超清秀水飛梭</div>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:500; color:var(--brown-mid);">+$1,000</div>
+      </div>
+    </div>
+
+    <!-- Section 3: Hydrafacial Packages -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <div class="section-title">超 清 秀 進 階 組 合</div>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="hydra-packages">
+        <div class="hydra-pkg">
+          <div>
+            <div class="hydra-pkg-name">超清秀＋空氣水光</div>
+            <div class="hydra-pkg-sub">贈手清粉刺＋保濕導入</div>
+          </div>
+          <div class="hydra-pkg-prices">
+            <div class="hydra-pkg-original">$4,500</div>
+            <div class="hydra-pkg-trial">$3,380</div>
+          </div>
+        </div>
+        <div class="hydra-pkg">
+          <div>
+            <div class="hydra-pkg-name">超清秀＋緊緻V臉</div>
+            <div class="hydra-pkg-sub">贈手清粉刺＋保濕導入</div>
+          </div>
+          <div class="hydra-pkg-prices">
+            <div class="hydra-pkg-original">$5,000</div>
+            <div class="hydra-pkg-trial">$3,880</div>
+          </div>
+        </div>
+        <div class="hydra-pkg">
+          <div>
+            <div class="hydra-pkg-name">超清秀＋微型水光</div>
+            <div class="hydra-pkg-sub">贈手清粉刺＋保濕導入</div>
+          </div>
+          <div class="hydra-pkg-prices">
+            <div class="hydra-pkg-original">$7,500</div>
+            <div class="hydra-pkg-trial">$4,980</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: Micro Aqua -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <div class="section-title">微 型 水 光　$5,080／次</div>
+        <div class="section-line"></div>
+      </div>
+      <div class="hydra-packages" style="margin-bottom:14px;">
+        <div class="hydra-pkg">
+          <div>
+            <div class="hydra-pkg-name">OCTA</div>
+            <div class="hydra-pkg-sub">全效修護・毛孔水光一次到位</div>
+          </div>
+        </div>
+        <div class="hydra-pkg">
+          <div>
+            <div class="hydra-pkg-name">MELA</div>
+            <div class="hydra-pkg-sub">亮白淨透・均勻膚色光感</div>
+          </div>
+        </div>
+        <div class="hydra-pkg">
+          <div>
+            <div class="hydra-pkg-name">CICA</div>
+            <div class="hydra-pkg-sub">舒緩修護・緊緻毛孔調理</div>
+          </div>
+        </div>
+        <div class="hydra-pkg">
+          <div>
+            <div class="hydra-pkg-name">V-fit</div>
+            <div class="hydra-pkg-sub">緊緻輪廓・線條立體導入</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size:11px; color:var(--brown-light); letter-spacing:0.08em; margin-bottom:16px;">搭配任一課程・微型水光加購價 $3,000</div>
+
+      <div class="addon-block">
+        <div class="addon-block-title">包堂方案</div>
+        <div class="addon-grid" style="grid-template-columns:1fr 1fr;">
+          <div class="addon-item">
+            <div class="addon-name">極致水光澎潤療程</div>
+            <div style="font-size:10px;color:var(--brown-pale);letter-spacing:0.1em;margin-bottom:4px;">四堂完整療程</div>
+            <div class="addon-price no-plus">$18,000</div>
+          </div>
+          <div class="addon-item">
+            <div class="addon-name">全效肌底煥活療程</div>
+            <div style="font-size:10px;color:var(--brown-pale);letter-spacing:0.1em;margin-bottom:4px;">八堂完整療程</div>
+            <div class="addon-price no-plus">$33,000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: Add-ons -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <div class="section-title">附 加 管 理</div>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="addon-block">
+        <div class="addon-block-title">所有療程適用</div>
+        <div class="addon-grid">
+          <div class="addon-item">
+            <div class="addon-name">尊翼細胞安瓶</div>
+            <div class="addon-price">$700</div>
+          </div>
+          <div class="addon-item">
+            <div class="addon-name">拋光蛋肌</div>
+            <div class="addon-price">$900</div>
+          </div>
+          <div class="addon-item">
+            <div class="addon-name">空氣水光</div>
+            <div class="addon-price">$1,000</div>
+          </div>
+          <div class="addon-item">
+            <div class="addon-name">小臉撥筋</div>
+            <div class="addon-price">$400</div>
+          </div>
+          <div class="addon-item">
+            <div class="addon-name">拉提管理</div>
+            <div class="addon-price">$1,500</div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-ornament"></div>
+      <div class="footer-text">實際療程依膚況由專業諮詢師為您規劃</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
