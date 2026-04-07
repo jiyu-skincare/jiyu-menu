@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390px, initial-scale=1.0">
+<title>肌·癒皮膚管理中心｜敏感肌修護價目表</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:       #f0ebe1;
+    --brown-deep:  #3a2012;
+    --brown-mid:   #6b3d2e;
+    --brown-light: #9c6b52;
+    --brown-pale:  #c4a48a;
+    --divider:     rgba(107,61,46,0.18);
+    --card-bg:     rgba(255,255,255,0.55);
+    --post:        #9c6060;
+    --post-bg:     rgba(156,96,96,0.07);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    font-family: 'Noto Serif TC', serif;
+    color: var(--brown-deep);
+    width: 390px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #3a2012;
+    padding: 48px 28px 36px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .header::before {
+    content: ''; position: absolute; top: -40px; right: -40px;
+    width: 180px; height: 180px; border-radius: 50%;
+    background: rgba(196,164,138,0.08);
+  }
+  .header::after {
+    content: ''; position: absolute; bottom: -30px; left: -30px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: rgba(196,164,138,0.06);
+  }
+  .header-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px; letter-spacing: 0.35em;
+    color: #c4a48a; text-transform: uppercase; margin-bottom: 12px;
+  }
+  .header-title {
+    font-size: 20px; font-weight: 500;
+    letter-spacing: 0.18em; color: #f0ebe1; margin-bottom: 6px;
+  }
+  .header-ornament {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; margin: 14px 0;
+  }
+  .header-ornament::before, .header-ornament::after {
+    content: ''; width: 50px; height: 1px; background: rgba(196,164,138,0.4);
+  }
+  .diamond { width: 4px; height: 4px; background: #c4a48a; transform: rotate(45deg); }
+  .header-sub { font-size: 11px; letter-spacing: 0.28em; color: #c4a48a; }
+
+  /* ── INTRO ── */
+  .intro-note {
+    margin: 20px 20px 0;
+    background: var(--card-bg); border: 1px solid var(--divider);
+    border-radius: 6px; padding: 14px 16px;
+    font-size: 11px; color: var(--brown-light);
+    line-height: 1.8; letter-spacing: 0.05em; text-align: center;
+  }
+  .intro-note em { font-style: normal; color: var(--brown-mid); font-weight: 500; }
+
+  /* ── SECTION ── */
+  .section { padding: 28px 20px 0; }
+  .section-last { padding-bottom: 48px; }
+  .sec-hd { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .sec-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10px; font-style: italic;
+    color: var(--brown-pale); letter-spacing: 0.1em;
+  }
+  .sec-title { font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--brown-mid); }
+  .sec-line { flex: 1; height: 1px; background: var(--divider); }
+
+  /* ── BARRIER STANDALONE ── */
+  .barrier-card {
+    background: var(--card-bg); border: 1px solid var(--divider);
+    border-radius: 6px; padding: 18px 16px 18px 20px;
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .barrier-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--brown-pale); border-radius: 3px 0 0 3px;
+  }
+  .barrier-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10px; font-style: italic; letter-spacing: 0.1em;
+    color: var(--brown-pale); border: 1px solid var(--brown-pale);
+    padding: 2px 7px; border-radius: 2px;
+    display: inline-block; margin-bottom: 8px;
+  }
+  .barrier-name {
+    font-size: 15px; font-weight: 600;
+    letter-spacing: 0.08em; color: var(--brown-deep); margin-bottom: 5px;
+  }
+  .barrier-desc { font-size: 10px; color: var(--brown-light); letter-spacing: 0.04em; line-height: 1.7; }
+  .barrier-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 500;
+    color: var(--brown-mid); line-height: 1;
+    text-align: right; white-space: nowrap;
+  }
+  .price-unit {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 10px; color: var(--brown-pale); margin-left: 2px;
+  }
+
+  /* ── LEVEL CARD ── */
+  .level-card {
+    background: var(--card-bg); border: 1px solid var(--divider);
+    border-radius: 6px; padding: 18px 16px 0 20px;
+    margin-bottom: 10px; position: relative; overflow: hidden;
+  }
+  .level-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; border-radius: 3px 0 0 3px;
+  }
+  .lv1::before { background: #c4a48a; }
+  .lv2::before { background: #b08060; }
+  .lv3::before { background: #8a5a3a; }
+  .lv4::before { background: #5c2e1a; }
+
+  .level-badge { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+  .level-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10px; font-style: italic; letter-spacing: 0.1em;
+    padding: 2px 7px; border-radius: 2px; border: 1px solid;
+  }
+  .lv1 .level-tag { color: #c4a48a; border-color: #c4a48a; }
+  .lv2 .level-tag { color: #b08060; border-color: #b08060; }
+  .lv3 .level-tag { color: #8a5a3a; border-color: #8a5a3a; }
+  .lv4 .level-tag { color: #5c2e1a; border-color: #5c2e1a; }
+
+  .level-name {
+    font-size: 15px; font-weight: 600;
+    letter-spacing: 0.08em; color: var(--brown-deep); margin-bottom: 4px;
+  }
+  .level-course-tag {
+    font-size: 11px; color: var(--brown-light);
+    letter-spacing: 0.06em; margin-bottom: 10px;
+  }
+  .symptoms {
+    font-size: 11px; color: var(--brown-light);
+    line-height: 1.85; letter-spacing: 0.04em; margin-bottom: 14px;
+  }
+  .symptoms-highlight { color: var(--brown-mid); font-weight: 500; }
+
+  /* single row */
+  .course-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 0; border-top: 1px solid var(--divider);
+  }
+  .course-label { font-size: 10px; letter-spacing: 0.1em; color: var(--brown-pale); margin-bottom: 3px; }
+  .course-name { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: var(--brown-deep); }
+  .course-detail { font-size: 10px; color: var(--brown-pale); letter-spacing: 0.04em; margin-top: 2px; }
+  .price-single {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 500;
+    color: var(--brown-mid); line-height: 1;
+    text-align: right; white-space: nowrap;
+  }
+
+  /* package row */
+  .pkg-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 0 14px; border-top: 1px dashed var(--divider);
+  }
+  .pkg-label { font-size: 10px; letter-spacing: 0.1em; color: var(--brown-pale); margin-bottom: 4px; }
+  .pkg-gift {
+    display: inline-block; font-size: 10px; letter-spacing: 0.06em;
+    color: var(--brown-mid); background: rgba(107,61,46,0.07);
+    border-radius: 2px; padding: 2px 6px;
+  }
+  .pkg-addon {
+    display: inline-block; font-size: 10px; letter-spacing: 0.06em;
+    color: var(--brown-light);
+    border-radius: 2px; padding: 2px 0;
+  }
+  .price-pkg {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500;
+    color: var(--brown-mid); line-height: 1;
+    text-align: right; white-space: nowrap;
+  }
+
+  /* ── ADD-ON CARD ── */
+  .addon-card {
+    background: var(--card-bg); border: 1px solid var(--divider);
+    border-radius: 6px; padding: 16px 16px 16px 20px;
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .addon-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--brown-pale); opacity: 0.5;
+    border-radius: 3px 0 0 3px;
+  }
+  .addon-label-top {
+    font-size: 10px; letter-spacing: 0.12em;
+    color: var(--brown-pale); margin-bottom: 4px;
+  }
+  .addon-name {
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.06em; color: var(--brown-deep); margin-bottom: 3px;
+  }
+  .addon-note { font-size: 10px; color: var(--brown-light); letter-spacing: 0.04em; }
+  .addon-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 500;
+    color: var(--brown-mid); white-space: nowrap; text-align: right;
+  }
+
+  /* ── DIVIDER ── */
+  .section-divider { height: 1px; background: var(--divider); margin: 28px 20px 0; }
+
+  /* ── POST ── */
+  .post-section { padding: 28px 20px 0; }
+  .post-card {
+    background: var(--post-bg); border: 1px solid rgba(156,96,96,0.18);
+    border-radius: 6px; padding: 18px 16px 18px 20px;
+    position: relative; overflow: hidden;
+  }
+  .post-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: #9c6060; border-radius: 3px 0 0 3px;
+  }
+  .post-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10px; font-style: italic; letter-spacing: 0.1em;
+    color: #9c6060; border: 1px solid #9c6060;
+    padding: 2px 7px; border-radius: 2px;
+    display: inline-block; margin-bottom: 8px;
+  }
+  .post-name {
+    font-size: 15px; font-weight: 600;
+    letter-spacing: 0.08em; color: var(--brown-deep); margin-bottom: 8px;
+  }
+  .post-desc {
+    font-size: 11px; color: var(--brown-light);
+    line-height: 1.85; letter-spacing: 0.04em; margin-bottom: 14px;
+  }
+  .post-desc span { color: var(--brown-mid); font-weight: 500; }
+  .post-course-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 10px; border-top: 1px solid rgba(156,96,96,0.15);
+  }
+  .post-course-label { font-size: 10px; letter-spacing: 0.12em; color: rgba(156,96,96,0.5); margin-bottom: 3px; }
+  .post-course-name { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: var(--brown-deep); }
+
+  /* ── NOTICE ── */
+  .notice {
+    margin: 14px 0 0; padding: 14px 16px;
+    background: var(--card-bg); border: 1px solid var(--divider); border-radius: 6px;
+  }
+  .notice-title { font-size: 10px; letter-spacing: 0.18em; color: var(--brown-pale); margin-bottom: 8px; }
+  .notice-item {
+    font-size: 10px; color: var(--brown-light);
+    line-height: 1.9; letter-spacing: 0.04em;
+    padding-left: 10px; position: relative;
+  }
+  .notice-item::before { content: '·'; position: absolute; left: 0; color: var(--brown-pale); }
+
+  /* ── FOOTER ── */
+  .footer { background: #3a2012; padding: 28px; text-align: center; margin-top: 28px; }
+  .footer-ornament {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; margin-bottom: 12px;
+  }
+  .footer-ornament::before, .footer-ornament::after {
+    content: ''; width: 36px; height: 1px; background: rgba(196,164,138,0.4);
+  }
+  .footer-text { font-size: 10px; letter-spacing: 0.2em; color: #c4a48a; }
+  .footer-ig {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px; letter-spacing: 0.15em; color: rgba(196,164,138,0.6); margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-en">Ji Yu Skin Care Center</div>
+  <div class="header-title">肌·癒皮膚管理中心</div>
+  <div class="header-ornament"><div class="diamond"></div></div>
+  <div class="header-sub">敏 感 肌 修 護 價 目 表</div>
+</div>
+
+<!-- INTRO -->
+<div class="intro-note">
+  先找到你的肌膚狀況，再選對課程<br>
+  <em>程度越高，修護越深，恢復越穩定</em>
+</div>
+
+<!-- 01 屏障管理 -->
+<div class="section">
+  <div class="sec-hd">
+    <div class="sec-num">01</div>
+    <div class="sec-title">基 礎 修 護</div>
+    <div class="sec-line"></div>
+  </div>
+  <div class="barrier-card">
+    <div>
+      <div class="barrier-tag">Foundation</div>
+      <div class="barrier-name">屏 障 管 理</div>
+      <div class="barrier-desc">修復肌膚屏障，敏感修護的第一步</div>
+    </div>
+    <div class="barrier-price">2,080<span class="price-unit">元</span></div>
+  </div>
+</div>
+
+<!-- 02 分級課程 -->
+<div class="section">
+  <div class="sec-hd">
+    <div class="sec-num">02</div>
+    <div class="sec-title">敏 感 肌 修 護 課 程</div>
+    <div class="sec-line"></div>
+  </div>
+
+  <!-- Lv.1 -->
+  <div class="level-card lv1">
+    <div class="level-badge"><span class="level-tag">Lv. 1</span></div>
+    <div class="level-name">輕 度 敏 感</div>
+    <div class="symptoms">
+      <span class="symptoms-highlight">換季或壓力一來，就泛紅、發癢，</span><br>
+      其他時候還算穩定，但你已經開始注意到<br>
+      皮膚不像以前那麼好照顧了。
+    </div>
+    <div class="course-row">
+      <div>
+        <div class="course-label">推 薦 課 程　單 次</div>
+        <div class="course-name">益菌修護管理</div>
+      </div>
+      <div class="price-single">2,580<span class="price-unit">元</span></div>
+    </div>
+    <div class="pkg-row">
+      <div>
+        <div class="pkg-label">六 堂 包 堂　85 折</div>
+      </div>
+      <div class="price-pkg">13,100<span class="price-unit">元</span></div>
+    </div>
+  </div>
+
+  <!-- Lv.2 -->
+  <div class="level-card lv2">
+    <div class="level-badge"><span class="level-tag">Lv. 2</span></div>
+    <div class="level-name">中 度 敏 感</div>
+    <div class="symptoms">
+      <span class="symptoms-highlight">不明原因的刺痛、灼熱感，</span><br>
+      試過很多產品，幾乎都容易不適。<br>
+      皮膚變得很難伺候，保養選擇越來越少。
+    </div>
+    <div class="course-row">
+      <div>
+        <div class="course-label">推 薦 課 程　單 次</div>
+        <div class="course-name">處方膠囊管理　單效</div>
+        <div class="course-detail">含一隻膠囊</div>
+      </div>
+      <div class="price-single">2,980<span class="price-unit">元</span></div>
+    </div>
+    <div class="pkg-row">
+      <div>
+        <div class="pkg-label">六 堂 包 堂　85 折</div>
+      </div>
+      <div class="price-pkg">15,100<span class="price-unit">元</span></div>
+    </div>
+  </div>
+
+  <!-- Lv.3 -->
+  <div class="level-card lv3">
+    <div class="level-badge"><span class="level-tag">Lv. 3</span></div>
+    <div class="level-name">屏 障 受 損 型</div>
+    <div class="symptoms">
+      <span class="symptoms-highlight">換產品或做完護膚就大爆發，</span><br>
+      外力一點刺激就全臉崩潰。<br>
+      皮膚屏障已受損，需要系統性重建，<br>
+      而不只是補水舒緩。
+    </div>
+    <div class="course-row">
+      <div>
+        <div class="course-label">推 薦 課 程　單 次</div>
+        <div class="course-name">處方膠囊管理　複方</div>
+        <div class="course-detail">含兩隻膠囊</div>
+      </div>
+      <div class="price-single">3,580<span class="price-unit">元</span></div>
+    </div>
+    <div class="pkg-row">
+      <div>
+        <div class="pkg-label">六 堂 包 堂　85 折</div>
+        <div class="pkg-gift">升級 屏障管理 × 4 堂</div>
+      </div>
+      <div class="price-pkg">18,200<span class="price-unit">元</span></div>
+    </div>
+  </div>
+
+  <!-- Lv.4 -->
+  <div class="level-card lv4">
+    <div class="level-badge"><span class="level-tag">Lv. 4</span></div>
+    <div class="level-name">慢 性 泛 紅 型</div>
+    <div class="symptoms">
+      <span class="symptoms-highlight">長期泛紅，像酒糟或玫瑰斑，</span><br>
+      臉部持續偏紅、伴隨明顯刺激感。<br>
+      屬於慢性炎症狀態，需要長期管理策略，<br>
+      急性舒緩無法根本改善。
+    </div>
+    <div class="course-row">
+      <div>
+        <div class="course-label">推 薦 課 程　單 次</div>
+        <div class="course-name">處方膠囊管理　全效</div>
+        <div class="course-detail">含三隻膠囊</div>
+      </div>
+      <div class="price-single">4,080<span class="price-unit">元</span></div>
+    </div>
+    <div class="pkg-row">
+      <div>
+        <div class="pkg-label">六 堂 包 堂　85 折</div>
+        <div class="pkg-gift">升級 屏障管理 × 6 堂</div>
+      </div>
+      <div class="price-pkg">20,800<span class="price-unit">元</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 03 加購 -->
+<div class="section">
+  <div class="sec-hd">
+    <div class="sec-num">03</div>
+    <div class="sec-title">加 購 項 目</div>
+    <div class="sec-line"></div>
+  </div>
+  <div class="addon-card">
+    <div>
+      <div class="addon-label-top">所 有 課 程 均 可 升 級</div>
+      <div class="addon-name">屏 障 管 理</div>
+      <div class="addon-note">單次定價 $2,080・升級加購</div>
+    </div>
+    <div class="addon-price">+1,000<span class="price-unit">元</span></div>
+  </div>
+</div>
+
+<!-- DIVIDER -->
+<div class="section-divider"></div>
+
+<!-- 04 術後修護 -->
+<div class="post-section section-last">
+  <div class="sec-hd">
+    <div class="sec-num">04</div>
+    <div class="sec-title" style="color:#9c6060;">術 後 專 屬 修 護</div>
+    <div class="sec-line" style="background:rgba(156,96,96,0.2);"></div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-tag">醫美術後</div>
+    <div class="post-name">術 後 修 護 課 程</div>
+    <div class="post-desc">
+      雷射、微針、果酸換膚等醫美處置後，<br>
+      <span>皮膚處於高度敏感的修復期，</span>需要專業的<br>
+      術後管理，幫助加速癒合、鎮靜泛紅、<br>
+      穩定屏障，讓醫美效果更完整發揮。
+    </div>
+    <div class="post-course-row">
+      <div>
+        <div class="post-course-label">推 薦 課 程</div>
+        <div class="post-course-name">術後修護管理課程</div>
+        <div style="font-size:10px;color:var(--brown-light);letter-spacing:0.04em;margin-top:3px;">全程以屏障保護為核心，不施行去角質及清粉刺</div>
+        <div style="font-size:10px;color:var(--brown-mid);letter-spacing:0.06em;margin-top:4px;background:rgba(107,61,46,0.07);display:inline-block;padding:2px 6px;border-radius:2px;">贈 術後專屬修護禮</div>
+      </div>
+      <div class="price-single" style="color:#9c6060;">1,880<span class="price-unit">元</span></div>
+    </div>
+  </div>
+
+  <div class="notice">
+    <div class="notice-title">注 意 事 項</div>
+    <div class="notice-item">實際課程建議以現場肌膚評估為準</div>
+    <div class="notice-item">術後修護需告知執行項目與術後天數</div>
+    <div class="notice-item">乾性敏感肌膚如有粉刺，將視當日肌膚狀態評估，以低刺激手法審慎處置，以屏障保護為優先</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-ornament"><div class="diamond"></div></div>
+  <div class="footer-text">肌·癒皮膚管理中心</div>
+  <div class="footer-ig">@jiyu.tw</div>
+</div>
+
+</body>
+</html>
