@@ -2471,7 +2471,7 @@ const COURSES = {
             <div>
               <div class="entry-en">In-Service SOP</div>
               <div class="entry-title" style="font-size:16px;margin-bottom:6px;">現 場 服 務 流 程</div>
-              <div class="entry-desc">從進門到送客 4 階段 10 步驟<br>到場前 · 諮詢療程 · 療程後 · 結帳</div>
+              <div class="entry-desc">從進門到送客 4 階段 15 步驟<br>到場前 · 諮詢療程 · 療程後 · 結帳</div>
             </div>
             <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--brown-light);">→</span>
           </div>
@@ -2894,6 +2894,7 @@ const COURSES = {
       intro: {
         lead: '這份諮詢工具是為了讓你能在 15 分鐘內為客人完成完整面診、推薦適合課程、列印保養建議。',
         principles: [
+          '⭐「客人想做什麼」優先於「你看到什麼」— 新客留客的核心。看到斑 / 痘印 / 毛孔粗大時，先問「您在意嗎、想改善嗎」，客人不想改善就不推除斑 / 美白課程。主訴是「想放鬆、想睡著」也是合理選項（推撥筋 / 舒緩同樣專業）。客人主動問你「老師你覺得我需要什麼」，才用專業判斷介入。',
           '不強迫推銷。只給客人皮膚真正需要的東西。',
           'iPad 橫放在客人對面，諮詢過程是「我們一起看」，不是「我問你答」。',
           '每個問題你都先看一遍再開口。系統設計是讓客人也能讀懂，但你的解釋會讓她更安心。',
@@ -3282,6 +3283,10 @@ const COURSES = {
         { title: '情境 4：客人說別的店推銷某項目', script: '每家做法不一樣。我們只做敏感肌可以承受的東西，所以避開了酸類、雷射這類強刺激。長期下來屏障會越來越好。' },
         { title: '情境 5：客人想單次體驗', text: '直接點 Step 8 的「單次體驗」就好，不要勉強推包堂。單次體驗就是給她認識我們的機會。' },
         { title: '情境 6：客人是醫美術後', list: ['7 天內：建議「術後修護管理」（贈術後修護禮）', '7 天以上：依照膚況走一般敏感肌路線'] },
+        { title: '⭐ 新客留客心法 · 想放鬆也是合理主訴（真實案例）',
+          text: '上次一位新客諮詢時問了很多專業問題，但最後說他「想要做舒服可以睡著的課程」。員工依此推薦撥筋課程 → 客人睡著 → 非常滿意 → 後續回購。\n\n學到的事：客人的主訴可能是「放鬆」「療癒」「儀式感」，不一定是「處理皮膚問題」。順著客人想要的方向推，比硬塞自己看到的問題更能留住客人。',
+          script: '您今天想要做怎麼樣的課程呢？想處理特定膚況、想放鬆休息、還是想嘗試看看我們的招牌？依您今天的心情我們可以給不同建議。'
+        },
         { title: '🌿 諮詢 / 療程結束後 — 首頁「課後衛教 + 消費說明」按鈕',
           text: '4 種療程衛教（通用 / 藻針 / MTS / 韓國水光）切 chip 切換 + 消費 tab（包堂 / 儲值 / 付款）。每個衛教下方有「📥 下載這份衛教 PNG 給客人」按鈕，皮膚管理師點下去產 PNG、AirDrop 或 LINE 給客人。客人 24h 內、修護期 7-14 天的注意事項都在這裡。',
           script: '這份是您今天課程的居家照顧重點，我等等 LINE 傳一張給您，您可以對照著做。如果有任何不適隨時 LINE 我們。' },
@@ -5002,35 +5007,40 @@ const COURSES = {
   }
 
   /* ====== SERVICE FLOW (現場服務 SOP) ====== */
-  const SERVICE_FLOW = [
+    const SERVICE_FLOW = [
     {
       phase: '01', en: 'Pre-arrival & Arrival', title: '客人到場前後',
       steps: [
         { num: 1, text: '<strong>進門前</strong>先倒好水 + 紙毛巾、鋪好床紙、倒好洗臉水盆' },
-        { num: 2, text: '客人進門：幫客人拿拖鞋' }
+        { num: 2, text: '客人進門：幫客人拿拖鞋' },
+        { num: 3, text: '請客人稍坐、奉水、引導擦手' }
       ]
     },
     {
       phase: '02', en: 'Consultation → Treatment', title: '諮詢 · 療程',
       steps: [
-        { num: 3, text: '<strong>新客</strong>：用肌膚檢測儀確認療程' },
-        { num: 4, text: '<strong>舊客</strong>：查上次紀錄確認這次療程' },
-        { num: 5, text: '要敷臉前問客人需要茶 / 點心嗎' },
-        { num: 6, text: '要的話敷臉時先準備茶水 + 點心放好' }
+        { num: 4, text: '<strong>新客</strong>：填肌膚檢測儀資料表（同意書 / 基本資料）' },
+        { num: 5, text: '<strong>新客</strong>：照肌膚檢測儀' },
+        { num: 6, text: '<strong>等檢測結果同時</strong>：開始填面診諮詢 Step 1（基本資料 + 底型）' },
+        { num: 7, text: '<strong>新客</strong>：與客人一起看肌膚檢測報告' },
+        { num: 8, text: '<strong>新客</strong>：繼續面診諮詢 → 確認課程' },
+        { num: 9, text: '<strong>舊客</strong>：查上次紀錄、確認這次療程（取代 4–8）' },
+        { num: 10, text: '要敷臉前問客人需要茶 / 點心嗎' },
+        { num: 11, text: '要的話敷臉時先準備茶水 + 點心放好' }
       ]
     },
     {
       phase: '03', en: 'After Treatment', title: '療程後 · 送客',
       steps: [
-        { num: 7, text: '起床後引導到化妝桌整理、查看膚況' },
-        { num: 8, text: '吃點心時請客人寫問卷、介紹消費方式' }
+        { num: 12, text: '起床後引導到化妝桌整理、查看膚況' },
+        { num: 13, text: '吃點心時請客人寫問卷、介紹消費方式' }
       ]
     },
     {
       phase: '04', en: 'Checkout', title: '結帳',
       steps: [
-        { num: 9, text: '優先 <strong>現金 / 轉帳</strong>；客人主動問 LINE Pay 才給' },
-        { num: 10, text: '<em>刷卡需加 3% 手續費</em>' }
+        { num: 14, text: '優先 <strong>現金 / 轉帳</strong>；客人主動問 LINE Pay 才給' },
+        { num: 15, text: '<em>刷卡需加 3% 手續費</em>' }
       ]
     }
   ];
@@ -5061,7 +5071,7 @@ const COURSES = {
         <div class="hero-en">IN-SERVICE SOP</div>
         <h1 class="hero-title">現 場 服 務 流 程</h1>
         <div class="hero-orn"><span class="diamond"></span></div>
-        <div class="hero-sub">從進門到送客 · 4 階段 10 步驟</div>
+        <div class="hero-sub">從進門到送客 · 4 階段 15 步驟</div>
       </header>
       <div class="ci-intro" style="margin-top:20px;">
         <em>每位客人都依這個流程跑。</em>順序錯了客人會感覺被慢待 — 記住 phase 順序就不會亂。
