@@ -2471,7 +2471,7 @@ const COURSES = {
             <div>
               <div class="entry-en">In-Service SOP</div>
               <div class="entry-title" style="font-size:16px;margin-bottom:6px;">現 場 服 務 流 程</div>
-              <div class="entry-desc">從進門到送客 4 階段 15 步驟<br>到場前 · 諮詢療程 · 療程後 · 結帳</div>
+              <div class="entry-desc">從進門到送客 5 階段 17 步驟<br>到場前 · 諮詢療程 · 療程後 · 結帳 · 跟進</div>
             </div>
             <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--brown-light);">→</span>
           </div>
@@ -5007,7 +5007,7 @@ const COURSES = {
   }
 
   /* ====== SERVICE FLOW (現場服務 SOP) ====== */
-    const SERVICE_FLOW = [
+      const SERVICE_FLOW = [
     {
       phase: '01', en: 'Pre-arrival & Arrival', title: '客人到場前後',
       steps: [
@@ -5026,14 +5026,14 @@ const COURSES = {
         { num: 8, text: '<strong>新客</strong>：繼續面診諮詢 → 確認課程' },
         { num: 9, text: '<strong>舊客</strong>：查上次紀錄、確認這次療程（取代 4–8）' },
         { num: 10, text: '要敷臉前問客人需要茶 / 點心嗎' },
-        { num: 11, text: '要的話敷臉時先準備茶水 + 點心放好' }
+        { num: 11, text: '要的話敷臉時先準備：茶水 + 點心 + <strong>依客人膚況挑適合的試用包</strong>' }
       ]
     },
     {
       phase: '03', en: 'After Treatment', title: '療程後 · 送客',
       steps: [
         { num: 12, text: '起床後引導到化妝桌整理、查看膚況' },
-        { num: 13, text: '吃點心時請客人寫問卷、介紹消費方式' }
+        { num: 13, text: '吃點心時介紹消費方式、預約下次時間' }
       ]
     },
     {
@@ -5041,6 +5041,13 @@ const COURSES = {
       steps: [
         { num: 14, text: '優先 <strong>現金 / 轉帳</strong>；客人主動問 LINE Pay 才給' },
         { num: 15, text: '<em>刷卡需加 3% 手續費</em>' }
+      ]
+    },
+    {
+      phase: '05', en: 'Follow-up', title: '客人離開後 · 跟進',
+      steps: [
+        { num: 16, text: '<strong>當天</strong>由員工手動 LINE 客人：諮詢紀錄圖 + 滿意度問卷連結' },
+        { num: 17, text: '客人填寫完回傳 → 贈送 <strong>85 折券一張</strong>' }
       ]
     }
   ];
@@ -5071,7 +5078,7 @@ const COURSES = {
         <div class="hero-en">IN-SERVICE SOP</div>
         <h1 class="hero-title">現 場 服 務 流 程</h1>
         <div class="hero-orn"><span class="diamond"></span></div>
-        <div class="hero-sub">從進門到送客 · 4 階段 15 步驟</div>
+        <div class="hero-sub">從進門到送客 · 5 階段 17 步驟</div>
       </header>
       <div class="ci-intro" style="margin-top:20px;">
         <em>每位客人都依這個流程跑。</em>順序錯了客人會感覺被慢待 — 記住 phase 順序就不會亂。
