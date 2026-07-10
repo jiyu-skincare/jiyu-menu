@@ -1028,6 +1028,61 @@
     .tmpl-copy:hover, .tmpl-copy:active { background: var(--ink); }
     .tmpl-copy.copied { background: var(--done); }
 
+    /* House Rules (內部守則) */
+    .hr-list { padding: 0 16px; display: flex; flex-direction: column; gap: 12px; }
+    .hr-card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 6px; overflow: hidden;
+    }
+    .hr-card-head {
+      padding: 14px 18px; background: var(--ink); color: var(--bg);
+      display: flex; align-items: center; gap: 14px;
+      position: relative; overflow: hidden;
+    }
+    .hr-card-head::before {
+      content: ''; position: absolute; top: -15px; right: -15px;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(196,164,138,0.06);
+    }
+    .hr-num {
+      font-family: var(--en); font-size: 20px; font-weight: 600;
+      color: var(--brown-pale); letter-spacing: 0.05em;
+      min-width: 32px; position: relative; z-index: 1;
+    }
+    .hr-title {
+      font-size: 15px; font-weight: 500; letter-spacing: 0.15em;
+      position: relative; z-index: 1;
+    }
+    .hr-body {
+      padding: 14px 18px; font-size: 13px; line-height: 1.9;
+      color: var(--ink-mid); letter-spacing: 0.04em;
+    }
+    .hr-case-box {
+      margin: 20px 16px 12px;
+      background: rgba(217,119,87,0.06);
+      border: 1px solid rgba(217,119,87,0.25);
+      border-left: 3px solid var(--warn);
+      border-radius: 6px; padding: 16px 18px;
+    }
+    .hr-case-title {
+      font-size: 13px; font-weight: 600; color: var(--warn);
+      letter-spacing: 0.1em; margin-bottom: 12px;
+    }
+    .hr-case-item {
+      padding: 10px 12px; background: var(--card);
+      border-radius: 4px; margin-bottom: 10px;
+      font-size: 12px; line-height: 1.8;
+      color: var(--ink-mid); letter-spacing: 0.04em;
+    }
+    .hr-case-item:last-child { margin-bottom: 0; }
+    .hr-case-item strong { color: var(--warn); font-weight: 600; }
+    .hr-case-do {
+      margin-top: 8px; padding-top: 8px;
+      border-top: 1px dashed var(--line-soft);
+      color: var(--done); font-size: 11px;
+    }
+    .hr-case-do strong { color: var(--done); font-weight: 600; }
+
     /* Sub-section header (員工訓練分大類用) */
     .sub-hd {
       display: flex; align-items: center; gap: 8px;
@@ -2567,6 +2622,16 @@ const COURSES = {
           <span class="sub-hd-title">核 心 原 則</span>
           <span class="sub-hd-line"></span>
         </div>
+        <a href="#/house-rules" class="entry" style="margin-bottom:10px;padding:18px 22px;background:rgba(217,119,87,0.06);border-color:var(--warn);">
+          <div class="entry-grid">
+            <div>
+              <div class="entry-en">House Rules · 內部守則</div>
+              <div class="entry-title" style="font-size:16px;margin-bottom:6px;">內 部 守 則</div>
+              <div class="entry-desc">5 條內部夥伴共遵事項<br>進出規範 · 設備使用 · 監控 · 私人分際 · 尊重共識</div>
+            </div>
+            <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--warn);">→</span>
+          </div>
+        </a>
         <a href="#/priority" class="entry" style="margin-bottom:10px;padding:18px 22px;background:rgba(196,164,138,0.08);border-color:var(--brown-light);">
           <div class="entry-grid">
             <div>
@@ -2592,7 +2657,7 @@ const COURSES = {
             <div>
               <div class="entry-en">In-Service SOP</div>
               <div class="entry-title" style="font-size:16px;margin-bottom:6px;">現 場 服 務 流 程</div>
-              <div class="entry-desc">從進門到送客 5 階段 20 步驟<br>到場前 · 諮詢療程 · 療程後 · 結帳 · 跟進</div>
+              <div class="entry-desc">從進門到送客 5 階段 21 步驟<br>到場前 · 諮詢療程 · 療程後 · 結帳 · 跟進</div>
             </div>
             <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--brown-light);">→</span>
           </div>
@@ -5080,18 +5145,19 @@ const COURSES = {
     {
       phase: '04', en: 'Checkout', title: '結帳',
       steps: [
-        { num: 14, text: '優先 <strong>現金 / 轉帳</strong>；客人主動問 LINE Pay 才給' },
-        { num: 15, text: '<em>刷卡需加 3% 手續費</em>' }
+        { num: 14, text: '⭐ <strong>結帳前必問：本月活動是否介紹過？</strong><br>當月活動見諮詢頁首頁 banner / Step 7 上方 banner（過月會自動隱藏）<br>例：6 月 THESERA 套盒 H / G / L 三款 $3,280（原 $4,280）—— 對應乾燥 / 色素疤痕 / 細紋客人' },
+        { num: 15, text: '優先 <strong>現金 / 轉帳</strong>；客人主動問 LINE Pay 才給' },
+        { num: 16, text: '<em>刷卡需加 3% 手續費</em>' }
       ]
     },
     {
       phase: '05', en: 'Follow-up', title: '客人離開後 · 跟進',
       steps: [
-        { num: 16, text: '⭐ 預約系統<strong>服務歷程</strong>：上傳客人<strong>前後照</strong>' },
-        { num: 17, text: '⭐ 寫<strong>詳細課程內容</strong>（給日後查詢 / 下次續做用）<br>例：酸上 8 分、保鮮膜輔助；去角質方式（手工 / 機器 / 酸類）；MTS 幾針 + 出針長度等具體參數' },
-        { num: 18, text: '⭐ 寫<strong>店家筆記</strong>（客人看不到、僅內部留檔）<br>· 今天聊天內容（下次客人來前複習 → 記得他發生的事情 = 客人覺得被在乎、大加分）<br>· 客人在意事項（不要茶點 / 對貓過敏 / 怕冷等）<br>· 給下一位接他的美容師的備注' },
-        { num: 19, text: '<strong>當天</strong>手動 LINE 客人：諮詢紀錄圖 + 滿意度問卷連結<br>⚠️ 訊息中提示「對比照可到服務歷程觀看」' },
-        { num: 20, text: '客人填寫完回傳 → 贈送 <strong>85 折券一張</strong>（限單堂使用、不可疊包堂 / 儲值折扣）' }
+        { num: 17, text: '⭐ 預約系統<strong>服務歷程</strong>：上傳客人<strong>前後照</strong>' },
+        { num: 18, text: '⭐ 寫<strong>詳細課程內容</strong>（給日後查詢 / 下次續做用）<br>例：酸上 8 分、保鮮膜輔助；去角質方式（手工 / 機器 / 酸類）；MTS 幾針 + 出針長度等具體參數' },
+        { num: 19, text: '⭐ 寫<strong>店家筆記</strong>（客人看不到、僅內部留檔）<br>· 今天聊天內容（下次客人來前複習 → 記得他發生的事情 = 客人覺得被在乎、大加分）<br>· 客人在意事項（不要茶點 / 對貓過敏 / 怕冷等）<br>· 給下一位接他的美容師的備注' },
+        { num: 20, text: '<strong>當天</strong>手動 LINE 客人：諮詢紀錄圖 + 滿意度問卷連結<br>⚠️ 訊息中提示「對比照可到服務歷程觀看」' },
+        { num: 21, text: '客人填寫完回傳 → 贈送 <strong>85 折券一張</strong>（限單堂使用、不可疊包堂 / 儲值折扣）' }
       ]
     }
   ];
@@ -5433,6 +5499,79 @@ const COURSES = {
     window.scrollTo(0, 0);
   }
 
+  /* ====== HOUSE RULES (內部守則) ====== */
+  const HOUSE_RULES = [
+    { num: '01', title: '非營業 / 無客時段進出規範',
+      body: '若在非有預約或客人時間仍需進入店內，請務必<strong>事先告知並取得同意</strong>，以避免資源調度混亂或誤會。' },
+    { num: '02', title: '設備與產品使用原則',
+      body: '所有店內儀器、耗材、產品等皆有記錄與管理流程，<strong>非經允許請勿私自使用</strong>。若有需求，可提前提出安排體驗或測試使用。' },
+    { num: '03', title: '監控設備通知',
+      body: '店內為維護環境與安全設有監視器，進出及操作行為皆有紀錄。若有違反守則行為，將依情節提醒、限制使用或另作處理。' },
+    { num: '04', title: '私人行為與空間分際',
+      body: '店內為營業場所，請避免將私人活動（如<strong>閒聊、飲酒、招待朋友</strong>等）帶入空間，除非事前經同意或安排。' },
+    { num: '05', title: '尊重與共識',
+      body: '本店重視每位合夥人及協助者的參與，但也期望彼此尊重流程與邊界，建立<strong>透明、專業、和諧</strong>的合作關係。' }
+  ];
+
+  const HOUSE_RULES_CASES = [
+    { situation: '想帶朋友來店內體驗療程',
+      wrong: '<strong>❌</strong> 未告知直接到店 + 帶朋友來做臉',
+      right: '<strong>✅</strong> 事前 LINE 老闆 → 討論體驗時段 + 使用哪些產品耗材 → 得到同意再約',
+      rules: '相關條款：01 進出規範 + 02 設備使用 + 04 私人行為分際' },
+    { situation: '無客人時段想到店內處理個人事務',
+      wrong: '<strong>❌</strong> 沒告知就到店 / 使用店內設備',
+      right: '<strong>✅</strong> 事前告知老闆時間與用途 → 得到同意',
+      rules: '相關條款：01 進出規範 + 03 監控紀錄' },
+    { situation: '朋友想陪你在店內等 / 聊天',
+      wrong: '<strong>❌</strong> 直接讓朋友進來店內閒聊',
+      right: '<strong>✅</strong> 營業場所非私人空間 — 引導到店外附近咖啡廳等',
+      rules: '相關條款：04 私人行為分際' }
+  ];
+
+  function renderHouseRules() {
+    $fm.textContent = '內部守則 · 僅供員工使用';
+    const rulesHTML = HOUSE_RULES.map(r => `
+      <div class="hr-card">
+        <div class="hr-card-head">
+          <span class="hr-num">${esc(r.num)}</span>
+          <span class="hr-title">${esc(r.title)}</span>
+        </div>
+        <div class="hr-body">${r.body}</div>
+      </div>`).join('');
+
+    const casesHTML = HOUSE_RULES_CASES.map(c => `
+      <div class="hr-case-item">
+        <div style="font-weight:500;color:var(--ink);margin-bottom:6px;letter-spacing:0.06em;">💭 情境：${esc(c.situation)}</div>
+        <div style="margin-bottom:4px;">${c.wrong}</div>
+        <div style="color:var(--done);">${c.right}</div>
+        <div class="hr-case-do">${esc(c.rules)}</div>
+      </div>`).join('');
+
+    $view.innerHTML = `
+      <div class="back-bar"><a href="#/"><span class="back-arr">←</span><span class="back-en">BACK · 返回</span></a></div>
+      <header class="hero">
+        <div class="hero-en">HOUSE RULES</div>
+        <h1 class="hero-title">內 部 守 則</h1>
+        <div class="hero-orn"><span class="diamond"></span></div>
+        <div class="hero-sub">內部夥伴與協助人員共遵</div>
+      </header>
+      <div class="us-intro">
+        為了確保工作流程順利與空間秩序，請配合以下 5 條事項。<strong>店內為營業場所，非私人空間。</strong>
+      </div>
+      <div class="hr-list">${rulesHTML}</div>
+
+      <div class="hr-case-box">
+        <div class="hr-case-title">⚠️ 常見情境澄清（Q&A）</div>
+        ${casesHTML}
+      </div>
+
+      <div class="us-intro" style="margin-top:18px;background:rgba(90,112,80,0.06);border-left-color:var(--done);">
+        💡 <strong style="color:var(--done);">共識原則</strong>：不是「規定太多」，是「事前一句話溝通」就避免所有誤會。有疑問 LINE 老闆 = 最省事、最不會踩雷。
+      </div>
+    `;
+    window.scrollTo(0, 0);
+  }
+
   /* ====== LINE TEMPLATES (給客人的公版訊息) ====== */
   const LINE_TEMPLATES = [
     {
@@ -5549,6 +5688,7 @@ const COURSES = {
     if (parts[0] === 'service-flow') return renderServiceFlow();
     if (parts[0] === 'upgrade-script') return renderUpgradeScript();
     if (parts[0] === 'line-templates') return renderLineTemplates();
+    if (parts[0] === 'house-rules') return renderHouseRules();
     renderHome();
   }
 
