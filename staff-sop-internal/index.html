@@ -963,71 +963,6 @@
     }
     .pr-3q-conclusion strong { color: var(--warn); font-weight: 600; }
 
-    /* LINE Template cards */
-    .tmpl-intro {
-      margin: 16px 16px 14px;
-      padding: 12px 14px;
-      background: rgba(217,119,87,0.08);
-      border: 1px solid rgba(217,119,87,0.25);
-      border-radius: 6px;
-      font-size: 12px; color: var(--ink-mid);
-      line-height: 1.7; letter-spacing: 0.04em;
-    }
-    .tmpl-intro strong { color: var(--warn); font-weight: 600; }
-    .tmpl-card {
-      margin: 0 16px 16px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-    .tmpl-card-head {
-      padding: 14px 18px;
-      background: var(--ink); color: var(--bg);
-      display: flex; align-items: center; gap: 10px;
-      position: relative; overflow: hidden;
-    }
-    .tmpl-card-head::before {
-      content: ''; position: absolute; top: -15px; right: -15px;
-      width: 60px; height: 60px; border-radius: 50%;
-      background: rgba(196,164,138,0.06);
-    }
-    .tmpl-card-en {
-      font-family: var(--en); font-size: 10px; font-style: italic;
-      letter-spacing: 0.25em; color: var(--brown-pale);
-      text-transform: uppercase;
-    }
-    .tmpl-card-title {
-      font-size: 15px; font-weight: 500; letter-spacing: 0.12em;
-      margin-left: auto;
-    }
-    .tmpl-body {
-      margin: 0; padding: 16px 18px;
-      font-family: var(--tc); font-size: 13px;
-      line-height: 1.95; letter-spacing: 0.05em;
-      color: var(--ink); white-space: pre-wrap;
-      background: var(--bg);
-    }
-    .tmpl-fillin {
-      color: var(--accent); font-weight: 600;
-      background: rgba(184,128,74,0.12);
-      padding: 1px 4px; border-radius: 2px;
-    }
-    .tmpl-actions {
-      padding: 14px 18px; display: flex; gap: 8px;
-      border-top: 1px solid var(--line-soft);
-    }
-    .tmpl-copy {
-      flex: 1; padding: 10px 16px;
-      background: var(--accent); color: var(--bg);
-      border: none; border-radius: 4px;
-      font-family: var(--tc); font-size: 13px;
-      letter-spacing: 0.15em; cursor: pointer;
-      transition: all 160ms;
-    }
-    .tmpl-copy:hover, .tmpl-copy:active { background: var(--ink); }
-    .tmpl-copy.copied { background: var(--done); }
-
     /* Consultation Technique (面診技巧) */
     .ct-content { padding: 0 12px 20px; }
     .ct-chapter {
@@ -2854,16 +2789,6 @@ const COURSES = {
               <div class="entry-en">Upgrade Script · 對齊店內課程</div>
               <div class="entry-title" style="font-size:16px;margin-bottom:6px;">首 次 體 驗 升 級 話 術</div>
               <div class="entry-desc">客人預約首次體驗但主訴超出範圍 → 怎麼讓他自己選升級<br>5 主訴 × 3 層級 + 敏感系列 + 韓國水光 + 加購</div>
-            </div>
-            <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--brown-light);">→</span>
-          </div>
-        </a>
-        <a href="#/line-templates" class="entry" style="margin-bottom:10px;padding:18px 22px;">
-          <div class="entry-grid">
-            <div>
-              <div class="entry-en">LINE Template · 一鍵複製</div>
-              <div class="entry-title" style="font-size:16px;margin-bottom:6px;">L I N E 公 版 訊 息</div>
-              <div class="entry-desc">課後傳給客人的公版範本<br>諮詢紀錄 · 對比照 · 問卷 · 85 折券 · 課後叮嚀</div>
             </div>
             <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--brown-light);">→</span>
           </div>
@@ -6091,103 +6016,6 @@ const COURSES = {
     window.scrollTo(0, 0);
   }
 
-  /* ====== LINE TEMPLATES (給客人的公版訊息) ====== */
-  const LINE_TEMPLATES = [
-    {
-      id: 'after-service',
-      en: 'After Service',
-      title: '課後關心訊息',
-      body: `〔客人稱呼〕您好 🤍
-
-謝謝您今天蒞臨肌·癒
-辛苦您完成今天的療程了 ✨
-
-📋 為您整理了今天的諮詢紀錄與課後保養重點 ↓
-〔附上諮詢紀錄圖〕
-
-📷 課程前後對比照已上傳到
-「會員卡 → 服務歷程」
-下次回診前可以打開看看肌膚的變化喔 ☺
-
-—
-
-💛 麻煩您撥 3 分鐘填寫今天的服務問卷
-協助我們把細節做得更好
-〔貼上 Google 問卷連結〕
-
-填完截圖回傳給我們
-贈您 ⭐ 全館 85 折券 一張
-（限單堂使用 · 不可疊包堂 / 儲值折扣）
-
-—
-
-回家小提醒 🌿
-☕ 24h 內避免桑拿 / 三溫暖 / 激烈運動
-🌞 防曬一定要做（物理防曬為主）
-💧 多喝水 · 早一點休息
-
-肌膚如果有任何不舒服
-或保養上有疑問
-都歡迎隨時 LINE 我們 🤍
-
-期待下次與您見面
-肌·癒 ／ 〔皮膚管理師姓名〕`
-    }
-  ];
-
-  function renderLineTemplates() {
-    $fm.textContent = 'LINE 公版訊息 · 僅供員工使用';
-
-    const cardsHTML = LINE_TEMPLATES.map(t => {
-      // Replace 〔...〕 with highlighted span in display
-      const displayBody = t.body
-        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-        .replace(/〔([^〕]+)〕/g, '<span class="tmpl-fillin">〔$1〕</span>');
-      return `
-        <div class="tmpl-card">
-          <div class="tmpl-card-head">
-            <span class="tmpl-card-en">${esc(t.en)}</span>
-            <span class="tmpl-card-title">${esc(t.title)}</span>
-          </div>
-          <pre class="tmpl-body" id="tmpl-${esc(t.id)}">${displayBody}</pre>
-          <div class="tmpl-actions">
-            <button class="tmpl-copy" onclick="copyTemplate('${esc(t.id)}', this)">📋 複製訊息</button>
-          </div>
-        </div>`;
-    }).join('');
-
-    $view.innerHTML = `
-      <div class="back-bar"><a href="#/"><span class="back-arr">←</span><span class="back-en">BACK · 返回</span></a></div>
-      <header class="hero">
-        <div class="hero-en">LINE TEMPLATE</div>
-        <h1 class="hero-title">L I N E 公 版 訊 息</h1>
-        <div class="hero-orn"><span class="diamond"></span></div>
-        <div class="hero-sub">給客人的公版範本 · 一鍵複製</div>
-      </header>
-      <div class="tmpl-intro">
-        ⚠️ <strong>〔金色框〕</strong>內是需要替換成客人實際資訊的地方<br>
-        複製後請依客人狀況調整 — 不要直接整段傳出
-      </div>
-      ${cardsHTML}
-    `;
-    window.scrollTo(0, 0);
-  }
-
-  window.copyTemplate = function(id, btn) {
-    const tmpl = LINE_TEMPLATES.find(t => t.id === id);
-    if (!tmpl) return;
-    navigator.clipboard.writeText(tmpl.body).then(() => {
-      btn.textContent = '✓ 已複製，請貼到 LINE 編輯';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = '📋 複製訊息';
-        btn.classList.remove('copied');
-      }, 2500);
-    }).catch(() => {
-      alert('複製失敗，請手動選取訊息文字複製');
-    });
-  };
-
   /* ====== ROUTER ====== */
   function route() {
     const parts = (window.location.hash.slice(1) || '/').split('/').filter(Boolean);
@@ -6206,7 +6034,6 @@ const COURSES = {
     if (parts[0] === 'check-in') return renderCheckIn();
     if (parts[0] === 'service-flow') return renderServiceFlow();
     if (parts[0] === 'upgrade-script') return renderUpgradeScript();
-    if (parts[0] === 'line-templates') return renderLineTemplates();
     if (parts[0] === 'house-rules') return renderHouseRules();
     if (parts[0] === 'consultation-technique') return renderConsultationTechnique();
     renderHome();
