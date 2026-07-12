@@ -2741,7 +2741,7 @@ const COURSES = {
             <div>
               <div class="entry-en">Check-in SOP</div>
               <div class="entry-title" style="font-size:16px;margin-bottom:6px;">進 門 前 置 作 業</div>
-              <div class="entry-desc">客人進門前 5 分鐘必查 6 件事<br>生日 · 票券 · 初次訂金 · 上次紀錄 · 備注 · 加購</div>
+              <div class="entry-desc">客人進門前 5 分鐘必查 8 件事<br>生日 · 票券 · 訂金 · LINE 改名 · 上次紀錄 · 承諾優惠 · 備注 · 加購</div>
             </div>
             <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--brown-light);">→</span>
           </div>
@@ -5154,10 +5154,22 @@ const COURSES = {
       why: '避免重複收費；客人會立刻抓包「為什麼這麼貴」'
     },
     {
+      icon: '💳', title: '初次客人 → LINE 名稱改「本名 + 電話」',
+      where: 'LINE 好友清單 / 加為好友後右上編輯',
+      how: '客人自己的 LINE 顯示名稱通常是暱稱 / 英文 / 表情 → 加為好友當下就把備注改成 <strong>「本名 + 電話後 4 碼」</strong>，例：陳○○ 0938',
+      why: '未來要找客人時看到「🌸ANNIE🌸」根本找不到；別的員工接手也對得上人；客人資料 / 對帳 / 排班對照全部靠這個'
+    },
+    {
       icon: '📋', title: '查看上次服務歷程',
       where: '上次諮詢報告 / 服務紀錄',
       how: '看上次做什麼課程、客人膚況、有沒有反饋',
       why: '今天能延續上次方向、不從零開始；客人會覺得被照顧'
+    },
+    {
+      icon: '💬', title: '掃過 LINE 對話 → 承諾優惠主動幫他打',
+      where: 'LINE 上次對話紀錄（往上翻 1–2 個月）',
+      how: '看有沒有承諾過客人「下次 9 折」「送你一次藻針」「85 折券還沒用」→ <strong>先在收費單 / 諮詢單上把折扣打好</strong>，客人一坐下就講「上次答應您的 9 折我已經幫您算進來了 🤍」',
+      why: '客人不用開口 = 覺得你記得他 → 信任大加分；等客人自己提會顯得你「想偷藏」、扣分'
     },
     {
       icon: '📝', title: '查看預約備注',
@@ -5199,7 +5211,7 @@ const COURSES = {
         <div class="hero-sub">每位客人進門前 5 分鐘必查</div>
       </header>
       <div class="ci-intro">
-        <em>6 件事，3 分鐘搞定。</em>客人感受到的「被照顧」90% 來自進門前你做了什麼。
+        <em>8 件事，5 分鐘搞定。</em>客人感受到的「被照顧」90% 來自進門前你做了什麼。
       </div>
       <div class="ci-list">${itemsHTML}</div>
     `;
