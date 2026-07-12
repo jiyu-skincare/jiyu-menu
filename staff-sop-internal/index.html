@@ -1028,6 +1028,82 @@
     .tmpl-copy:hover, .tmpl-copy:active { background: var(--ink); }
     .tmpl-copy.copied { background: var(--done); }
 
+    /* Consultation Technique (面診技巧) */
+    .ct-content { padding: 0 12px 20px; }
+    .ct-chapter {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 6px; margin: 0 4px 10px; overflow: hidden;
+    }
+    .ct-chapter[open] { box-shadow: 0 4px 12px rgba(58,32,18,0.04); }
+    .ct-summary {
+      padding: 14px 18px; cursor: pointer; list-style: none;
+      font-size: 14px; font-weight: 500; letter-spacing: 0.1em;
+      color: var(--ink); background: var(--card);
+      display: flex; align-items: center; user-select: none;
+      transition: background 160ms;
+    }
+    .ct-summary::-webkit-details-marker { display: none; }
+    .ct-summary:hover { background: var(--bg-soft); }
+    .ct-chapter[open] .ct-summary {
+      background: var(--ink); color: var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+    .ct-arrow {
+      margin-left: auto; font-size: 12px;
+      color: var(--brown-light); transition: transform 200ms;
+    }
+    .ct-chapter[open] .ct-arrow {
+      transform: rotate(180deg); color: var(--brown-pale);
+    }
+    .ct-body {
+      padding: 4px 18px 18px; font-size: 13px;
+      line-height: 1.85; color: var(--ink-mid);
+      letter-spacing: 0.03em;
+    }
+    .ct-body h3 {
+      font-size: 14px; font-weight: 600;
+      color: var(--ink); letter-spacing: 0.1em;
+      margin: 20px 0 10px; padding-top: 12px;
+      border-top: 1px solid var(--line-soft);
+    }
+    .ct-body h3:first-child { border-top: none; padding-top: 0; margin-top: 8px; }
+    .ct-body h4 {
+      font-size: 13px; font-weight: 600;
+      color: var(--ink-mid); letter-spacing: 0.08em;
+      margin: 14px 0 6px;
+    }
+    .ct-body p { margin: 8px 0; }
+    .ct-body ul, .ct-body ol {
+      padding-left: 20px; margin: 8px 0;
+    }
+    .ct-body li { margin-bottom: 4px; }
+    .ct-body strong { color: var(--ink); font-weight: 600; }
+    .ct-body em { color: var(--accent); font-style: normal; font-weight: 500; }
+    .ct-body blockquote {
+      margin: 12px 0; padding: 10px 14px;
+      background: var(--bg); border-left: 3px solid var(--accent);
+      border-radius: 0 4px 4px 0; color: var(--ink-mid);
+      font-size: 12px; line-height: 1.75;
+    }
+    .ct-body blockquote p { margin: 4px 0; }
+    .ct-body table {
+      width: 100%; border-collapse: collapse;
+      font-size: 12px; margin: 12px 0;
+    }
+    .ct-body th, .ct-body td {
+      padding: 8px 10px; border: 1px solid var(--line-soft);
+      text-align: left; vertical-align: top;
+    }
+    .ct-body th {
+      background: var(--bg-soft); color: var(--ink);
+      font-weight: 600; letter-spacing: 0.05em;
+    }
+    .ct-body code {
+      background: var(--bg); padding: 1px 5px;
+      border-radius: 3px; font-size: 11px;
+      color: var(--accent);
+    }
+
     /* House Rules (內部守則) */
     .hr-list { padding: 0 16px; display: flex; flex-direction: column; gap: 12px; }
     .hr-card {
@@ -2319,6 +2395,89 @@ const COURSES = {
   'bright-premium': {
     name: '亮白淨斑', category: 'general', metaTc: '高端', tierLabel: '亮白淨斑', tier: 'premium',
     status: 'complete', kicker: '韓國皮膚管理 · 亮白淨斑 高端',
+    intro: '此等級提供兩種課程選擇，依客戶膚況需求挑選：',
+    variants: [
+      { id: 'bright-premium-arbuten6', label: '6小時淨白管理｜Arbuten 6', sub: '溫和低刺激 · 暗沉、斑點、膚色不均', tag: '酵素長效' },
+      { id: 'bright-premium-civasan', label: '亮白煥膚｜Pygcenin', sub: '頑固斑點色積 · 酪胺酸酶抑制淡斑', tag: '酸類煥膚' }
+    ]
+  },
+
+  'bright-premium-arbuten6': {
+    name: '6小時淨白管理', category: 'general', metaTc: '高端 · Arbuten 6', tierLabel: '亮白淨斑', tier: 'premium',
+    status: 'complete', parent: 'bright-premium',
+    kicker: '亮白淨斑 高端 · 6小時淨白管理',
+    nameEn: 'Reracine · Arbuten 6 煥亮套裝',
+    recommendedFor: '傳統美白刺激有副作用困擾、光老化／產後（孕期）色素、雷射後斑點反覆（維持期）、痘痘紅黑印與膚色不均\n品牌：Reracine · Arbuten 6 煥亮套裝（6小時馭黑精準標靶系統）\n⚠ 孕婦與哺乳期禁做；限滿 13 歲以上\n（依官方線上教育 PPT 標準流程，2026-07-13 更新）',
+    meta: [{ v: '120', l: 'MIN' }, { v: '13', l: 'STEPS' }],
+    brandIntro: {
+      titleEn: 'Arbuten 6 · 6-Hour Targeted Brightening',
+      tagline: '雙安瓶現混 · 6 小時長效活性亮白系統',
+      body: '【美白四大核心（客人問「這堂在做什麼」照這個答）】\n1. 抑制黑色素生成\n2. 抑制酪胺酸酶活性\n3. 加速表皮層色素代謝\n4. 做好紫外線防護（沒做好防曬與修復，任何美白都容易反黑）\n\n【產品怎麼對應核心】\n· 1劑 維他命安瓶（熊果素）→ 抑制酪胺酸酶、切斷黑色素細胞向上延伸的樹突\n· 2劑 醯胺安瓶（酒麴發酵酵素 Nuruk）→ 從源頭抑制黑色素本身的化學合成與新生；菸鹼醯胺阻斷黑色素體向上轉移\n· 兩劑同時使用還有酵素代謝老廢角質、去除表皮累積色素的效果\n\n【和傳統美白差在哪】傳統=單純抗氧化、強行剝離角質、作用停在表皮淺層、易氧化變色、酸性刺激；Arbuten 6=療程前雙安瓶「當場現混」保持最高活性、酵素在肌膚內維持約 6 小時長效轉換釋放、酵素溫和軟化角質、泛醇 B5＋積雪草同步顧屏障，皮膚親和力高。\n\n⚠ 對客話術紅線：不可提成分濃度數字（熊果素法定上限 7%，講「10%」= 違法廣告，這句只在內部講）；美白只能用允許詞（亮白、淨白、改善暗沉、提亮膚色、抑制黑色素生成）。「一次療程即可見效」是原廠行銷語，對客要保守說「多數人會感覺膚色比較勻淨透亮，實際依個人膚況與次數」。',
+      targets: ['暗沉', '頑固斑點', '痘痘紅黑印', '膚色不均']
+    },
+    steps: [
+      STEP_PHOTO,
+      { name: '① 潔面（雙重清潔）', timer: 180,
+        products: [{ name: '益蜂潔面乳', desc: 'Reracine · 溫和清空毛孔皮脂髒污', dose: '適量' }],
+        method: '30 秒乾洗（乾臉打圈）→ 30 秒沾水濕洗 → 沖淨、按乾。\n可卸防曬、隔離；濃妝不可卸（濃妝請先另行卸妝）。' },
+      { name: '② 角質整頓（不刷角質液）', timer: 120,
+        products: [{ name: '持潤精華水 Padding Toner', desc: 'Reracine · 搭配化妝棉', dose: '適量' }],
+        method: '化妝棉沾化妝水進行角質整頓。\n角質較厚的客人可打圈清潔。\n※ 這堂不需刷角質液。' },
+      { name: '③ 清粉刺', timer: 1800, meta: '約 30 分',
+        products: [],
+        method: '清粉刺約 30 分鐘。' },
+      { name: '④ 降溫退紅（滅火）', timer: 600, meta: '薄敷 10 分',
+        products: [
+          { name: 'Reracine 控制凝膠 ＋ 玻尿酸乳霜 4:1', desc: '控制凝膠 : 玻尿酸乳霜 = 4:1 現調 · 建立保護膜、舒緩穩定', dose: '4:1' },
+          { name: 'Reracine AC 控制精華液', desc: '局部痘痘用', dose: '點狀' }
+        ],
+        method: '控制凝膠與玻尿酸乳霜 4:1 混合，全臉薄敷 10 分鐘降溫退紅。\n局部有痘痘：先點上 AC 控制精華液，再刷凝膠。' },
+      { name: '⑤ 頭部按摩＋照燈', timer: 300, meta: '照燈 5–10 分',
+        products: [],
+        method: '頭部按摩 5 分鐘；照燈 5–10 分鐘。' },
+      { name: '⑥ 刮膠吸收', timer: 120,
+        products: [],
+        method: '刮掉凝膠，按摩幫助吸收。' },
+      { name: '⑦ 雙安瓶現混', timer: 120, meta: '核心導入',
+        products: [
+          { name: '1劑 維他命安瓶 Vita Ampoule', desc: '10% 熊果素（⚠ 對客不提濃度）、維他命 E、尿囊素、泛醇 B5、甘草萃取', dose: '按 12 下' },
+          { name: '2劑 醯胺安瓶 Amide Ampoule', desc: '酒麴發酵酵素（Nuruk / Aspergillus）、菸鹼醯胺、維他命 E、積雪草', dose: '按 12 下' }
+        ],
+        method: '1劑 12 下 ＋ 2劑 12 下，混合均勻。\n※ 療程前才現混，保持最高活性，不可預先調好放著。' },
+      { name: '⑧ 奈米微晶 MTS 導入', timer: 600, meta: '注意深度',
+        products: [],
+        method: '36 針，0.75 深度，全臉打圈三遍。\n· 有紅 → 改 0.5\n· 鼻子、額頭 → 0.25\n· 斑深的地方 → 用點壓（Stamp）方式 0.5 導入',
+        handling: '⚠ 禁忌：活動性（發炎化膿）痘痘部位、金屬過敏、蟹足腫（瘢痕疙瘩）體質、蕁麻疹、孕婦哺乳、月經期間。\n術前用 RERACINE 問診表確認禁忌（近期醫美／雷射、酸類、過敏史）。\n拿不準深度或客人喊痛 → 停下改 STS／LDM 導入並回報 Becky。' },
+      { name: '⑨ STS 導入剩餘精華', timer: 180,
+        products: [{ name: '（可加）美白精華', desc: '太乾時加入', dose: '適量' }],
+        method: '以 STS 導入剩餘精華。\n太乾可加入美白精華一起導入。' },
+      { name: '⑩ 海藻重啟面膜', timer: 1200, meta: '含脖子濕敷',
+        products: [{ name: '海藻重啟面膜 Damage Control Mask', desc: 'Reracine', dose: '適量' }],
+        method: '精華液較多時可放缽裡、把精華倒進去一起敷。\n敷完再刷上精華；剩下的脖子放化妝棉濕敷。' },
+      { name: '⑪ 肩頸淋巴按摩', timer: 600,
+        products: [],
+        method: '肩頸淋巴按摩 10 分鐘。' },
+      { name: '⑫ 擦拭乾淨', timer: 120,
+        products: [],
+        method: '擦拭乾淨。' },
+      { name: '⑬ 收尾（含防曬）', timer: 180, meta: '白天防曬必做',
+        products: [
+          { name: '套組 1劑 ＋ 2劑', desc: '各按一下混合', dose: '各 1 下' },
+          { name: '能量填充霜 Recharge Booster Balm', desc: '拍打吸收', dose: '適量' },
+          { name: '琉璃光感噴霧 Glaze Mist', desc: '提亮補水', dose: '噴' },
+          { name: '防曬', desc: '白天必做', dose: '適量' }
+        ],
+        method: '① 套組 1劑2劑各按一下混合擦上\n② 能量填充霜拍打吸收\n③ 琉璃光感噴霧\n④ 白天擦上防曬（必做，不是選配）。' }
+    ],
+    generalNotes: '【門店實操流程 13 步（Becky 版，2026-07-13）】潔面 → 角質整頓（不刷角質液）→ 清粉刺 30 分 → 降溫退紅（控制凝膠＋玻尿酸乳霜 4:1）→ 頭部按摩＋照燈 → 刮膠吸收 → 雙安瓶現混（各 12 下）→ MTS 導入 → STS 導入 → 海藻重啟面膜 → 肩頸淋巴按摩 → 擦拭 → 收尾（套組＋能量填充霜＋琉璃光感噴霧＋防曬）。\n\n【操作頻率】\n· 一般肌：每週 1 次，做完 4 次休息 4 週。\n· 敏感肌（meimei）：做完 4 次休息 2–3 個月，讓皮膚完整修復。\n\n【MTS 深度（門店標準）】全臉 0.75、有紅改 0.5、鼻子額頭 0.25、斑深處點壓 0.5。\n※ 門店儀器出力較弱，0.75 為實測適用深度（Becky 確認 OK）；原廠 PPT 標稱最大 0.5mm 供參。\n\n【管理後注意事項（務必逐條告知客戶）】\n· 護理後 6 小時內酵素高度活躍：嚴禁混用其他品牌保養品、外出必須防曬（微針通道約 4–6 小時才自然閉合）\n· 療程當天避免洗臉及化妝；隔日起改用溫和、低刺激潔顏品\n· 3–5 天避免飲酒、吸菸、劇烈運動、半身浴、三溫暖、熱蒸毛巾\n· 至少一週內暫停 A 醇／高濃度維生素 C／酸類／去角質居家品\n· 術後脫皮勿強行摳除（防色素沉澱），加強保濕＋防曬\n· 孕婦與哺乳期禁用；限滿 13 歲以上\n\n【對客話術提醒】\n· ⚠ 不可講成分濃度數字、不可講「最有效／醫美級／換膚／再生」\n· 可以講：亮白、淨白、改善暗沉、提亮膚色、抑制黑色素生成、溫和低負擔、長效\n· 色素管理鐵律不變：客人臉正在紅／屏障不穩 → 先修護再排這堂（金字塔順序）',
+    productSummary: ['益蜂潔面乳', '持潤精華水 Padding Toner＋化妝棉', '控制凝膠＋玻尿酸乳霜（4:1 現調）', 'AC 控制精華液（局部痘痘）', '1劑 維他命安瓶 Vita Ampoule', '2劑 醯胺安瓶 Amide Ampoule', '美白精華（可加）', '海藻重啟面膜 Damage Control Mask', '能量填充霜 Recharge Booster Balm', '琉璃光感噴霧 Glaze Mist', '防曬'],
+    instruments: ['奈米微晶 MTS（36 針，0.25–0.75mm）', 'STS 導入儀', '照燈（紅/黃光）']
+  },
+
+  'bright-premium-civasan': {
+    name: '亮白淨斑（亮白煥膚）', category: 'general', metaTc: '高端 · 亮白煥膚', tierLabel: '亮白淨斑', tier: 'premium',
+    status: 'complete', parent: 'bright-premium',
+    kicker: '亮白淨斑 高端 · 亮白煥膚',
     nameEn: 'Civasan · Pygcenin 亮白煥膚（淡斑）',
     recommendedFor: '頑固斑點色積、需淡斑與預防色素管理\n品牌：CIVASAN 施瓦珊 · 亮白煥膚管理套盒',
     meta: [{ v: '95', l: 'MIN' }, { v: '7', l: 'STEPS' }],
@@ -2677,6 +2836,16 @@ const COURSES = {
               <div class="entry-desc">iPad 諮詢系統使用教學<br>13 節點 · 話術範例 · 常見情境</div>
             </div>
             <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--brown-light);">→</span>
+          </div>
+        </a>
+        <a href="#/consultation-technique" class="entry" style="margin-bottom:10px;padding:18px 22px;background:rgba(184,128,74,0.08);border-color:var(--accent);">
+          <div class="entry-grid">
+            <div>
+              <div class="entry-en">Consultation Technique · 諮詢方法論</div>
+              <div class="entry-title" style="font-size:16px;margin-bottom:6px;">面 診 技 巧</div>
+              <div class="entry-desc">員工諮詢知識完整版 · 10 章手機可讀<br>心理建設 · 破冰 · 問診 · 開方案 · 成交 · 售後</div>
+            </div>
+            <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--accent);">→</span>
           </div>
         </a>
         <a href="#/upgrade-script" class="entry" style="margin-bottom:10px;padding:18px 22px;background:rgba(184,128,74,0.06);border-color:var(--accent);">
@@ -5224,7 +5393,7 @@ const COURSES = {
     { icon: '🌗', name: '亮白淨斑', en: 'Brightening', rows: [
       ['基礎', '亮白淨斑 · 基礎', '輕度暗沉、局部色差', '導入<strong>亮白配方</strong>提升整體膚色透亮感'],
       ['進階', '亮白淨斑 · 進階', '痘疤色印、局部斑點、膚色不均', '<strong>代謝+抑黑雙路徑</strong>，痘印跟斑點是不同處理'],
-      ['高端', '亮白淨斑 · 高端', '長期頑固斑、深層色素', '<strong>多重抑黑活性</strong>深層代謝、針對頑固斑']
+      ['高端', '亮白淨斑 · 高端（2 選 1）', '長期頑固斑、深層色素', '① <strong>6小時亮白管理</strong>：雙安瓶酵素長效、傳統美白易刺激者 ② <strong>亮白煥膚</strong>：多重抑黑活性、針對頑固斑']
     ]},
     { icon: '✨', name: '提拉塑顏', en: 'Lifting', rows: [
       ['基礎', '提拉塑顏 · 基礎', '輕度細紋、初期鬆弛、預防保養', '<strong>膠原代謝 + 彈力修護</strong>，30 後預防型保養'],
@@ -5499,6 +5668,356 @@ const COURSES = {
     window.scrollTo(0, 0);
   }
 
+  /* ====== CONSULTATION TECHNIQUE (面診技巧) ====== */
+  const CT_HTML = `<details class="ct-chapter" open><summary class="ct-summary">一、診前心理建設(先建立「自己」的信心)<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<blockquote>
+<p>客人會讀到你的狀態。你畏縮、怕說錯、怕客人不信,客人就更沒信心。面診前,先把自己立起來。整體氛圍要<strong>專業 + 有趣、摒棄銷售感</strong>,讓客人在輕鬆愉悅下成交。</p>
+</blockquote>
+<h3>1. 職業願景 / 個人 IP</h3>
+<ul>
+<li>記得自己入行的那份願景,用自己的話、形象、行為表現出來,別埋在心底做著做著就忘了。</li>
+<li>我們是「美的引領者」,在做一件<strong>改變別人人生</strong>的事:改善肌膚與外貌問題 → 客人更有自信 → 人生更順。</li>
+<li>除了外在,也提供<strong>情緒價值</strong>:讓客人感覺自己美好、有感知幸福的能力,心靈和外在都被好好對待。</li>
+</ul>
+<h3>2. 環境服務的專業吸引力 —— 五感行銷</h3>
+<table>
+<thead>
+<tr>
+<th>感官</th>
+<th>做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>視覺</strong></td>
+<td>門店乾淨整潔、不堆雜物;可設「量膚訂製藥劑展示台」,把瓶瓶罐罐陳列出來,讓客人一眼看到專業感</td>
+</tr>
+<tr>
+<td><strong>聽覺</strong></td>
+<td>① 音樂:純輕音樂久了無聊,改放<strong>有歌詞、耳熟能詳</strong>的中/英/韓文歌,選舒緩翻唱版,傳達情緒與審美 →「你們的歌單跟我的好像」瞬間拉近距離。② 服務人員談吐:咬字清晰的國語、好聽的聲音=高素養印象</td>
+</tr>
+<tr>
+<td><strong>嗅覺</strong></td>
+<td>建立<strong>固定氣味記憶</strong>(像有些連鎖飯店、大型百貨一進門就有專屬香氛)。洗手液長期同一個味道、門口固定香氛/百合;熟悉好聞的味道讓客人身心放鬆、記憶深刻</td>
+</tr>
+<tr>
+<td><strong>觸覺</strong></td>
+<td>恆溫(大廳與房間別忽冷忽熱)、舒適拖鞋、客袍、柔軟床品——讓客人一進門就放鬆</td>
+</tr>
+<tr>
+<td><strong>味覺</strong></td>
+<td>進門/護理後的小點心、甜品。⚠️ 見下方查證:甜品當「放鬆愉悅」用,別當成交手段</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️【查證】甜品的作用要講對:「吃甜 → 多巴胺 → 愉悅幸福感」大致成立,<strong>可以用來讓客人放鬆、留下好印象</strong>。但錄音裡「血糖升高 → 決策力增強 → 更願意衝動辦大卡」這條<strong>科學上站不住、且有爭議</strong>——研究反而顯示低血糖時更愛冒險、血糖升高後傾向更有耐心等待,血糖與意志力的關聯本身學界仍在吵。<strong>別把成交建立在「用甜品拉血糖促衝動消費」這個說法上</strong>,把甜品單純當貼心服務就好。</p>
+</blockquote>
+<h3>3. 建立信任 —— 信任公式</h3>
+<blockquote>
+<p>常被稱「麥肯錫信任公式」(出處其實是《值得信賴的顧問》Trusted Advisor):</p>
+</blockquote>
+<p><strong>信任 =(可信度 × 可靠度 × 親密度)÷ 自私度</strong></p>
+<table>
+<thead>
+<tr>
+<th>指標</th>
+<th>意思</th>
+<th>怎麼提升</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>可信度</strong>(正)</td>
+<td>客人信不信你<strong>有能力</strong>解決他的問題</td>
+<td>專業度:講得出專業術語、專業方案</td>
+</tr>
+<tr>
+<td><strong>可靠度</strong>(正)</td>
+<td>你能不能把嘴上講的<strong>落實</strong>出效果</td>
+<td>談吐真誠、執行力、把專業落實到項目操作與搭配、聯合治療可靠</td>
+</tr>
+<tr>
+<td><strong>親密度</strong>(正)</td>
+<td>你跟客人<strong>熟不熟</strong>、私交近不近</td>
+<td><strong>自我揭示</strong>(見下)</td>
+</tr>
+<tr>
+<td><strong>自私度</strong>(負，當分母)</td>
+<td>你給人的印象<strong>是不是只為自己牟利</strong></td>
+<td><strong>利他思維</strong>(見下)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>親密度的關鍵:自我揭示</strong><br />
+- 我們常犯的錯:一直問客人問題(皮膚、隱私),自己卻不講自己的事——這反了。<br />
+- 人對「認識越久、了解越多」的人越信任;對陌生人最不信任。<strong>想讓客人信任你,就讓他多知道你的事</strong>。<br />
+- 做法:從皮膚話題切入,聊著就帶入自己的創業經歷、家庭、生活狀態(客人說熬夜,你也聊你怎麼熬)、最近在做小紅書/在講課…。你攤開,他也會攤開,黏著度就上來。<br />
+- 實操:每個高階客人進房都多聊 10–15 分鐘,聊彼此最近發生的事——「客情好」的祕訣就是<strong>互相了解近況</strong>。</p>
+<p><strong>自私度的關鍵:利他思維</strong><br />
+- 客人能真實感覺到你是不是真心想幫他解決問題。<br />
+- 利他=不只推院內項目(院內有侷限):也談身體健康、內源/外源調理、作息、家庭護理;需要時甚至推薦醫美、院內沒有的項目;提供情緒價值(別讓他為肌膚問題過度焦慮,焦慮反而更糟)。<br />
+- 站客人角度、講性價比:「護理若問題不嚴重,是經濟允許下的<strong>錦上添花</strong>;預算夠就對自己好一點,預算緊就挑最剛需的」——客人反而更信你。</p>
+<hr />
+</div></details>
+<details class="ct-chapter"><summary class="ct-summary">二、破冰三招(面診前先破冰,別一進來就是銷售味)<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<ol>
+<li><strong>180 度路過</strong>:所有服務/銷售人員第一次見到客人就<strong>微笑打招呼</strong>。等到面診區就等於「第二次見面=熟人」,氛圍完全不同。全店每個人每次都跟客人打招呼——萬一原美容師離職/沒空換人接手,也不尷尬。</li>
+<li><strong>細節讚美</strong>:別泛泛誇「你今天好漂亮」(客人知道你在套近乎)。<strong>把細節放大</strong>:「你脖子線條和肩膀好好看,有在練皮拉提斯嗎?」「你衣服低飽和度的顏色好清爽、很襯膚色」「你頭髮漂這麼淺光澤還這麼好、像緞面一樣」——具體才顯真心。(實例:誇一個新客頭髮,她坐著分享了 15 分鐘,面診就聊得很愉快。)</li>
+<li><strong>讓客戶幫你一個小忙</strong>(富蘭克林效應):人更在意<strong>自己付出</strong>的幫忙,而不是別人給的。熟客可幫大忙,初見就請舉手之勞——「你的護髮這麼好,可以推薦你的髮膜/發個連結給我嗎?我也漂髮但質感沒你好」。問到他的興趣點,他很樂意幫,關係瞬間拉近,後面面診信任度更高。</li>
+</ol>
+<blockquote>
+<p>核心心法:面診前一定用破冰;<strong>減少銷售味、增加人情味</strong>,客人才願意聽你說話。</p>
+</blockquote>
+<hr />
+</div></details>
+<details class="ct-chapter"><summary class="ct-summary">三、面診流程:先問診,後檢測(順序很重要)<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<h3>為什麼「先問診、後檢測」?</h3>
+<ul>
+<li>很多門店一進來就照皮膚檢測儀 → 客人在別處做過、很煩、只想快點做護理 → 因為信任還沒建立,一上來就是重銷售感的東西。客人都知道「照檢測=等下要坐下來聽你推方案」,信任沒建起來自然抗拒。</li>
+<li>正確順序:<strong>先問診</strong>(判斷問題、也是建立專業信任的第一步)→ 治療理念 → 再檢測。</li>
+</ul>
+<h3>問診 = 把自己當醫生</h3>
+<ul>
+<li>醫生會先問「哪裡不舒服」,不會一上來就開藥/叫你做 CT/抽血——那樣你會覺得他不專業、甚至懷疑他為了賺檢測費。客人對「一進門就照皮膚檢測」是同樣感覺。</li>
+<li><strong>別問「你今天要做什麼項目」</strong>(客人潛意識會鎖定他原本要的那個項目,你後面講什麼都像在推銷);改問 <strong>「你今天有沒有哪裡的皮膚,想讓我幫你改善?」</strong>——把「項目認知」轉成「皮膚問題認知」。</li>
+</ul>
+<p><strong>項目 → 皮膚問題 的轉化(範例):</strong><br />
+| 客人說 | 你怎麼轉 |<br />
+|---|---|<br />
+| 想做清潔 | 是<strong>看起來</strong>不乾淨(黑頭、暗沉)還是<strong>摸起來</strong>不乾淨(乾燥粗糙、閉口粉刺)?→ 各自延伸底層問題 |<br />
+| 想做補水 | 是<strong>補不進</strong>水(吸收差 = 代謝差)還是<strong>鎖不住</strong>水(屏障鎖水差 = 屏障受損)? |</p>
+<blockquote>
+<p>心法:不要跟著客人的思路走(他說做什麼你就介紹什麼項目);從他的問題<strong>轉化到皮膚根本問題</strong>,你談的就不是項目、而是專業。</p>
+</blockquote>
+<h3>問診三層(像醫生一路追問下去)</h3>
+<ol>
+<li><strong>問症狀</strong>:圍繞你判斷的根本問題,問對應症狀。判斷像敏感肌→問乾繃/發癢/曬到發燙/換季起小疹/生理期前後敏感度上升;痘肌→問出油/刺癢/紅腫痘 vs 粉刺/囊腫維持多久/留不留痘印痘坑;色素→問斑長多久、會不會變深變淺、家族遺傳史。<strong>問得越細 = 把控度越高 = 客人越安心</strong>(對症下藥)。</li>
+<li><strong>問病因</strong>:先<strong>內源</strong>(壓力、情緒穩定度、生理期、熬夜、高油高糖乳製品、吃辣),再<strong>外源</strong>(換季、換環境出差、在家換了保養品)。順便看出他的生活/家庭/工作狀態(方便後面同頻),也能當場指出他哪些習慣在傷皮膚、後面要改。</li>
+<li><strong>問治療史</strong>(問題肌一定要問):之前做過什麼治療/護理、在醫院用過什麼藥。<strong>第一要務:排除類固醇使用史</strong>(痘、斑尤其重要),對後續護理影響很大;同時看出客人對光電/破皮項目的接受度——做過脈衝光/中胚/水光=能接受→方案可直接往高階配,不用第一次只給基礎方案、後面難升單。</li>
+</ol>
+<h3>望聞問切(問診的完整動作)</h3>
+<ul>
+<li><strong>望</strong>:看皮膚質感(泛紅、斑點、紋理、粗糙、乾紋細紋、毛孔),也看<strong>精神狀態</strong>(能反映思維方式與消費習慣)。</li>
+<li><strong>聞</strong>:多聽客人自述,用問句互動(「你知道這問題是什麼造成的嗎?」)激發他表達;他答完先<strong>肯定</strong>(「你認知不錯」)再補上專業解答(「不過有一點小片面…」)。</li>
+<li><strong>問</strong>:如上三層。</li>
+<li><strong>切</strong>:觸摸皮膚手感(皮下有無增生/結節、光滑度、緊實度、彈性)。<strong>摸臉前一定當著客人面做手部消毒</strong>——很多人不喜歡別人碰臉。</li>
+</ul>
+<h3>問診表:面診師幫客人填,別丟給客人自己填</h3>
+<ul>
+<li>像看病的病歷是醫生填的、不是你自己寫。面診師拿著表、依客人說的用專業方式幫他填,顯得專業;直接丟給客人填=像例行公事的麻煩事,專業感低。</li>
+</ul>
+<h3>治療理念傳達(檢測前穿插):治症 → 治根 → 治本</h3>
+<blockquote>
+<p>填完表、總結完問題後,傳達護理理念。日式皮膚管理理念接近中醫,分三階段:<br />
+- <strong>治症</strong>:先處理客人焦慮的表象症狀(有痘治痘、有紅退紅、有斑做斑)——他就是為這個來的,一定要先幫他處理。<br />
+- <strong>治根</strong>:治症狀背後的皮膚根本問題(泛紅是因為底層炎症/屏障受損)→ 從根本改善,皮膚才穩定、不易反覆。<br />
+- <strong>治本</strong>:所有問題都跟生活習慣、護理習慣、身體狀態有關 → 最深層改善本源(作息、精神、護理習慣),長期不反覆。<br />
+- 三個好處:① 客人有安全感(你不只治表層);② 方便後面<strong>分階段開單</strong>(階段一治標、階段二治本、階段三長期託管式維養,提前鋪墊);③ 跟客人<strong>站同一戰線</strong>(共同目標=更健康、更開心),黏著度更高。</p>
+</blockquote>
+<h3>皮膚檢測(放最後,把問題「可視化」)</h3>
+<ul>
+<li>前面已把基礎資訊與皮膚問題聊清楚,檢測是為了把問題<strong>可視化</strong>、讓客人看懂,也判斷底層炎症的嚴重度/區域、斑點表層 vs 底層量。</li>
+<li><strong>別按部就班把所有照片都講</strong>(客人在別處聽過會很不耐煩)。先問「你以前做過皮膚檢測嗎?」做過 → 只挑重點幾張剖析,其他帶過。</li>
+<li>健康/清潔為主的客人:測皮脂(T 字 U 字較多)、卟啉。</li>
+<li>痘肌:測皮脂(通常旺盛)+ 卟啉(看微環境、菌群爆發區);卟啉高的那側,皮膚穩定度通常較低。做完清潔後可再拍一次讓客人對比下降。</li>
+</ul>
+<p><strong>各板塊怎麼判讀(把問診的猜想「驗證」給客人看):</strong><br />
+- <strong>炎症</strong>:看紅色圖/紅區圖——正常皮膚偏藍,敏感區偏綠(微微升高),明顯發炎區偏紅(溫度升高)。一眼看出發炎的位置與嚴重度。<br />
+- <strong>色素</strong>:看色素圖——表層有色素反應的地方,底層色素量通常更大(炎症型色沉或斑點都是)。<strong>可藉此先跟客人講清楚「反黑」:底層本來就有色素,治療促進代謝、色素會先浮到表面,這是必然現象,之後會再慢慢代謝掉</strong>——先講,客人後面看到浮色就不會怪你。<br />
+- <strong>衰老</strong>:看紋理——衰老可能出現「斷裂的紋理」(不只乾紋),要<strong>提前講明這種斷裂紋普通護理改善不了、需要醫美打針</strong>,別過度承諾。<br />
+- <strong>含水量</strong>:水分直接影響膠原含量,一定要測。<br />
+- 核心:<strong>皮膚檢測是拿來「驗證問診的猜想」</strong>,一定是先有前幾天學的根本成因判斷,再用檢測去篩選佐證,不是照了再瞎解讀。</p>
+<blockquote>
+<p>⚠️【查證修正】<strong>卟啉(Porphyrin)</strong> 是皮膚檢測儀在 UV 下看到的螢光小點,它是<strong>細菌(主要是痤瘡桿菌)的代謝產物,不是「真菌排泄物」</strong>(錄音講成真菌,已查證更正)。卟啉強度反映痤瘡桿菌密度、對應痘痘嚴重程度;急性脂漏、痤瘡明顯、出油量大的人卟啉通常較高。(註:錄音的「補磷/補啉」是「卟啉」的誤植。)</p>
+</blockquote>
+<hr />
+</div></details>
+<details class="ct-chapter"><summary class="ct-summary">四、開方案:從總結問題到階段性方案<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<h3>4.1 先歸納:所有表象問題 → 四大根本問題</h3>
+<blockquote>
+<p>用問診表最後附一張白紙打草稿,把客人的現況問題寫出來、標出主要問題。皮膚表象再多,歸到根本就這四類:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>表象問題</th>
+<th>根本問題</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>痘痘、粉刺、閉口、角質堵塞</td>
+<td><strong>炎症</strong>(底層炎症)</td>
+</tr>
+<tr>
+<td>暗沉、色沉、斑點、色素堆積</td>
+<td><strong>色素</strong>(色素活性/代謝)</td>
+</tr>
+<tr>
+<td>乾燥粗糙、敏感刺痛、缺水</td>
+<td><strong>屏障</strong>(屏障受損、鎖不住水)</td>
+</tr>
+<tr>
+<td>毛孔、細紋、鬆弛</td>
+<td><strong>衰老</strong>(彈性缺失/膠原流失)</td>
+</tr>
+</tbody>
+</table>
+<p>依表象篩出他最主要的 1–2 個根本問題(例:痘肌 = 炎症 + 屏障),再做方案。</p>
+<h3>4.2 判斷主次訴求:主要給「詳細思路」,次要「講明必要性」</h3>
+<ul>
+<li>客人臉上通常不只一個問題。聊天中感知他<strong>最在意的點(主要訴求)</strong>,先針對最剛需的做詳細思路。</li>
+<li>例:又是痘肌又是敏感肌,痘比較嚴重(影響美觀最大)→ 先按痘的炎症思路做詳細方案。</li>
+<li><strong>次要問題不是不講</strong>——第一次方案要開得越完整越好。屏障、色素、抗衰也要講到,重點放主要問題、次要問題<strong>講明必要性</strong>:「你現在處理痘痘,但屏障沒跟上,痘會一直反覆,所以屏障雖然排下一階段,對你一樣重要。」</li>
+<li>好處:第一次就把完整藍圖鋪好,客人不會「痘治好就不來了」,方便後面<strong>分階段再銷售</strong>。</li>
+</ul>
+<h3>4.3 先給「治療思路」,再給「治療方案」(降銷售感的關鍵)</h3>
+<ul>
+<li><strong>治療思路</strong>=純從皮膚科學角度講怎麼解決,<strong>完全不提任何項目、產品、店裡做什麼</strong>——沒有銷售性質,是最好的專業輸出。</li>
+<li>客人認可你的思路(覺得專業)後,再把思路<strong>延伸成結合門店項目的方案</strong>,信任感高、銷售感低很多。</li>
+<li>反例:客人說要治痘,你馬上「我們店這幾個項目適合你」開始介紹項目 → 銷售感很強。<strong>先思路、後方案</strong>。</li>
+</ul>
+<h3>4.4 階段性方案:治療期 → 穩定期</h3>
+<ul>
+<li><strong>治療期(治症)</strong>:光電 + 中胚 + 效果顯著的項目,處理表象問題。約 3 個月。</li>
+<li><strong>穩定期(治本)</strong>:改善皮膚機能、整體厚度、屏障穩定度,讓前面的改善更長久。約 3 個月。</li>
+<li>合計約 <strong>6 個月</strong>:時間夠長(隨時可調整方案)、次數夠多(客單也更高)、穩定度與滿意度更高。</li>
+</ul>
+<h3>4.5 搭配聯合治療</h3>
+<ul>
+<li>懂不同產品/方式/問題怎麼搭、順序怎麼排(對照〈聯合治療〉SOP)。</li>
+</ul>
+<hr />
+</div></details>
+<details class="ct-chapter"><summary class="ct-summary">五、加值權益與差異化<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<h3>延保權益(會員/追蹤服務的免費加值)</h3>
+<ul>
+<li>例:會員可隨時免費來照光療儀 + 免費醫療級面膜;做完抗炎後回家爆粉刺痘痘,回店做簡單清理/針清也免費。</li>
+<li>成本對門店很低(面膜幾塊、照光一點電費),對客人卻是「讓療程更完整」的權益。</li>
+<li><strong>卡到期/方案沒含的簡單項目要不要收錢?</strong> ——其實你巴不得他來:他出現在店裡,才有再溝通、再消費的機會;不來就零機會。用權益讓他常出現、創造銷售機會(客人的需求會隨年齡、生活狀態變化,這階段結束不代表沒新訴求)。</li>
+<li>新客也給:第一次沒辦卡,美容師追蹤服務——有赫氏反應、皮膚發乾需要敷面膜照燈,都邀他免費回來。① 多一次見面/銷售機會;② 讓他覺得「沒辦卡服務也這麼好」,安全感足,有需要就會回來辦。</li>
+</ul>
+<h3>差異化(不是為了不同而不同,是找「對客人的價值」)</h3>
+<ul>
+<li>門店太多、項目差異不大,客人憑什麼選你?把差異化+<strong>它帶給客人的價值</strong>講清楚,他才在意。</li>
+<li>例:延保權益(別家不給)、專業講得更清楚、能做聯合治療、老闆願意大手筆投資裝潢(給客人「不會跑路」的安全感、感覺你不急著跟他做生意、只想解決他問題)。</li>
+<li>每個差異化都要落到「對他的價值」:安全感提升、服務感提升、解決問題能力提升——他才會為它買單。</li>
+</ul>
+<blockquote>
+<p>⚠️【合規提醒】「醫療級光療儀/醫用面膜/1998 顆燈珠」這類<strong>「醫療級」宣稱要小心</strong>:對客人講「醫療級」涉及醫療器材宣稱,若設備/面膜不是合法登記的醫療器材,這樣講有廣告合規風險。建議改講體感與功能(如「高階光療」「舒緩鎮定面膜」),或先確認品項的合法字號再定調(對照課程第 11 章合規、文案法規)。</p>
+</blockquote>
+<hr />
+</div></details>
+<details class="ct-chapter"><summary class="ct-summary">六、案例:用故事,不只用對比圖<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<ul>
+<li>前面講很多會把客人講到一頭霧水,這時拿<strong>具象化的案例</strong>。找<strong>皮膚情況、治療思路跟他相近</strong>的案例才有參考價值。</li>
+<li>放 iPad,面診時直接看。<strong>面診前一定先熟這些案例</strong>——不能只打開一張圖,要把圖背後的<strong>故事</strong>講清楚,才有共情與真實感。</li>
+<li>講故事帶情緒:「這位客人剛來跟你很像,在醫院做過 2–3 個月玫瑰斑治療覺得沒明顯效果、很焦慮,朋友推薦來我這;我幫他做了某某方案(跟你很像),兩個月後…三個月後…半年後…」給階段性對比。再說「你的情況跟他很像,可以參考他的方案與對比」。</li>
+<li><strong>一個真實案例故事,勝過十張單純的對比圖</strong>,更可信、更打動人。</li>
+</ul>
+<hr />
+</div></details>
+<details class="ct-chapter"><summary class="ct-summary">七、成交環節(心態五要點)<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<ol>
+<li><strong>不是「賣東西」,是「和客人一起買」</strong>:當客人的閨蜜,站他的角度幫他選真正適合的方案——同一戰線。</li>
+<li><strong>讓客人自己說要買</strong>:每個總結節點都給他一個「肯定」的機會——「你認不認可我的方案?認不認可我的專業?願不願意配合我一起達到你要的皮膚狀態?」讓他親口說出「願意/認可」。人更重視自己說出口的結論。</li>
+<li><strong>面對壓價</strong>:客人壓價多半是<strong>試探心理底價</strong>,不是真要你降。重點是<strong>把方案/項目的價值塑造清楚</strong>,讓他覺得付的價格和價值匹配。談的時候「嘴軟心硬」(別刀子嘴豆腐心):「我真的很想給你優惠、我們聊得這麼好…但我的產品/儀器/美容師成本就在這、利潤空間真的有限、全店統一價」——輕易讓步,客人會覺得你利潤好壓,就一步步要更多。</li>
+<li><strong>合作關係,不是買賣關係</strong>:我賺你的錢,你也向我要更好的服務與效果,<strong>完全平等</strong>。強調客人要配合、一起朝更健康更美的共同目標努力。心態擺正,下次邀約就不卑微,客人更尊重、更願意跟隨你。</li>
+<li><strong>購買是理性 + 感性</strong>:感性客人容易衝動消費——但大部分人冷靜後會理性思考,所以要給足<strong>理論支撐與專業輸出</strong>(案例、專業知識、專業方案)讓他理性也認可。對太衝動的客人,付錢前反而<strong>勸他理性</strong>:「你要想清楚、下定決心要改善,別今天付了回去我叫你你不來;開始了就別隨便放棄。」——換來更高的配合度、更好的效果、更少客訴退款。</li>
+</ol>
+<hr />
+</div></details>
+<details class="ct-chapter"><summary class="ct-summary">八、成交流程與壓單技巧<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<h3>8.1 成交流程</h3>
+<ol>
+<li><strong>求方案認可</strong>:讓客人<strong>親口說</strong>「我認可你的方案/專業」,並說出他的預期與<strong>刚需</strong>。</li>
+<li><strong>把刚需再細講一遍</strong>:針對他自己認知裡最重要的刚需,單獨拿出來細講,徵求他意見「想不想跟我一起實施這個完美方案」。</li>
+<li><strong>以退為進</strong>:「有多少錢就解決多少問題」,不逼他買整個方案;從初期刚需開始,一份錢解決一份問題。</li>
+<li><strong>報兩個方案、二選一</strong>(關鍵):<br />
+   - <strong>方案 A(基礎/初級)</strong>:便宜、基礎項目、好上手。劣勢:只改善輕微表象(如痘肌基礎清潔+刷酸只改善輕微炎症/堵塞),<strong>沒法解決根本問題</strong>,要長期、頻繁操作才有效。<br />
+   - <strong>方案 B(高階/治本)</strong>:加上抗炎、中胚、屏障修復。貴一點,但<strong>連根本問題一起改善</strong>,效果更快更顯著、不用太頻繁(一個月約兩次)、後期不易反覆。<br />
+   - 效果:客人從「買不買」變成「選 A 還是選 B」,更容易成交。<strong>選哪個都行,重點是他留下來、進入循環護理</strong>。</li>
+</ol>
+<h3>8.2 答疑:同意且消解(絕不否定客人)</h3>
+<ul>
+<li>客人提問題(如「有點貴」),<strong>先聽完、先同意、再消解</strong>,不要一句「不貴啊」把你們推到對立面。</li>
+<li>範例:「確實我們價格不便宜,很多客人也說貴——但我們的性價比高:用的產品跟儀器是市面上排得上前段的好東西,我天天鑽研皮膚專業、能給你多於預期的效果,很多人大老遠來找我做諮詢,專業配得上這個價。」→ 同意+消解反而讓信任更高。</li>
+</ul>
+<h3>8.3 壓單三技巧</h3>
+<ol>
+<li><strong>敢報價、要自信</strong>:別覺得自己貴。東西好、效果好、專業配得上價格,報價時就理直氣壯。可附帶一些「客人需要、但第一次不必買」的項目一起報(如痘肌主要是抗炎疏通,屏障修復不是今天非做不可,但可一起報)——藉此<strong>試探他的購買欲、消費力與心理閾值</strong>(他買得起 1000、5000 還是 1 萬的方案)。</li>
+<li><strong>先送再談優惠</strong>(送的要有邏輯):送<strong>客人需要、本來要花錢買、確實能改善他問題</strong>的小項目,而不是隨手降價/送東西。例:痘肌方案沒含酸類清潔 → 送他日常碳酸清潔(高階護理中間做基礎疏通會用到、偶爾冒粉刺回來針清後也用)。出發點是「讓他方案更完整、效果更好、到店更頻繁」→ 他覺得比減錢更有價值,還強化你的專業與搭配概念。<br />
+   - ⚠️ <strong>給優惠一定要「換」</strong>:讓客人拿出東西交換,邏輯才說得通(不是隨便給)。小卡→請他寫 Google 評論/社群打卡筆記(用勞動換);大卡→讓他從已買的卡裡挑一個「他其實用不到的權益」來換(你換給他的價值略高)。下次他再要優惠:「上次你拿東西換,這次準備拿什麼換?」沒得換就可以拒絕。</li>
+<li><strong>調整項目次數</strong>:嫌貴 → <strong>減貴的、加便宜的</strong>(如水光 3 次減成 2 次、基礎項目次數拉高)→ 總價降、到店頻次增(方便鋪墊下次銷售)。還接受不了 → 整體降次數(6 次降 3 次 = 6 個月療程先做 3 個月看看)。</li>
+</ol>
+<hr />
+</div></details>
+<details class="ct-chapter"><summary class="ct-summary">九、售後跟蹤與客情經營(續單的關鍵)<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<blockquote>
+<p>「動不動開大單」的祕訣就是<strong>客情</strong>——沒什麼大邏輯,都是小細節。</p>
+</blockquote>
+<h3>護理中/每次</h3>
+<ul>
+<li><strong>服務小記</strong>:系統或本子記錄皮膚護理前後狀態、這次鋪墊了什麼項目、下次銷售計畫,用文字留痕。</li>
+<li><strong>前後對比照</strong>:每次拍,讓客人養成記錄習慣;1/3/6 個月做對比圖,他看到變化更有信心堅持。</li>
+</ul>
+<h3>付款後(休息區聊天,3 個動作)</h3>
+<blockquote>
+<p>付款當下是<strong>信任感最高</strong>的時候,要維繫下去。<br />
+1. <strong>讓他堅信今天的選擇正確</strong>:真誠感謝他把皮膚交給你、願意配合接下來的計畫(用肢體語言+口頭都行)。<br />
+2. <strong>給長期護理的信心/正能量</strong>:「保持愉悅、別壓力太大,你皮膚沒你想的嚴重,過度焦慮反而更糟;你已經很漂亮,做護理是為了看到更好的自己。」院內也及時給正向反饋、看改善對比圖,放大他的護理快感、消除焦慮。<br />
+3. <strong>定期回訪邀約</strong>:護理後 2–3 天問有沒有不良反應/不舒服;一週左右問效果(透亮度、水潤度有沒有變好)給正向反饋;接著邀約下次護理的時間與類型。</p>
+</blockquote>
+<h3>再到店:從事實出發的讚美</h3>
+<ul>
+<li>拿 1–3 個月的對比圖,<strong>針對事實</strong>讚美(別浮誇)。例:別說「做了鎮定消炎脸变小了」;要說「你皮膚透亮度變好、質感變好、痘痘愈合週期比以前快、紅退了、炎症色沉淡了很多,正往好方向發展」。</li>
+</ul>
+<h3>好轉反應要提前講</h3>
+<ul>
+<li>痘肌/炎症肌短期可能出現<strong>好轉反應(赫氏反應/爆痘期)</strong>,大面積冒粉刺,很多人這階段撐不下去。要<strong>提前告知</strong>,並在每階段分析變化(好或壞都講、不逃避):這段變差的原因、要調整什麼、下階段做什麼。客人就知道每一步在做什麼、為什麼變化,不會半途放棄。(註:「赫氏反應」原指感染治療的好轉反應,美業借用來形容代謝/爆痘期,概念相近但不完全等同,對客講「代謝反應/爆痘期」也可以。)</li>
+</ul>
+<h3>讓客人養成「先找自己原因」的習慣</h3>
+<ul>
+<li>持續做階段性規劃與總結,客人會養成主動反饋的習慣:「我最近壓力大/飲食沒控好,皮膚不太穩定」,甚至自責「不好意思這陣子沒按時來」。好反饋→可當案例發社群;壞反饋→及時調方案。方案更高效、滿意度更高。</li>
+</ul>
+<h3>讓客人知道門店的變化(把客人變「戰友」)</h3>
+<ul>
+<li>適時分享門店近況(擴張、進修學習、業績成長、經營想法)。客人了解越多越像<strong>戰友</strong>;高消費客人甚至像<strong>合夥人</strong>,會給你經營建議、你採用後回饋心得——各維度同頻,這種客人維持得特別久。</li>
+</ul>
+<hr />
+</div></details>
+<details class="ct-chapter"><summary class="ct-summary">十、用語在地化 / 待確認<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<ul>
+<li>已轉台灣用詞:普通話→國語、普拉提→皮拉提斯、發小→從小的朋友、卡項/辦卡→課程/儲值卡、客情→客戶關係、姨媽→生理期、中配→中胚、光子→脈衝光、痤瘡丙酸桿菌→痤瘡桿菌、馬拉色菌→皮屑芽孢菌、紅素圖→紅色圖/紅區圖、延保權益(原「眼保」為誤植)、大眾點評→Google 評論、朋友圈→社群/限動。</li>
+<li>大陸場所例子(全季酒店、羅湖天街、銀泰)已改為「連鎖飯店、大型百貨」通稱;客人對話中的人名(思佳)已改為通稱。</li>
+<li>⚠️ 已查證/合規標註:甜品「拉血糖促成交」不採用(一之2);卟啉是<strong>細菌(痤瘡桿菌)代謝物、非真菌排泄物</strong>(三);「醫療級光療儀/醫用面膜」對客宣稱有合規風險(五);「赫氏反應」屬借用、對客可講「代謝/爆痘期」(九)。</li>
+<li>[ ] 這份要不要也做成<strong>課程的一個章節</strong>?(目前先不放,當內部諮詢方法文件。)</li>
+<li>[ ] 「量膚訂製展示台」「固定香氛」「歌單」「問診表」「延保權益」「案例庫」「服務小記格式」等要不要落成肌·癒自己的具體版本?</li>
+<li>[ ] 光療儀/面膜的「醫療級」字號要不要查清楚再決定對客怎麼講?</li>
+<li>[ ] 「給優惠要客人交換(寫評論/讓權益)」這類技巧要不要收進員工版 SOP,還是只當主理人自己用?</li>
+</ul></div></details>
+`;
+
+  function renderConsultationTechnique() {
+    $fm.textContent = '面診技巧 · 僅供員工使用';
+    $view.innerHTML = `
+      <div class="back-bar"><a href="#/"><span class="back-arr">←</span><span class="back-en">BACK · 返回</span></a></div>
+      <header class="hero">
+        <div class="hero-en">CONSULTATION TECHNIQUE</div>
+        <h1 class="hero-title">面 診 技 巧</h1>
+        <div class="hero-orn"><span class="diamond"></span></div>
+        <div class="hero-sub">諮詢方法論 · 破冰 · 成交 · 售後（10 章 · 展開閱讀）</div>
+      </header>
+      <div class="us-intro">
+        📖 <strong>員工諮詢知識完整版</strong>。10 章依真實面診順序：診前心理建設 → 破冰 → 問診 → 治療理念 → 皮膚檢測 → 開方案 → 加值 → 案例 → 成交 → 售後。<br>
+        點章節標題可展開閱讀。第一章預設展開。
+      </div>
+      <div class="ct-content">${CT_HTML}</div>
+    `;
+    window.scrollTo(0, 0);
+  }
+
   /* ====== HOUSE RULES (內部守則) ====== */
   const HOUSE_RULES = [
     { num: '01', title: '非營業 / 無客時段進出規範',
@@ -5689,6 +6208,7 @@ const COURSES = {
     if (parts[0] === 'upgrade-script') return renderUpgradeScript();
     if (parts[0] === 'line-templates') return renderLineTemplates();
     if (parts[0] === 'house-rules') return renderHouseRules();
+    if (parts[0] === 'consultation-technique') return renderConsultationTechnique();
     renderHome();
   }
 
