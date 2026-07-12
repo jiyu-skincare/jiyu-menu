@@ -963,6 +963,71 @@
     }
     .pr-3q-conclusion strong { color: var(--warn); font-weight: 600; }
 
+    /* Service History Template (服務歷程填寫範本) */
+    .sht-intro {
+      margin: 16px 16px 14px;
+      padding: 12px 14px;
+      background: rgba(184,128,74,0.06);
+      border: 1px solid rgba(184,128,74,0.22);
+      border-radius: 6px;
+      font-size: 12px; color: var(--ink-mid);
+      line-height: 1.75; letter-spacing: 0.04em;
+    }
+    .sht-intro strong { color: var(--accent); font-weight: 600; }
+    .sht-card {
+      margin: 0 16px 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .sht-card-head {
+      padding: 14px 18px;
+      background: var(--ink); color: var(--bg);
+      display: flex; align-items: center; gap: 10px;
+      position: relative; overflow: hidden;
+    }
+    .sht-card-head::before {
+      content: ''; position: absolute; top: -15px; right: -15px;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(196,164,138,0.06);
+    }
+    .sht-card-en {
+      font-family: var(--en); font-size: 10px; font-style: italic;
+      letter-spacing: 0.22em; color: var(--brown-pale);
+      text-transform: uppercase;
+    }
+    .sht-card-title {
+      font-size: 15px; font-weight: 500; letter-spacing: 0.12em;
+      margin-left: auto;
+    }
+    .sht-body {
+      margin: 0; padding: 16px 18px;
+      font-family: var(--tc); font-size: 13px;
+      line-height: 1.95; letter-spacing: 0.04em;
+      color: var(--ink); white-space: pre-wrap;
+      background: var(--bg);
+    }
+    .sht-fillin {
+      color: var(--accent); font-weight: 600;
+      background: rgba(184,128,74,0.12);
+      padding: 1px 4px; border-radius: 2px;
+    }
+    .sht-actions {
+      padding: 14px 18px; display: flex; gap: 8px;
+      border-top: 1px solid var(--line-soft);
+    }
+    .sht-copy {
+      flex: 1; padding: 10px 16px;
+      background: var(--accent); color: var(--bg);
+      border: none; border-radius: 4px;
+      font-family: var(--tc); font-size: 13px;
+      letter-spacing: 0.15em; cursor: pointer;
+      transition: all 160ms;
+    }
+    .sht-copy:hover, .sht-copy:active { background: var(--ink); }
+    .sht-copy.copied { background: var(--done); }
+
     /* Consultation Technique (面診技巧) */
     .ct-content { padding: 0 12px 20px; }
     .ct-chapter {
@@ -2781,6 +2846,16 @@ const COURSES = {
               <div class="entry-desc">面診方法論 · 9 章手機可讀<br>心理建設 · 破冰 · 問診 · 開方案 · 成交 · 售後</div>
             </div>
             <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--accent);">→</span>
+          </div>
+        </a>
+        <a href="#/service-history-template" class="entry" style="margin-bottom:10px;padding:18px 22px;">
+          <div class="entry-grid">
+            <div>
+              <div class="entry-en">Service History Template · 一鍵複製</div>
+              <div class="entry-title" style="font-size:16px;margin-bottom:6px;">服 務 歷 程 填 寫 範 本</div>
+              <div class="entry-desc">課後填預約系統「服務歷程」的固定格式<br>給客人看的（會員說明）+ 店家筆記,兩份範本一鍵複製</div>
+            </div>
+            <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--brown-light);">→</span>
           </div>
         </a>
         <a href="#/upgrade-script" class="entry" style="margin-bottom:10px;padding:18px 22px;background:rgba(184,128,74,0.06);border-color:var(--accent);">
@@ -5260,8 +5335,8 @@ const COURSES = {
       phase: '05', en: 'Follow-up', title: '客人離開後 · 跟進',
       steps: [
         { num: 17, text: '⭐ 預約系統<strong>服務歷程</strong>：上傳客人<strong>前後照</strong>' },
-        { num: 18, text: '⭐ 寫<strong>詳細課程內容</strong>（給日後查詢 / 下次續做用）<br>例：酸上 8 分、保鮮膜輔助；去角質方式（手工 / 機器 / 酸類）；MTS 幾針 + 出針長度等具體參數' },
-        { num: 19, text: '⭐ 寫<strong>店家筆記</strong>（客人看不到、僅內部留檔）<br>· 今天聊天內容（下次客人來前複習 → 記得他發生的事情 = 客人覺得被在乎、大加分）<br>· 客人在意事項（不要茶點 / 對貓過敏 / 怕冷等）<br>· 給下一位接他的美容師的備注' },
+        { num: 18, text: '⭐ 寫<strong>詳細課程內容</strong>（給日後查詢 / 下次續做用）→ <a href="#/service-history-template" style="color:var(--accent);text-decoration:underline;">▸ 查看填寫範本</a><br>例：酸上 8 分、保鮮膜輔助；去角質方式（手工 / 機器 / 酸類）；MTS 幾針 + 出針長度等具體參數' },
+        { num: 19, text: '⭐ 寫<strong>店家筆記</strong>（客人看不到、僅內部留檔）→ <a href="#/service-history-template" style="color:var(--accent);text-decoration:underline;">▸ 查看填寫範本</a><br>· 今天聊天內容（下次客人來前複習 → 記得他發生的事情 = 客人覺得被在乎、大加分）<br>· 客人在意事項（不要茶點 / 對貓過敏 / 怕冷等）<br>· 給下一位接他的美容師的備注' },
         { num: 20, text: '<strong>當天</strong>手動 LINE 客人：諮詢紀錄圖 + 滿意度問卷連結<br>⚠️ 訊息中提示「對比照可到服務歷程觀看」' },
         { num: 21, text: '客人填寫完回傳 → 贈送 <strong>85 折券一張</strong>（限單堂使用、不可疊包堂 / 儲值折扣）' }
       ]
@@ -5600,6 +5675,91 @@ const COURSES = {
     `;
     window.scrollTo(0, 0);
   }
+
+  /* ====== SERVICE HISTORY TEMPLATE (服務歷程填寫範本) ====== */
+  const SERVICE_HISTORY_TEMPLATES = [
+    {
+      id: 'member-note',
+      en: 'For Client · Member Note',
+      title: '給客人看的（會員說明格）',
+      body: `【今日課程】
+· 課程:〔課程名〕
+· 費用:NT$ 〔金額〕
+· 加購:〔加購項目與金額,無則刪除此行〕`
+    },
+    {
+      id: 'internal-note',
+      en: 'Internal Note · Staff Only',
+      title: '店家筆記（僅內部留檔）',
+      body: `【客人狀況】
+· 皮膚類型:〔乾／油／混合／脫水油性／敏感／中性〕
+· 粉刺類型:〔牙膏狀／內包／黑頭／白頭／囊腫／膿包〕
+· 客人個性:〔注重隱私／怕貓／不吃點心／怕冷等,長期記錄〕
+
+【今日課程步驟】
+· 角質管理:〔角質液名 · 停留 __ 分〕
+· 一次膜:〔控油泥膜／保濕膜等〕
+· 主課程使用產品:〔安瓶／精華等〕
+· 導入方式:〔MTS __ 針 · 深度 __ mm ／ STS 超聲波 · __ 分〕
+· 面膜:〔海藻面膜／軟膜／二次膜等〕
+· 儀器參數:〔照燈時間／機器強度／脈衝光焦耳等〕
+
+【本次反饋 · 下次建議】
+· 本次反饋:〔怕痛／舒服／紅／過敏等〕
+· 下次建議:〔延續／加強／換課程／需準備〕`
+    }
+  ];
+
+  function renderServiceHistoryTemplate() {
+    $fm.textContent = '服務歷程填寫範本 · 僅供員工使用';
+    const cardsHTML = SERVICE_HISTORY_TEMPLATES.map(t => {
+      const displayBody = t.body
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/〔([^〕]+)〕/g, '<span class="sht-fillin">〔$1〕</span>');
+      return `
+        <div class="sht-card">
+          <div class="sht-card-head">
+            <span class="sht-card-en">${esc(t.en)}</span>
+            <span class="sht-card-title">${esc(t.title)}</span>
+          </div>
+          <pre class="sht-body" id="sht-${esc(t.id)}">${displayBody}</pre>
+          <div class="sht-actions">
+            <button class="sht-copy" onclick="copyServiceTemplate('${esc(t.id)}', this)">📋 複製範本</button>
+          </div>
+        </div>`;
+    }).join('');
+
+    $view.innerHTML = `
+      <div class="back-bar"><a href="#/"><span class="back-arr">←</span><span class="back-en">BACK · 返回</span></a></div>
+      <header class="hero">
+        <div class="hero-en">SERVICE HISTORY TEMPLATE</div>
+        <h1 class="hero-title">服 務 歷 程 填 寫 範 本</h1>
+        <div class="hero-orn"><span class="diamond"></span></div>
+        <div class="hero-sub">給客人看的 · 店家筆記 · 一鍵複製</div>
+      </header>
+      <div class="sht-intro">
+        📋 客人離開後,到預約系統「服務歷程」填這兩格 ↓<br>
+        <strong>複製範本 → 貼進去 → 把〔金色框〕改成當日實況</strong>。沒有的行直接刪掉。
+      </div>
+      ${cardsHTML}
+    `;
+    window.scrollTo(0, 0);
+  }
+
+  window.copyServiceTemplate = function(id, btn) {
+    const tmpl = SERVICE_HISTORY_TEMPLATES.find(t => t.id === id);
+    if (!tmpl) return;
+    navigator.clipboard.writeText(tmpl.body).then(() => {
+      btn.textContent = '✓ 已複製,貼到預約系統再改欄位';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = '📋 複製範本';
+        btn.classList.remove('copied');
+      }, 2500);
+    }).catch(() => {
+      alert('複製失敗,請手動選取範本文字複製');
+    });
+  };
 
   /* ====== CONSULTATION TECHNIQUE (面診技巧) ====== */
   const CT_HTML = `<details class="ct-chapter" open><summary class="ct-summary">一、診前心理建設(先建立「自己」的信心)<span class="ct-arrow">▾</span></summary><div class="ct-body">
@@ -5996,6 +6156,7 @@ const COURSES = {
     if (parts[0] === 'upgrade-script') return renderUpgradeScript();
     if (parts[0] === 'house-rules') return renderHouseRules();
     if (parts[0] === 'consultation-technique') return renderConsultationTechnique();
+    if (parts[0] === 'service-history-template') return renderServiceHistoryTemplate();
     renderHome();
   }
 
