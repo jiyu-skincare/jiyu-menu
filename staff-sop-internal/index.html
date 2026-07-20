@@ -1933,16 +1933,17 @@ const CATEGORIES = {
           <tbody style="color:var(--ink-mid);">
             <tr style="border-top:1px solid var(--line-soft);"><td style="padding:7px 10px;">急護舒緩 2,080</td><td style="text-align:center;">—</td><td style="text-align:center;">—</td><td style="text-align:center;">⭐ 首選</td></tr>
             <tr style="border-top:1px solid var(--line-soft);"><td style="padding:7px 10px;">益菌修護 2,580</td><td style="text-align:center;">⭐ 首選</td><td style="text-align:center;">✓ 清粉刺放輕</td><td style="text-align:center;">—</td></tr>
-            <tr style="border-top:1px solid var(--line-soft);"><td style="padding:7px 10px;">膠囊修護 3,580</td><td style="text-align:center;">✓</td><td style="text-align:center;">⭐ 首選</td><td style="text-align:center;">✓ 冰導起手</td></tr>
-            <tr style="border-top:1px solid var(--line-soft);"><td style="padding:7px 10px;">時光煥膚 4,280</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓ 完整步驟</td><td style="text-align:center;">✓ 照 L3 規則</td></tr>
+            <tr style="border-top:1px solid var(--line-soft);"><td style="padding:7px 10px;">定製膠囊 3,580</td><td style="text-align:center;">✓</td><td style="text-align:center;">⭐ 首選</td><td style="text-align:center;">—（膠囊需 MTS）</td></tr>
+            <tr style="border-top:1px solid var(--line-soft);"><td style="padding:7px 10px;">時光煥膚 4,080</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓ 完整步驟</td><td style="text-align:center;">✓ 照 L3 規則</td></tr>
             <tr style="border-top:1px solid var(--line-soft);"><td style="padding:7px 10px;">EXO 益膚平衡 4,280</td><td style="text-align:center;">✓ 可 MTS</td><td style="text-align:center;">⭐ 首選</td><td style="text-align:center;">✓ 冰鎮導入</td></tr>
           </tbody>
         </table>
         <div style="padding:10px 16px;border-top:1px solid var(--line-soft);font-size:11.5px;color:var(--brown-light);line-height:1.8;">
           💰 Level 3 模式<strong>價格照舊</strong>——避開刺激步驟、用料加倍（增加屏障修復膜、鎮靜精華冰鎮導入）。<br>
-          🎁 Level 3 當日權益（當日課程 4,280 適用）：7 天內回店檢視，贈術後面膜；當日加做療程享 8 折（<strong>須先預約</strong>）。<br>
+          🎁 Level 3 當日權益（當日課程 4,080 起適用）：7 天內回店檢視，贈術後面膜；當日加做療程享 8 折（<strong>須先預約</strong>）。<br>
           🗣 對客話術：「我們每次都會先幫你檢測今天的敏感 Level，Level 不同、同一堂課做法就不一樣——這就是為什麼每次都要先看膚況。」<br>
-          ⚠ Reracine 原廠講義 Level 方向相反（官方 Level 1＝最嚴重）；<strong>店內一律以本表為準（1 輕 → 3 極）</strong>。
+          ⚠ Reracine 原廠講義 Level 方向相反（官方 Level 1＝最嚴重）；<strong>店內一律以本表為準（1 輕 → 3 極）</strong>。<br>
+          💬 客人問「為什麼只有定製膠囊這堂有膠囊」→ 膠囊精華要靠 <strong>MTS 微針導入</strong>才進得去皮膚，不搭 MTS 效果會差很多；Level 3 急性期不能做 MTS，所以急性期不安排膠囊課。
         </div>
       </div>` },
     sections: [
@@ -2691,12 +2692,12 @@ const COURSES = {
     productSummary: ['雙層維穩潔面乳', '水合清透化妝水', '清粉刺工具組', '氨基酸水漾凝露', '冰肌霜（冰鎮用）', '控制修復凝膠＋修護滋潤霜（敏感維養 4:1）', '微晶脂屏障霜', '皮脂膜精華油', '益菌平衡精華（微生態系列）'],
     instruments: ['冷溫儀（冷）', '超聲波導入儀']
   },
-  'sens-lv3': { name: '定製膠囊管理', category: 'sensitive', level: 3, metaTc: 'Level 2 · 定製膠囊', desc: '中度敏感（化妝水後明顯刺痛）· 含兩支客製膠囊｜第 3 支 +500 加購｜🔴 Level 3 可做：冰導起手，退紅可轉超聲波', status: 'pending' },
+  'sens-lv3': { name: '定製膠囊管理', category: 'sensitive', level: 3, metaTc: 'Level 2 · 定製膠囊', desc: '中度敏感（化妝水後明顯刺痛）· 含兩支客製膠囊｜第 3 支 +500 加購｜膠囊需搭配 MTS 導入才有效，Level 3 急性期不安排', status: 'pending' },
   'sens-exo': {
     name: 'EXO 益膚平衡管理', category: 'sensitive', metaTc: 'Level 2 · 外泌體',
     status: 'complete', kicker: '敏感肌修護 · Level 2 EXO 外泌體',
     nameEn: 'Reracine · Exo-Lexa 益膚安瓶',
-    recommendedFor: '中度敏感（化妝水後明顯刺痛數秒）、屏障修護期、缺水性敏感、微生態失衡\n品牌：Reracine · Exo-Lexa（微生物外泌體＋乳酸菌）',
+    recommendedFor: '反反覆覆、老是不穩定的肌膚；中度敏感（化妝水後明顯刺痛數秒）、缺水性敏感、微生態失衡\n品牌：Reracine · Exo-Lexa（微生物外泌體＋乳酸菌）',
     meta: [{ v: '70', l: 'MIN' }, { v: '9', l: 'STEPS' }],
     brandIntro: {
       titleEn: 'Exosome ＋ Lacto',
@@ -3616,7 +3617,7 @@ COURSES['sens-lv1'].steps = [
             { type: 'tag-table', rows: [
               ['Level 1', '益菌修護 2,580', '輕度敏感（化妝水正常用僅微刺）· 穩定期保養；基礎修護流程＋益菌平衡導入'],
               ['Level 2', '定製膠囊管理 3,580 / EXO 益膚平衡管理 4,280', '中度敏感（化妝水後明顯刺痛）· 膠囊客製對症 vs 外泌體自我修護 二選一'],
-              ['Level 3', '急護舒緩 2,080 / 時光煥膚 4,280', '正在過敏、急性泛紅、雷射/微針後 7 天內 — 急護舒緩＝純鎮靜（不去角質不清粉刺 · ⚠ 僅單次無包堂）；時光煥膚＝完整滅火＋修復']
+              ['Level 3', '急護舒緩 2,080 / 時光煥膚 4,080', '正在過敏、急性泛紅、雷射/微針後 7 天內 — 急護舒緩＝純鎮靜（不去角質不清粉刺 · ⚠ 僅單次無包堂）；時光煥膚 4,080＝完整滅火＋修復']
             ]},
             { type: 'note', text: '定製膠囊管理內含 2 支客製膠囊，第 3 支 +500 加購。' },
             { type: 'sub-title', text: '🚦 課程是工具、Level 是狀態（同一堂課換 Level 換做法）' },
@@ -5522,9 +5523,9 @@ COURSES['sens-lv1'].steps = [
   const UPGRADE_SENSITIVE = [
     ['Level 1', '益菌修護管理', '2,580', '輕度敏感（化妝水正常用、僅短暫微刺）、換季敏感、微生態失衡', '基礎修護完整流程<strong>＋益菌平衡導入</strong>，先把地基蓋好'],
     ['Level 2', '定製膠囊管理', '3,580', '中度敏感（化妝水後明顯刺痛數秒）', '<strong>兩支客製膠囊</strong>對症處理；第 3 支 +500 加購'],
-    ['Level 2', 'EXO 益膚平衡管理', '4,280', '缺水型敏感、想更深層修護', '<strong>外泌體＋乳酸菌</strong>幫皮膚自我修護，敏感線天花板'],
+    ['Level 2', 'EXO 益膚平衡管理', '4,280', '反反覆覆、老是不穩定的肌膚；缺水型敏感', '<strong>外泌體＋乳酸菌</strong>幫皮膚補回自我修護力，敏感線天花板'],
     ['Level 3', '急護舒緩管理', '2,080', '正在過敏的急性期、雷射/微針後 7 天內', '<strong>純鎮靜滅火</strong>：不去角質不清粉刺，先讓皮膚停火；僅單次無包堂'],
-    ['Level 3', '時光煥膚管理', '4,280', '極度敏感（擦什麼都刺痛灼熱）、急性炎症、術後修復期', '<strong>完整滅火＋修復</strong>：溫和剝脫＋冰導＋蛋白修復；穩定後再轉Level 2']
+    ['Level 3', '時光煥膚管理', '4,080', '極度敏感（擦什麼都刺痛灼熱）、急性炎症、術後修復期', '<strong>完整滅火＋修復</strong>：溫和剝脫＋冰導＋蛋白修復；穩定後再轉Level 2']
   ];
 
   const UPGRADE_EXTRA = [
