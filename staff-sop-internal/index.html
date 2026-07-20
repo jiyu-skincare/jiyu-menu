@@ -1910,11 +1910,12 @@ const CATEGORIES = {
   },
   sensitive: {
     name: '敏感肌', nameEn: 'Sensitive Skin',
-    intro: { lead: '先辨識客戶膚況分級，再選對應 SOP', em: '程度越高，修護越深' },
+    intro: { lead: '化妝水刺痛測試分三級，先判級再選課', em: '急性期先滅火，再修護、再維養' },
     sections: [
-      { title: '基礎修護', num: '01', courses: ['barrier'] },
-      { title: '分級修護課程', num: '02', courses: ['sens-lv1', 'sens-lv2', 'sens-lv3', 'sens-lv4'] },
-      { title: '術後專屬修護', num: '03', courses: ['post-procedure'] }
+      { title: '維養級 · 輕度敏感', num: '01', courses: ['barrier', 'sens-lv1'] },
+      { title: '修護級 · 中度敏感', num: '02', courses: ['sens-lv3', 'sens-exo'] },
+      { title: '急護級 · 極度敏感／炎症期', num: '03', courses: ['sens-lv4'] },
+      { title: '術後專屬修護', num: '04', courses: ['post-procedure'] }
     ]
   }
 };
@@ -2580,10 +2581,10 @@ const COURSES = {
 
   /* ========== 敏感肌 ========== */
   'barrier': {
-    name: '屏障管理', category: 'sensitive', metaTc: 'Foundation · 基礎',
+    name: '屏障管理', category: 'sensitive', metaTc: '維養級 · 入門',
     status: 'complete',
-    kicker: '敏感肌修護 · 基礎入門',
-    recommendedFor: '敏感肌基礎修護；亦為其他課程之加購升級項',
+    kicker: '敏感肌修護 · 維養級 入門',
+    recommendedFor: '輕度敏感（化妝水正常用、僅短暫微刺）、穩定期保養；亦為其他課程之加購升級項',
     meta: [{ v: '55', l: 'MIN' }, { v: '6', l: 'STEPS' }],
     steps: [
       { name: '潔面', timer: 180,
@@ -2614,6 +2615,12 @@ const COURSES = {
         ] },
       { name: '定制型 1 次膜', timer: 900, meta: '依膚質',
         branches: [
+          { label: '敏感維養', sub: '凝膠 4：霜 1（Reracine）',
+            products: [
+              { name: '控制修復凝膠 Damage Control Gel', desc: 'Reracine · Fucogel 降溫緩紅', dose: '4 份' },
+              { name: '修護滋潤霜 Cica Repair Cream', desc: 'Reracine · PDRN＋胜肽', dose: '1 份' }
+            ],
+            method: '控制修復凝膠 4 ＋ 修護滋潤霜 1 調勻，塗厚厚一層靜置 10 分鐘。\n適用輕度敏感的穩定維養；泛紅明顯改 3:2 比例。' },
           { label: '油性皮膚', sub: '水 8：屏 2',
             products: [
               { name: '氨基酸水漾凝露', desc: 'Rxpert', dose: '8 份' },
@@ -2653,14 +2660,70 @@ const COURSES = {
       ]
     }
   },
-  'sens-lv1': { name: '益菌修護管理', category: 'sensitive', level: 1, metaTc: 'Lv.1 · 輕度敏感', desc: '換季或壓力泛紅發癢，偶發不穩', status: 'pending' },
-  'sens-lv2': { name: '處方膠囊管理　單效', category: 'sensitive', level: 2, metaTc: 'Lv.2 · 中度敏感', desc: '不明刺痛灼熱，產品選擇受限｜含一隻膠囊', status: 'pending' },
-  'sens-lv3': { name: '處方膠囊管理　複方', category: 'sensitive', level: 3, metaTc: 'Lv.3 · 屏障受損型', desc: '換產品即大爆發，需系統性屏障重建｜含兩隻膠囊', status: 'pending' },
+  'sens-lv1': {
+    name: '益菌修護管理', category: 'sensitive', level: 1, metaTc: '維養級 · 益菌升級',
+    status: 'complete', kicker: '敏感肌修護 · 維養級 益菌升級',
+    recommendedFor: '換季或壓力誘發的輕度敏感、微生態失衡、偶發泛紅發癢\n= 屏障管理完整流程 ＋ 益菌平衡導入',
+    meta: [{ v: '60', l: 'MIN' }, { v: '7', l: 'STEPS' }],
+    steps: [],
+    productSummary: ['同屏障管理全套', '益菌平衡精華（微生態系列）'],
+    instruments: ['冷溫儀（冷）', '超聲波導入儀']
+  },
+  'sens-lv3': { name: '處方膠囊修護', category: 'sensitive', level: 3, metaTc: '修護級 · 處方膠囊', desc: '中度敏感（化妝水後明顯刺痛）· 含兩支客製膠囊｜第 3 支 +500 加購', status: 'pending' },
+  'sens-exo': {
+    name: 'EXO 益膚修護', category: 'sensitive', metaTc: '修護級 · 外泌體',
+    status: 'complete', kicker: '敏感肌修護 · 修護級 EXO 外泌體',
+    nameEn: 'Reracine · Exo-Lexa 益膚安瓶',
+    recommendedFor: '中度敏感（化妝水後明顯刺痛數秒）、屏障修護期、缺水性敏感、微生態失衡\n品牌：Reracine · Exo-Lexa（微生物外泌體＋乳酸菌）',
+    meta: [{ v: '70', l: 'MIN' }, { v: '9', l: 'STEPS' }],
+    brandIntro: {
+      titleEn: 'Exosome ＋ Lacto',
+      tagline: '微生物外泌體 · 吸收率高 · 排斥最低',
+      body: 'Exo-Lexa ＝ Exosome ＋ Lacto：Lacto 穩定肌膚微生態，Exosome 是選擇性包裹高功能成分的傳導載體。\n1 劑（粉）：凍乾微生物外泌體＋低分子玻尿酸粉；2 劑（液）：17 種胺基酸＋3 種玻尿酸複合物。\nNMF 天然保濕因子中胺基酸佔 40% 以上——胺基酸不足，皮膚就鎖不住水，這是缺水型敏感的核心。',
+      targets: ['中度敏感肌', '屏障修護期', '缺水性敏感', '微生態失衡']
+    },
+    steps: [
+      STEP_PHOTO,
+      stepCleanser('益蜂潔面乳（Reracine）', '低敏潔面 · 畫圓 30 秒'),
+      { name: '化妝水', timer: 60,
+        products: [{ name: '持潤精華水（Reracine）', desc: '功能性精華水', dose: '浸濕化妝棉' }],
+        method: '100% 纖維素化妝棉浸濕後，全臉輕輕擦拭吸收。' },
+      STEP_EXTRACTION,
+      { name: '前導 · 控制修復凝膠', timer: 600,
+        products: [{ name: '控制修復凝膠 Damage Control Gel（Reracine）', desc: 'Fucogel 降溫緩紅 · 前導處理' }],
+        method: '厚敷一層靜置 5–10 分鐘，不擦洗、讓皮膚自行吸收。' },
+      { name: 'Exo-Lexa 導入', timer: 900, meta: 'A/B 路徑',
+        branches: [
+          { label: 'A｜MTS 導入', sub: '膚況穩定',
+            products: [{ name: 'EXO 益膚安瓶 1 劑＋2 劑（Reracine）', desc: '1 劑粉＋2 劑液現場混合', dose: '各 1 份' }],
+            method: '1＋2 劑混合後，順淋巴方向全臉 MTS 操作。' },
+          { label: 'B｜超音波／徒手', sub: '泛紅或刺痛',
+            products: [{ name: 'EXO 益膚安瓶 1 劑＋2 劑（Reracine）', dose: '各 1 份' }],
+            method: '泛紅或有刺痛感改超音波或徒手順淋巴按壓導入，降低刺激。' }
+        ],
+        handling: '⚠️ 化妝水刺痛測試明顯者一律走 B。\n⚠️ MTS 後微針通道約 4–6 小時才閉合，導入後不再上任何刺激產品。' },
+      { name: '鎖水修護', timer: 300,
+        products: [
+          { name: '玻尿酸乳霜（Reracine）', desc: '三重透明質酸＋神經醯胺' },
+          { name: '修護滋潤霜 Cica Repair Cream（Reracine）', desc: 'PDRN＋3GF 胜肽' }
+        ],
+        method: '玻尿酸乳霜＋修護滋潤霜混合，全臉塗抹按摩吸收。' },
+      { name: '海藻重啟面膜', timer: 900,
+        products: [{ name: '海藻重啟面膜 Damage Control Mask（Reracine）', desc: '立即降熱感 · 連續補水' }],
+        method: '敷 10–20 分鐘。' },
+      { name: '收尾', timer: 120,
+        products: [{ name: '能量填充膏 Recharge Booster Balm（Reracine）', desc: '膠原＋彈力蛋白＋艾地苯' }],
+        method: '能量填充膏收尾鎖住水分與養分，白天加防曬。' }
+    ],
+    generalNotes: '【課後衛教（務必提前講）】\n· 紅腫發熱持續 1–2 天屬正常；3–5 天可能微細脫皮乾燥\n· 可能暫時爆 1–2 顆痘（代謝反應，先講客人才不會嚇到）\n· 請客人每天喝足水（幫助代謝）\n· MTS 路徑當天不洗臉不化妝，隔日改溫和潔顏\n\n【禁忌】\n· 異位性皮膚炎急性期、出血性疾病\n· 孕期、哺乳期；生理期避開 MTS 路徑\n\n【對客話術提醒】\n· ⚠ 不講「再生／修復受損／醫美級」→ 改講「穩定」「維持肌膚健康狀態」「保濕舒緩」',
+    productSummary: ['益蜂潔面乳', '持潤精華水＋化妝棉', '控制修復凝膠', 'EXO 益膚安瓶 1 劑＋2 劑', '玻尿酸乳霜', '修護滋潤霜', '海藻重啟面膜', '能量填充膏', '防曬'],
+    instruments: ['MTS', '超音波導入儀']
+  },
   'sens-lv4': {
-    name: '處方膠囊管理　全效', category: 'sensitive', level: 4, metaTc: 'Lv.4 · 慢性泛紅型',
-    status: 'complete', kicker: '敏感肌修護 · Lv.4 慢性泛紅型',
+    name: '時光煥膚管理', category: 'sensitive', level: 4, metaTc: '急護級 · 極度敏感／炎症期',
+    status: 'complete', kicker: '敏感肌修護 · 急護級',
     nameEn: 'Civasan · Sizopirin Cellular DNA 時光煥膚',
-    recommendedFor: '長期泛紅、酒糟或玫瑰斑，慢性炎症狀態\n含三隻處方膠囊\n品牌：CIVASAN 施瓦珊 · 時光煥膚管理套盒（最百搭，判斷不出膚況時最安全）',
+    recommendedFor: '極度敏感（擦任何產品都刺痛灼熱）、急性泛紅／炎症期、酒糟玫瑰斑；也適用老化與術後\n品牌：CIVASAN 施瓦珊 · 時光煥膚管理套盒（最百搭，判斷不出膚況時最安全）',
     meta: [{ v: '90', l: 'MIN' }, { v: '7', l: 'STEPS' }],
     brandIntro: {
       titleEn: 'Polypeptide + Trans-X + Cure',
@@ -2690,7 +2753,7 @@ const COURSES = {
             ],
             method: '長期泛紅或炎症肌改用超聲波或冰導，降低刺激。\n先導入 P5（10 分鐘），再塗蠶絲蛋白修復霜。' }
         ],
-        handling: '⚠️ 慢性泛紅 / 玫瑰痤瘡客人優先使用冰導，避免高溫加重炎症。' },
+        handling: '⚠️ 急護級（極度敏感／急性泛紅）一律走 B 冰導，不做 MTS／微電流。\n⚠️ 慢性泛紅 / 玫瑰痤瘡客人同樣優先冰導，避免高溫加重炎症。' },
       { name: 'Step 4｜時光煥膚深層面霜＋照光', timer: 600,
         products: [{ name: '時光煥膚 深層面霜（CIVASAN）', desc: '鎖水保濕\n核心成分：乳木果脂、積雪草、馬齒莧、莓子複合物', dose: '10ml × 2ea' }],
         method: '當一次膜照光 10 分鐘。\n（也可直接厚敷一層後直接上軟膜，照光 20 分。）' },
@@ -2698,8 +2761,8 @@ const COURSES = {
         products: [{ name: '軟膜或面膜', desc: '建議使用品牌專用面膜' }],
         method: '照光結束不用擦，直接上軟膜或面膜，加照光 15 分鐘。\n收尾：BB 霜 / 防曬。' }
     ],
-    generalNotes: '此為敏感肌「最百搭」的全效套盒：\n· 如真的判斷不出膚況，做此套盒最安全\n· 含三隻處方膠囊，與時光煥膚精華搭配導入\n· 建議搭配 Rd 修護＋Se 敏感＋Hy 補水（敏感+泛紅組合）\n\n慢性泛紅 / 玫瑰痤瘡客人務必：\n· 角質手法選 1（最溫和）\n· 導入優先選冰導\n· 全程觀察反應，刺痛立即停止\n\n此套盒不對外販售給消費者。',
-    productSummary: ['潔面乳', '清粉刺工具組（輕度）', 'CIVASAN 時光煥膚 去角質凝膠', 'CIVASAN 時光煥膚 P5 彈力精華液', 'CIVASAN 時光煥膚 蠶絲蛋白修復霜', 'CIVASAN 時光煥膚 深層面霜', '處方膠囊（Rd / Se / Hy 等三隻）'],
+    generalNotes: '急護級定位：客人處於「擦什麼都刺痛」的急性期，先滅火、不做刺激。\n\n急護級三條紅線：\n· 角質手法一律選 1（最溫和），嚴重時可整步省略\n· 導入一律走 B 冰導，不做 MTS／微電流\n· 全程觀察反應，刺痛立即停止\n\n此套盒也是敏感肌「最百搭」選擇——判斷不出膚況時做這堂最安全。\n膠囊客製屬修護級課程；急性期穩定後（不刺痛了）再轉處方膠囊修護或 EXO 益膚修護。\n\n此套盒不對外販售給消費者。',
+    productSummary: ['潔面乳', '清粉刺工具組（輕度）', 'CIVASAN 時光煥膚 去角質凝膠', 'CIVASAN 時光煥膚 P5 彈力精華液', 'CIVASAN 時光煥膚 蠶絲蛋白修復霜', 'CIVASAN 時光煥膚 深層面霜'],
     instruments: ['MTS 微針滾輪', '微電流儀', '超聲波導入儀', '冰導儀', '光療儀'],
     slides: [
       { src: 'img/civasan/time-01.jpg', caption: 'Sizopirin Cellular DNA · 時光煥膚' },
@@ -2709,6 +2772,18 @@ const COURSES = {
   },
   'post-procedure': { name: '術後修護管理課程', category: 'sensitive', isPost: true, metaTc: 'Post-Procedure · 醫美術後', desc: '雷射／微針／果酸換膚後；屏障保護為核心，不去角質、不清粉刺', status: 'pending' }
 };
+
+/* 益菌修護 = 屏障管理完整流程 + 益菌平衡導入（插在修復導入之後） */
+const STEP_PROBIO = {
+  name: '益菌平衡導入', timer: 420, meta: '益菌修護限定',
+  products: [{ name: '益菌平衡精華（微生態系列）', desc: '調節皮膚微生態 · 平衡菌叢' }],
+  method: '以超聲波將益菌平衡精華均勻導入全臉約 5–7 分鐘。\n※ 泛紅明顯時改徒手輕拍導入。'
+};
+COURSES['sens-lv1'].steps = [
+  ...COURSES['barrier'].steps.slice(0, 4),
+  STEP_PROBIO,
+  ...COURSES['barrier'].steps.slice(4)
+];
 
 </script>
 
@@ -3451,22 +3526,28 @@ const COURSES = {
           id: 'step6', num: '6', title: '診斷結果', subtitle: '敏感肌 only',
           body: '系統根據前面的填答，自動判斷敏感類型 + 對應 Lv 等級：',
           table: {
-            head: ['敏感類型', '觸發條件', '推薦 Lv'],
+            head: ['敏感類型', '觸發條件', '推薦級'],
             rows: [
-              ['類固醇皮炎+血管擴張', '用過類固醇 + 紅血絲明顯', 'Lv.4 全效'],
-              ['類固醇皮炎', '用過類固醇', 'Lv.3 複方'],
-              ['玫瑰痤瘡', '一年以上 + 持續泛紅或血管', 'Lv.4 全效'],
-              ['脂漏性皮膚炎', '三點紅 + 頭皮屑/螢光', 'Lv.2 單效'],
-              ['接觸性皮炎', '近期 + 邊界清晰', 'Lv.1 益菌'],
-              ['一般敏感肌：明顯泛紅+血管', '—', 'Lv.4 全效'],
-              ['一般敏感肌：泛紅或血管', '—', 'Lv.3 複方'],
-              ['一般敏感肌：輕微', '—', 'Lv.2 單效'],
-              ['一般敏感肌：兩頰無泛紅', '—', 'Lv.1 益菌']
+              ['類固醇皮炎+血管擴張', '用過類固醇 + 紅血絲明顯', '急護級 時光煥膚'],
+              ['類固醇皮炎', '用過類固醇', '修護級 膠囊修護'],
+              ['玫瑰痤瘡', '一年以上 + 持續泛紅或血管', '急護級 時光煥膚'],
+              ['脂漏性皮膚炎', '三點紅 + 頭皮屑/螢光', '修護級 膠囊修護'],
+              ['接觸性皮炎', '近期 + 邊界清晰', '維養級 益菌修護'],
+              ['一般敏感肌：明顯泛紅+血管', '—', '急護級 時光煥膚'],
+              ['一般敏感肌：泛紅或血管', '—', '修護級（膠囊修護 / EXO）'],
+              ['一般敏感肌：輕微', '—', '維養級 益菌修護'],
+              ['一般敏感肌：兩頰無泛紅', '—', '維養級 屏障管理']
             ]
           },
           subSections: [
             { type: 'sub-title', text: '話術' },
-            { type: 'script', text: '根據前面的問答，系統判斷您是〔某型敏感〕，建議是 Lv.〔X〕。這個判斷您覺得符合嗎？' },
+            { type: 'script', text: '根據前面的問答，系統判斷您是〔某型敏感〕，建議從〔某級〕開始。這個判斷您覺得符合嗎？' },
+            { type: 'sub-title', text: '⭐ 快速判級：化妝水刺痛測試' },
+            { type: 'tip-list', items: [
+              '擦<strong>任何</strong>產品都刺痛灼熱 → <strong>急護級</strong>（先滅火、不導入）',
+              '化妝水後<strong>明顯刺痛數秒</strong> → <strong>修護級</strong>（膠囊修護 / EXO）',
+              '化妝水正常用、僅短暫微刺 → <strong>維養級</strong>（屏障管理 / 益菌修護）'
+            ]},
             { type: 'note', text: '如果客人說「我覺得不像」，底下有「切換診斷」按鈕，可以手動改其他類型。員工的判斷比系統優先。' }
           ]
         },
@@ -3497,15 +3578,14 @@ const COURSES = {
             { type: 'note', text: '推薦在「解釋方案前 30 秒」點開。會跳出一個 modal 含影片動畫（城牆磚塊水泥 → 屏障原理）。員工帶讀完，客人「懂了為什麼要修護」再聽方案會大幅提升信任。' },
             { type: 'script', text: '在我跟您解釋方案前，先花 30 秒帶您看一下皮膚屏障是怎麼運作的，這樣您會比較理解我為什麼會建議您這個方向。' },
 
-            { type: 'sub-title', text: '敏感肌 5 入口（2026-05 重組）' },
+            { type: 'sub-title', text: '敏感肌三級（2026-07 重組 · 依化妝水刺痛測試判級）' },
             { type: 'tag-table', rows: [
-              ['Foundation', '屏障管理', '修復肌膚屏障 · 敏感修護的第一步'],
-              ['Lv.1', '益菌修護管理', '換季或壓力誘發的輕度敏感'],
-              ['Rxpert 處方', '單效 / 複方 / 全效（可展開）', '中度敏感 → 慢性泛紅 三級對應'],
-              ['Renewal', 'CIVASAN 時光煥膚管理', '老化、敏感、炎症、術後通用'],
-              ['醫美術後', '術後修護管理', '雷射 / 微針 / 換膚後 15 天內 · ⚠ 僅單次無包堂']
+              ['維養級', '屏障管理 2,080 / 益菌修護 2,580', '輕度敏感（化妝水正常用僅微刺）· 穩定期保養；益菌修護＝屏障流程＋益菌導入'],
+              ['修護級', '處方膠囊修護 3,580 / EXO 益膚修護 4,280', '中度敏感（化妝水後明顯刺痛）· 膠囊客製對症 vs 外泌體自我修護 二選一'],
+              ['急護級', '時光煥膚管理 3,280', '極度敏感（擦什麼都刺痛灼熱）· 先滅火：溫和剝脫＋冰導，不做刺激導入'],
+              ['醫美術後', '術後修護管理 1,880', '雷射 / 微針 / 換膚後 15 天內 · ⚠ 僅單次無包堂']
             ]},
-            { type: 'note', text: '處方膠囊群組是可展開的：點「處方膠囊管理」一次就展開單效/複方/全效三張子卡。系統會依鑑別診斷自動標記推薦的那一張。' },
+            { type: 'note', text: '處方膠囊修護內含 2 支客製膠囊，第 3 支 +500 加購。急性期客人（急護級）穩定後再轉修護級，不要直接上膠囊或 MTS。' },
 
             { type: 'sub-title', text: '一般肌：3 階分類 mental model' },
             { type: 'tip-list', title: '🎯 客人主訴對應路徑（諮詢時判斷用）', items: [
@@ -3544,8 +3624,8 @@ const COURSES = {
           subSections: [
             { type: 'tip-list', items: [
               '方案選擇：單次 vs 六堂包堂（85 折）',
-              '膠囊選擇（Lv.2 / Lv.3 / Lv.4 才出現）：Lv.2 選 1 顆、Lv.3 選 2 顆、Lv.4 選 3 顆',
-              '升級加購（Lv.1 / Lv.2 才出現）：可加屏障管理 +$1,000',
+              '膠囊選擇（處方膠囊修護才出現）：內含 2 支客製膠囊，第 3 支 +500 加購',
+              '升級加購（維養級才出現）：可加屏障管理 +$1,000',
               '方案合計：自動計算'
             ]},
             { type: 'warn', text: '⚠ 術後修護 shxh 沒有包堂價 — 系統會強制走單次。不要硬選包堂會出 bug。' },
@@ -3579,7 +3659,8 @@ const COURSES = {
           subSections: [
             { type: 'sub-title', text: '兩個常見加購' },
             { type: 'tip-list', items: [
-              '✨ 益菌修護加購 +NT$ 600 — 只在選 Rxpert 處方膠囊（單效 / 複方 / 全效）時推薦',
+              '✨ 益菌修護加購 +NT$ 600 — 只在選處方膠囊修護時推薦',
+              '💊 第 3 支膠囊 +NT$ 500 — 處方膠囊修護限定',
               '✦ 微生態平衡導入 +NT$ 300 — 任何敏感肌課程都可加'
             ]},
             { type: 'note', text: '系統會用 ✨ 標示「強烈推薦」的加購。客人不一定都要加，依需求介紹。' },
@@ -3653,7 +3734,7 @@ const COURSES = {
         { title: '情境 1：客人說「我用過很多產品都沒效」', script: '沒關係，這就是我們存在的原因。我們會先弄清楚您的皮膚現在處在哪個狀態，再給對應的方案。' },
         { title: '情境 2：客人擔心價格', script: '我們完全理解。可以先從單次體驗開始，覺得有效再考慮包堂。包堂是給已經確認方向的客人省預算用的。' },
         { title: '情境 3：客人問「我多久會看到效果」',
-          list: ['Lv.1 / Lv.2：2-4 週', 'Lv.3：6-8 週', 'Lv.4：3 個月以上'],
+          list: ['維養級：2-4 週', '修護級：6-8 週', '急護級（慢性炎症）：3 個月以上'],
           script: '敏感肌不是一兩次就能解決，但通常 2-3 次後您會感覺到皮膚穩定下來。' },
         { title: '情境 4：客人說別的店推銷某項目', script: '每家做法不一樣。敏感肌的課程我們只用皮膚承受得住的成分，避開酸類、雷射這類強刺激；一般肌課程則會依膚況判斷。長期下來屏障會越來越好。' },
         { title: '情境 5：客人想單次體驗', text: '直接點 Step 8 的「單次體驗」就好，不要勉強推包堂。單次體驗就是給她認識我們的機會。' },
@@ -4597,7 +4678,7 @@ const COURSES = {
         cta: '下次來可以幫你安排「抗痘課程」或加購「局部消痘」，整臉處理會更全面。' },
       { sit: '情境二｜客人主動提泛紅',
         q: '您剛剛提到最近一直泛紅，正好我們今天有舒緩面膜，順便幫你局部敷一下穩定肌膚屏障，這次免費送你。',
-        cta: '泛紅這件事需要「先穩屏障再做其他」，下次建議排「屏障管理」或「Lv.1 益菌修護」，先把地基蓋好。' },
+        cta: '泛紅這件事需要「先穩屏障再做其他」，下次建議排「屏障管理」或「益菌修護」（維養級），先把地基蓋好。' },
       { sit: '情境三｜換季關懷',
         q: '最近換季比較容易乾，我們今天課程後段幫你多加一個保濕導入，5 分鐘左右，這次招待您，幫您過渡這個季節。',
         cta: '下次可以排「極潤補水」系列，整套做完含水量會明顯穩定，比單次加值有效。' },
@@ -5400,11 +5481,11 @@ const COURSES = {
   ];
 
   const UPGRADE_SENSITIVE = [
-    ['Lv.1', '屏障管理', '2,080', '輕度敏感、初次屏障受損', '所有敏感修護的基礎，<strong>先把地基蓋好</strong>'],
-    ['Lv.2', '益菌修護管理', '2,580', '換季敏感、壓力誘發、季節性', '<strong>益菌調節微生態</strong>，比屏障管理多一層菌叢平衡'],
-    ['Lv.3', '處方膠囊 · 單效', '2,980', '中度敏感、不明刺痛灼熱', '<strong>一支專屬膠囊</strong>，精準處理單一問題'],
-    ['Lv.3+', '處方膠囊 · 複方', '3,580', '屏障明顯受損（升級屏障 ×4 堂）', '<strong>兩支互補膠囊</strong>同時處理發炎與修復'],
-    ['Lv.4', '處方膠囊 · 全效', '4,080', '慢性泛紅、玫瑰痤瘡、酒糟（升級屏障 ×6 堂）', '<strong>三支膠囊全面處理</strong>，慢性是長期管理不是急性舒緩']
+    ['維養級', '屏障管理', '2,080', '輕度敏感（化妝水正常用、僅短暫微刺）', '所有敏感修護的基礎，<strong>先把地基蓋好</strong>'],
+    ['維養級', '益菌修護管理', '2,580', '換季敏感、壓力誘發、微生態失衡', '屏障管理完整流程<strong>＋益菌平衡導入</strong>'],
+    ['修護級', '處方膠囊修護', '3,580', '中度敏感（化妝水後明顯刺痛數秒）', '<strong>兩支客製膠囊</strong>對症處理；第 3 支 +500 加購'],
+    ['修護級', 'EXO 益膚修護', '4,280', '缺水型敏感、想更深層修護', '<strong>外泌體＋乳酸菌</strong>幫皮膚自我修護，敏感線天花板'],
+    ['急護級', '時光煥膚管理', '3,280', '極度敏感（擦什麼都刺痛灼熱）、急性炎症', '<strong>先滅火</strong>：溫和剝脫＋冰導＋蛋白修復；穩定後再轉修護級']
   ];
 
   const UPGRADE_EXTRA = [
