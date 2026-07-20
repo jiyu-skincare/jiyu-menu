@@ -2843,7 +2843,7 @@ const COURSES = {
             <div>
               <div class="entry-en">Consultation Technique · 諮詢方法論</div>
               <div class="entry-title" style="font-size:16px;margin-bottom:6px;">面 診 技 巧</div>
-              <div class="entry-desc">面診方法論 · 9 章手機可讀<br>心理建設 · 破冰 · 問診 · 開方案 · 成交 · 售後</div>
+              <div class="entry-desc">面診方法論 · 8 章手機可讀<br>心理建設 · 破冰 · 問診 · 開方案 · 成交 · 售後</div>
             </div>
             <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--accent);">→</span>
           </div>
@@ -2931,7 +2931,7 @@ const COURSES = {
             <div>
               <div class="entry-en">Staff Purchase</div>
               <div class="entry-title" style="font-size:16px;margin-bottom:6px;">員 購 價 目</div>
-              <div class="entry-desc">消費者定價七折<br>CIVASAN · Rxpért · THESERA</div>
+              <div class="entry-desc">消費者定價七折<br>CIVASAN · Rxpert · THESERA</div>
             </div>
             <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--brown-light);">→</span>
           </div>
@@ -3655,7 +3655,7 @@ const COURSES = {
         { title: '情境 3：客人問「我多久會看到效果」',
           list: ['Lv.1 / Lv.2：2-4 週', 'Lv.3：6-8 週', 'Lv.4：3 個月以上'],
           script: '敏感肌不是一兩次就能解決，但通常 2-3 次後您會感覺到皮膚穩定下來。' },
-        { title: '情境 4：客人說別的店推銷某項目', script: '每家做法不一樣。我們只做敏感肌可以承受的東西，所以避開了酸類、雷射這類強刺激。長期下來屏障會越來越好。' },
+        { title: '情境 4：客人說別的店推銷某項目', script: '每家做法不一樣。敏感肌的課程我們只用皮膚承受得住的成分，避開酸類、雷射這類強刺激；一般肌課程則會依膚況判斷。長期下來屏障會越來越好。' },
         { title: '情境 5：客人想單次體驗', text: '直接點 Step 8 的「單次體驗」就好，不要勉強推包堂。單次體驗就是給她認識我們的機會。' },
         { title: '情境 6：客人是醫美術後', list: ['7 天內：建議「術後修護管理」（贈術後修護禮）', '7 天以上：依照膚況走一般敏感肌路線'] },
         { title: '⭐ 新客留客心法 · 想放鬆也是合理主訴（真實案例）',
@@ -4224,7 +4224,7 @@ const COURSES = {
     },
 
     rxpert: {
-      name: 'R x p é r t', nameEn: 'Rxpért 奧可思博',
+      name: 'R x p é r t', nameEn: 'Rxpert 奧可思博',
       note: '智富美國際代理 · 2026 皮膚管理師專價',
       sections: [
         { title: '濃 縮 膠 囊 · 九 支 組', items: [
@@ -4678,7 +4678,7 @@ const COURSES = {
             <span class="ce-sec-line"></span>
           </div>
           <div class="ce-intro" style="padding: 0 0 10px; font-size: 12px; color: var(--brown-light);">
-            <p>※ 贈品來源 = 雜牌（試過的其他品牌）+ 即期品。自家代理的 CIVASAN / Rxpért / THESERA <strong>主力產品不能拿來送</strong>（成本太高），即期分裝才可以。</p>
+            <p>※ 贈品來源 = 雜牌（試過的其他品牌）+ 即期品。自家代理的 CIVASAN / Rxpert / THESERA <strong>主力產品不能拿來送</strong>（成本太高），即期分裝才可以。</p>
           </div>
           <div class="ce-cat-grid">${catsHTML}</div>
         </section>
@@ -4723,6 +4723,7 @@ const COURSES = {
             <li>送的時候要說出「為什麼送」，讓客人感受到誠意，不是隨便送</li>
             <li>不要說「治療」「保證」「100% 改善」這類字眼（醫療廣告法）</li>
             <li>儀器加值（白格）優先想到 — 沒實品成本最划算</li>
+            <li>加值贈送是「送服務」不動價格；要動到<strong>價格</strong>（折扣 / 降價 / 送堂數）一律請示店長</li>
             <li>遇到不確定的狀況，直接 LINE 店長 確認，寧可問也不要亂送</li>
             <li>送之後要主動引導：「下次來可以幫您安排完整的 XX 課程，會更全面」</li>
           </ul>
@@ -5181,27 +5182,6 @@ const COURSES = {
         <div class="hero-orn"><span class="diamond"></span></div>
         <div class="hero-sub">依底型 × 訴求查比例</div>
       </header>
-      <div class="search-wrap"><input type="text" class="search-input" placeholder="搜尋膠囊 / 底型 / 訴求 / 配方..." /></div>
-      <div class="filter-row">
-        <div class="filter-label">底型 · Skin Type</div>
-        <div class="chips">
-          <button class="chip active">全部</button>
-          <button class="chip">乾性</button>
-          <button class="chip">油性</button>
-          <button class="chip">混合性</button>
-          <button class="chip">脫水油性</button>
-          <button class="chip">中性</button>
-        </div>
-        <div class="filter-label">訴求 · Concern</div>
-        <div class="chips">
-          <button class="chip active">全部</button>
-          <button class="chip">保濕補水</button>
-          <button class="chip">抗痘控油</button>
-          <button class="chip">美白淡斑</button>
-          <button class="chip">抗老緊緻</button>
-          <button class="chip">屏障敏感</button>
-        </div>
-      </div>
       ${completeHTML}
       ${pendingHTML}
     `;
@@ -5309,7 +5289,7 @@ const COURSES = {
         { num: 4, text: '<strong>新客</strong>：填肌膚檢測儀資料表（同意書 / 基本資料）' },
         { num: 5, text: '<strong>新客</strong>：照肌膚檢測儀' },
         { num: 6, text: '<strong>等檢測結果同時</strong>：開始填面診諮詢 Step 1（基本資料 + 底型）' },
-        { num: 7, text: '<strong>新客</strong>：與客人一起看肌膚檢測報告' },
+        { num: 7, text: '<strong>新客</strong>：與客人一起看肌膚檢測報告<br>💡 檢測先拍不先講 — 問診做完最後才帶看報告驗證，銷售感最低（對應面診技巧「先問診後檢測」）' },
         { num: 8, text: '<strong>新客</strong>：繼續面診諮詢 → 確認課程' },
         { num: 9, text: '<strong>舊客</strong>：查上次紀錄、確認這次療程（取代 4–8）' },
         { num: 10, text: '要敷臉前問客人需要茶 / 點心嗎' },
@@ -5326,7 +5306,7 @@ const COURSES = {
     {
       phase: '04', en: 'Checkout', title: '結帳',
       steps: [
-        { num: 14, text: '⭐ <strong>結帳前必問：本月活動是否介紹過？</strong><br>當月活動見諮詢頁首頁 banner / Step 7 上方 banner（過月會自動隱藏）<br>例：6 月 THESERA 套盒 H / G / L 三款 $3,280（原 $4,280）—— 對應乾燥 / 色素疤痕 / 細紋客人' },
+        { num: 14, text: '⭐ <strong>結帳前必問：本月活動是否介紹過？</strong><br>當月活動見諮詢頁首頁 banner / Step 7 上方 banner（過月會自動隱藏）' },
         { num: 15, text: '優先 <strong>現金 / 轉帳</strong>；客人主動問 LINE Pay 才給' },
         { num: 16, text: '<em>刷卡需加 3% 手續費</em>' }
       ]
@@ -5337,7 +5317,7 @@ const COURSES = {
         { num: 17, text: '⭐ 預約系統<strong>服務歷程</strong>：上傳客人<strong>前後照</strong>' },
         { num: 18, text: '⭐ 寫<strong>詳細課程內容</strong>（給日後查詢 / 下次續做用）→ <a href="#/service-history-template" style="color:var(--accent);text-decoration:underline;">▸ 查看填寫範本</a><br>例：酸上 8 分、保鮮膜輔助；去角質方式（手工 / 機器 / 酸類）；MTS 幾針 + 出針長度等具體參數' },
         { num: 19, text: '⭐ 寫<strong>店家筆記</strong>（客人看不到、僅內部留檔）→ <a href="#/service-history-template" style="color:var(--accent);text-decoration:underline;">▸ 查看填寫範本</a><br>· 今天聊天內容（下次客人來前複習 → 記得他發生的事情 = 客人覺得被在乎、大加分）<br>· 客人在意事項（不要茶點 / 對貓過敏 / 怕冷等）<br>· 給下一位接他的美容師的備注' },
-        { num: 20, text: '<strong>當天</strong>手動 LINE 客人：諮詢紀錄圖 + 滿意度問卷連結<br>⚠️ 訊息中提示「對比照可到服務歷程觀看」' },
+        { num: 20, text: '<strong>當天</strong>手動 LINE 客人：諮詢紀錄圖 + 滿意度問卷連結<br>訊息範本在<strong>官方 LINE 預設訊息</strong>，點開直接複製使用<br>⚠️ 訊息中提示「對比照可到服務歷程觀看」' },
         { num: 21, text: '客人填寫完回傳 → 贈送 <strong>85 折券一張</strong>（限單堂使用、不可疊包堂 / 儲值折扣）' }
       ]
     }
@@ -5834,6 +5814,9 @@ const COURSES = {
 <li>很多門店一進來就照皮膚檢測儀 → 客人在別處做過、很煩、只想快點做護理 → 因為信任還沒建立,一上來就是重銷售感的東西。客人都知道「照檢測=等下要坐下來聽你推方案」,信任沒建起來自然抗拒。</li>
 <li>正確順序:<strong>先問診</strong>(判斷問題、也是建立專業信任的第一步)→ 治療理念 → 再檢測。</li>
 </ul>
+<blockquote>
+<p>💡 <strong>肌·癒實際動線對照</strong>:新客一進來會先拍皮膚檢測(建檔用),但<strong>不先講結果</strong>——先完成問診,最後才帶客人看報告、驗證問診的猜想。精神一樣是「先問診、後講檢測」。</p>
+</blockquote>
 <h3>問診 = 把自己當醫生</h3>
 <ul>
 <li>醫生會先問「哪裡不舒服」,不會一上來就開藥/叫你做 CT/抽血——那樣你會覺得他不專業、甚至懷疑他為了賺檢測費。客人對「一進門就照皮膚檢測」是同樣感覺。</li>
@@ -5960,21 +5943,8 @@ const COURSES = {
 <ul>
 <li>懂不同產品/方式/問題怎麼搭、順序怎麼排(對照肌·癒〈肌膚處理順序〉+〈聯合治療〉SOP)。</li>
 </ul>
-<hr />
 </div></details>
-<details class="ct-chapter"><summary class="ct-summary">五、加值權益(客人問要能答)<span class="ct-arrow">▾</span></summary><div class="ct-body">
-<h3>延保權益(會員/追蹤服務的免費加值)</h3>
-<ul>
-<li>例:會員可隨時免費來照光療儀 + 免費醫療級面膜;做完抗炎後回家爆粉刺痘痘,回店做簡單清理/針清也免費。</li>
-<li>對客人是「讓療程更完整」的權益——他不用擔心中間狀況沒地方處理。</li>
-<li>新客也給:第一次沒辦卡,美容師追蹤服務——有赫氏反應、皮膚發乾需要敷面膜照燈,都邀他免費回來。讓他覺得「沒辦卡服務也這麼好」,有需要就會回來辦。</li>
-</ul>
-<blockquote>
-<p>⚠️【合規提醒】「醫療級光療儀/醫用面膜/1998 顆燈珠」這類<strong>「醫療級」宣稱</strong>要注意:對客人講「醫療級」涉及醫療器材宣稱,若設備/面膜不是合法登記的醫療器材,這樣講有廣告合規風險。<strong>建議改講體感與功能</strong>(如「高階光療」「舒緩鎮定面膜」),不確定字號怎麼講,先問店長。</p>
-</blockquote>
-<hr />
-</div></details>
-<details class="ct-chapter"><summary class="ct-summary">六、案例:用故事,不只用對比圖<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<details class="ct-chapter"><summary class="ct-summary">五、案例:用故事,不只用對比圖<span class="ct-arrow">▾</span></summary><div class="ct-body">
 <ul>
 <li>前面講很多會把客人講到一頭霧水,這時拿<strong>具象化的案例</strong>。找<strong>皮膚情況、治療思路跟他相近</strong>的案例才有參考價值。</li>
 <li>放 iPad,面診時直接看。<strong>面診前一定先熟這些案例</strong>——不能只打開一張圖,要把圖背後的<strong>故事</strong>講清楚,才有共情與真實感。</li>
@@ -5983,7 +5953,7 @@ const COURSES = {
 </ul>
 <hr />
 </div></details>
-<details class="ct-chapter"><summary class="ct-summary">七、成交環節(心態四要點)<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<details class="ct-chapter"><summary class="ct-summary">六、成交環節(心態四要點)<span class="ct-arrow">▾</span></summary><div class="ct-body">
 <ol>
 <li><strong>不是「賣東西」,是「和客人一起買」</strong>:當客人的閨蜜,站他的角度幫他選真正適合的方案——同一戰線。</li>
 <li><strong>讓客人自己說要買</strong>:每個總結節點都給他一個「肯定」的機會——「你認不認可我的方案?認不認可我的專業?願不願意配合我一起達到你要的皮膚狀態?」讓他親口說出「願意/認可」。人更重視自己說出口的結論。</li>
@@ -5995,27 +5965,28 @@ const COURSES = {
 </blockquote>
 <hr />
 </div></details>
-<details class="ct-chapter"><summary class="ct-summary">八、成交流程:讓客人親口認可<span class="ct-arrow">▾</span></summary><div class="ct-body">
-<h3>8.1 執行動作</h3>
+<details class="ct-chapter"><summary class="ct-summary">七、成交流程:讓客人親口認可<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<h3>7.1 執行動作</h3>
 <ol>
 <li><strong>求方案認可</strong>:讓客人<strong>親口說</strong>「我認可你的方案/專業」,並說出他的預期與<strong>剛需</strong>。</li>
 <li><strong>把剛需再細講一遍</strong>:針對他自己認知裡最重要的剛需,單獨拿出來細講,徵求他意見「想不想跟我一起實施這個完美方案」。</li>
 <li><strong>以退為進</strong>:「有多少錢就解決多少問題」,不逼他買整個方案;從初期剛需開始,一份錢解決一份問題。</li>
 <li><strong>報方案時給二選一</strong>:店裡的方案基本結構是「入門版 vs 完整版」,客人從「買不買」變成「選 A 還是選 B」,更容易成交。<strong>選哪個都好,重點是他留下來、進入循環護理</strong>。</li>
 </ol>
-<h3>8.2 答疑:同意且消解(絕不否定客人)</h3>
+<h3>7.2 答疑:同意且消解(絕不否定客人)</h3>
 <ul>
 <li>客人提問題(如「有點貴」),<strong>先聽完、先同意、再消解</strong>,不要一句「不貴啊」把你們推到對立面。</li>
 <li>範例:「確實我們價格不便宜,很多客人也說貴——但我們的性價比高:用的產品跟儀器是市面上排得上前段的好東西,我天天鑽研皮膚專業、能給你多於預期的效果,很多人大老遠來找我做諮詢,專業配得上這個價。」→ 同意+消解反而讓信任更高。</li>
 </ul>
-<h3>8.3 敢報價、要自信</h3>
+<h3>7.3 敢報價、要自信</h3>
 <ul>
 <li>別覺得自己貴。東西好、效果好、專業配得上價格,報價時就理直氣壯。</li>
 <li><strong>不要主動送優惠或降價</strong>——優惠、加贈、次數調整這些屬於方案調整層級,遇到客人堅持要 → 請示店長判斷。</li>
+<li>跟「加值贈送 SOP」不衝突:加值贈送是<strong>送小服務、不動價格</strong>,A 級內(50 元以下)員工可自行決定;<strong>動到價格</strong>(折扣/降價/送堂數)才需要請示店長。</li>
 </ul>
 <hr />
 </div></details>
-<details class="ct-chapter"><summary class="ct-summary">九、售後跟蹤與客情經營(續單的關鍵)<span class="ct-arrow">▾</span></summary><div class="ct-body">
+<details class="ct-chapter"><summary class="ct-summary">八、售後跟蹤與客情經營(續單的關鍵)<span class="ct-arrow">▾</span></summary><div class="ct-body">
 <blockquote>
 <p>「動不動開大單」的祕訣就是<strong>客情</strong>——沒什麼大邏輯,都是小細節。</p>
 </blockquote>
@@ -6056,8 +6027,8 @@ const COURSES = {
         <div class="hero-sub">諮詢方法論 · 破冰 · 成交 · 售後</div>
       </header>
       <div class="us-intro">
-        📖 <strong>諮詢方法論</strong>共 9 章 · 依真實面診順序<br>
-        診前心理建設 → 破冰 → 問診 → 開方案 → 加值 → 案例 → 成交心態 → 成交流程 → 售後
+        📖 <strong>諮詢方法論</strong>共 8 章 · 依真實面診順序<br>
+        診前心理建設 → 破冰 → 問診 → 開方案 → 案例 → 成交心態 → 成交流程 → 售後
       </div>
       <div class="ct-content">${CT_HTML}</div>
     `;
@@ -6075,7 +6046,7 @@ const COURSES = {
     { num: '04', title: '私人行為與空間分際',
       body: '店內為營業場所，請避免將私人活動（如<strong>閒聊、飲酒、招待朋友</strong>等）帶入空間，除非事前經同意或安排。' },
     { num: '05', title: '尊重與共識',
-      body: '本店重視每位合夥人及協助者的參與，但也期望彼此尊重流程與邊界，建立<strong>透明、專業、和諧</strong>的合作關係。' }
+      body: '本店重視每位工作夥伴的參與，但也期望彼此尊重流程與邊界，建立<strong>透明、專業、和諧</strong>的合作關係。' }
   ];
 
   const HOUSE_RULES_CASES = [
