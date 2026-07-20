@@ -1910,7 +1910,39 @@ const CATEGORIES = {
   },
   sensitive: {
     name: '敏感肌', nameEn: 'Sensitive Skin',
-    intro: { lead: '化妝水刺痛測試分三級，先判級再選課', em: '急性期先滅火，再修護、再維養' },
+    intro: { lead: '課程是工具，燈號是皮膚今天的狀態', em: '每次到店先看燈號，同一堂課換燈換做法',
+      extraHTML: `
+      <div style="margin:0 22px 20px;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;">
+        <div style="padding:12px 16px;background:var(--ink);color:var(--bg);font-size:13px;letter-spacing:0.12em;font-weight:500;">🚦 先看今天的燈號（化妝水刺痛測試）</div>
+        <div style="padding:12px 16px;font-size:12px;line-height:1.9;color:var(--ink-mid);letter-spacing:0.03em;">
+          🔴 <strong>急性</strong>：擦什麼都刺痛灼熱／正在過敏／術後 15 天內<br>
+          🟡 <strong>修護</strong>：化妝水後明顯刺痛數秒<br>
+          🟢 <strong>維養</strong>：化妝水正常用、僅短暫微刺
+        </div>
+        <div style="padding:12px 16px;border-top:1px solid var(--line-soft);background:rgba(217,119,87,0.06);font-size:12px;line-height:1.9;color:var(--ink-mid);">
+          <strong style="color:var(--warn);">🔴 紅燈通用規則（任何課程都一樣，只有這一條）</strong><br>
+          ① 跳過去角質＋清粉刺　② 導入一律冰鎮／徒手，退紅後可轉超聲波（邊做邊觀察有沒有變紅）　③ 刺痛立即停
+        </div>
+        <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+          <thead><tr style="background:var(--bg-soft);">
+            <th style="padding:8px 10px;text-align:left;color:var(--ink);">課程</th>
+            <th style="padding:8px 6px;text-align:center;">🔴 急性</th>
+            <th style="padding:8px 6px;text-align:center;">🟡 修護</th>
+            <th style="padding:8px 6px;text-align:center;">🟢 維養</th>
+          </tr></thead>
+          <tbody style="color:var(--ink-mid);">
+            <tr style="border-top:1px solid var(--line-soft);"><td style="padding:7px 10px;">急護舒緩 2,080</td><td style="text-align:center;">⭐ 主場</td><td style="text-align:center;">—</td><td style="text-align:center;">—</td></tr>
+            <tr style="border-top:1px solid var(--line-soft);"><td style="padding:7px 10px;">益菌修護 2,580</td><td style="text-align:center;">—</td><td style="text-align:center;">✓ 清粉刺放輕</td><td style="text-align:center;">⭐ 主場</td></tr>
+            <tr style="border-top:1px solid var(--line-soft);"><td style="padding:7px 10px;">膠囊修護 3,580</td><td style="text-align:center;">✓ 冰導起手</td><td style="text-align:center;">⭐ 主場</td><td style="text-align:center;">✓</td></tr>
+            <tr style="border-top:1px solid var(--line-soft);"><td style="padding:7px 10px;">時光煥膚 4,280</td><td style="text-align:center;">✓ 跳角質清粉刺</td><td style="text-align:center;">✓ 完整步驟</td><td style="text-align:center;">✓</td></tr>
+            <tr style="border-top:1px solid var(--line-soft);"><td style="padding:7px 10px;">EXO 益膚 4,280</td><td style="text-align:center;">✓ 冰鎮導入</td><td style="text-align:center;">⭐ 主場</td><td style="text-align:center;">✓ 可 MTS</td></tr>
+          </tbody>
+        </table>
+        <div style="padding:10px 16px;border-top:1px solid var(--line-soft);font-size:11.5px;color:var(--brown-light);line-height:1.8;">
+          💰 紅燈模式跳步驟<strong>價格照舊</strong>——跳的是刺激步驟，鎮靜用料反而更多。<br>
+          🗣 對客話術：「我們每次都先看你今天皮膚的燈號，同一堂課紅燈跟綠燈做法不一樣——這就是為什麼每次都要先幫你看膚況。」
+        </div>
+      </div>` },
     sections: [
       { title: '維養級 · 輕度敏感', num: '01', courses: ['sens-lv1'] },
       { title: '修護級 · 中度敏感', num: '02', courses: ['sens-lv3', 'sens-exo'] },
@@ -2653,10 +2685,11 @@ const COURSES = {
     recommendedFor: '輕度敏感（化妝水正常用、僅短暫微刺）、換季或壓力誘發、微生態失衡、偶發泛紅發癢\n基礎修護完整流程 ＋ 益菌平衡導入',
     meta: [{ v: '60', l: 'MIN' }, { v: '7', l: 'STEPS' }],
     steps: [],
+    generalNotes: '🚦 燈號：🟢 綠燈主場。🟡 黃燈可做——清粉刺放輕即可。🔴 紅燈不做，先轉急護舒緩／時光煥膚（紅燈模式）。',
     productSummary: ['雙層維穩潔面乳', '水合清透化妝水', '清粉刺工具組', '氨基酸水漾凝露', '冰肌霜（冰鎮用）', '控制修復凝膠＋修護滋潤霜（敏感維養 4:1）', '微晶脂屏障霜', '皮脂膜精華油', '益菌平衡精華（微生態系列）'],
     instruments: ['冷溫儀（冷）', '超聲波導入儀']
   },
-  'sens-lv3': { name: '處方膠囊修護', category: 'sensitive', level: 3, metaTc: '修護級 · 處方膠囊', desc: '中度敏感（化妝水後明顯刺痛）· 含兩支客製膠囊｜第 3 支 +500 加購', status: 'pending' },
+  'sens-lv3': { name: '處方膠囊修護', category: 'sensitive', level: 3, metaTc: '修護級 · 處方膠囊', desc: '中度敏感（化妝水後明顯刺痛）· 含兩支客製膠囊｜第 3 支 +500 加購｜🔴 紅燈可做：冰導起手，退紅可轉超聲波', status: 'pending' },
   'sens-exo': {
     name: 'EXO 益膚修護', category: 'sensitive', metaTc: '修護級 · 外泌體',
     status: 'complete', kicker: '敏感肌修護 · 修護級 EXO 外泌體',
@@ -2684,11 +2717,11 @@ const COURSES = {
           { label: 'A｜MTS 導入', sub: '膚況穩定',
             products: [{ name: 'EXO 益膚安瓶 1 劑＋2 劑（Reracine）', desc: '1 劑粉＋2 劑液現場混合', dose: '各 1 份' }],
             method: '1＋2 劑混合後，順淋巴方向全臉 MTS 操作。' },
-          { label: 'B｜超音波／徒手', sub: '泛紅或刺痛',
+          { label: 'B｜冰鎮／超音波／徒手', sub: '泛紅、刺痛或紅燈',
             products: [{ name: 'EXO 益膚安瓶 1 劑＋2 劑（Reracine）', dose: '各 1 份' }],
-            method: '泛紅或有刺痛感改超音波或徒手順淋巴按壓導入，降低刺激。' }
+            method: '泛紅或刺痛改超音波或徒手順淋巴按壓導入。\n🔴 紅燈（急性期）：冰鎮導入起手，退紅後可轉超聲波，邊做邊觀察有沒有變紅。' }
         ],
-        handling: '⚠️ 化妝水刺痛測試明顯者一律走 B。\n⚠️ MTS 後微針通道約 4–6 小時才閉合，導入後不再上任何刺激產品。' },
+        handling: '⚠️ 化妝水刺痛測試明顯者一律走 B。\n⚠️ 🔴 紅燈（急性期）：清粉刺跳過、導入用冰鎮。\n⚠️ MTS 後微針通道約 4–6 小時才閉合，導入後不再上任何刺激產品。' },
       { name: '鎖水修護', timer: 300,
         products: [
           { name: '玻尿酸乳霜（Reracine）', desc: '三重透明質酸＋神經醯胺' },
@@ -2723,7 +2756,7 @@ const COURSES = {
       { name: 'Step 1｜時光煥膚 去角質凝膠', timer: 300, meta: '3 種手法',
         products: [{ name: '時光煥膚 去角質凝膠（CIVASAN）', desc: '適用所有肌膚的無痛剝脫去角質\n核心成分：聚異丁烯、天然纖維素、超細海藻顆粒、麴酸', dose: '5ml × 5ea' }],
         method: '依膚況選用以下 3 種手法之一：\n\n手法 1｜塗上放置 3 分鐘後清潔（敏感肌、術後肌）\n手法 2｜打圈按摩 3 分鐘可加水（很久沒做角質）\n手法 3｜放置 80–90% 變乾後順紋理按摩，不加水撥乾淨再擦（正常肌膚）',
-        handling: '⚠️ 慢性泛紅型客人務必選手法 1（最溫和）。\n⚠️ 觀察皮膚反應，如有刺痛立即擦除。' },
+        handling: '⚠️ 🔴 紅燈（急性期）此步連同清粉刺直接跳過。\n⚠️ 慢性泛紅型客人務必選手法 1（最溫和）。\n⚠️ 觀察皮膚反應，如有刺痛立即擦除。' },
       STEP_EXTRACTION,
       { name: 'Step 2＋3｜彈力精華導入', timer: 600, meta: 'A/B 路徑',
         branches: [
@@ -2748,7 +2781,7 @@ const COURSES = {
         products: [{ name: '軟膜或面膜', desc: '建議使用品牌專用面膜' }],
         method: '照光結束不用擦，直接上軟膜或面膜，加照光 15 分鐘。\n收尾：BB 霜 / 防曬。' }
     ],
-    generalNotes: '急護級定位：客人處於「擦什麼都刺痛」的急性期，先滅火、不做刺激。\n\n急護級三條紅線：\n· 角質手法一律選 1（最溫和），嚴重時可整步省略\n· 導入一律走 B 冰導，不做 MTS／微電流\n· 全程觀察反應，刺痛立即停止\n\n此套盒也是敏感肌「最百搭」選擇——判斷不出膚況時做這堂最安全。\n急護級兩堂分工：正在過敏／術後 15 天內先走「急護舒緩管理 2,080」（純鎮靜、不去角質不清粉刺）；過了急性期想完整滅火＋修復做這堂。\n膠囊客製屬修護級課程；急性期穩定後（不刺痛了）再轉處方膠囊修護或 EXO 益膚修護。\n\n此套盒不對外販售給消費者。',
+    generalNotes: '急護級定位：客人處於「擦什麼都刺痛」的急性期，先滅火、不做刺激。\n\n🔴 紅燈模式（急性期）：\n· 去角質凝膠＋清粉刺<strong>直接跳過</strong>\n· 導入一律走 B 冰導，不做 MTS／微電流；退紅後可轉超聲波（邊做邊觀察有沒有變紅）\n· 全程觀察反應，刺痛立即停止\n🟡 黃燈（修護期）：完整步驟正常做（角質手法依膚況選 1–3）\n\n此套盒也是敏感肌「最百搭」選擇——判斷不出膚況時做這堂最安全。\n急護級兩堂分工：正在過敏／術後 15 天內先走「急護舒緩管理 2,080」（純鎮靜、不去角質不清粉刺）；過了急性期想完整滅火＋修復做這堂。\n膠囊客製屬修護級課程；急性期穩定後（不刺痛了）再轉處方膠囊修護或 EXO 益膚修護。\n\n此套盒不對外販售給消費者。',
     productSummary: ['潔面乳', '清粉刺工具組（輕度）', 'CIVASAN 時光煥膚 去角質凝膠', 'CIVASAN 時光煥膚 P5 彈力精華液', 'CIVASAN 時光煥膚 蠶絲蛋白修復霜', 'CIVASAN 時光煥膚 深層面霜'],
     instruments: ['MTS 微針滾輪', '微電流儀', '超聲波導入儀', '冰導儀', '光療儀'],
     slides: [
@@ -3038,6 +3071,7 @@ COURSES['sens-lv1'].steps = [
     }).join('');
 
     const introHTML = cat.intro ? `<div class="cat-intro">${esc(cat.intro.lead)}<br><em>${esc(cat.intro.em)}</em></div>` : '';
+    const extraHTML = (cat.intro && cat.intro.extraHTML) ? cat.intro.extraHTML : '';
 
     $view.innerHTML = `
       <nav class="back-bar"><a href="#/"><span class="back-arr">←</span><span class="back-en">HOME</span><span>回首頁</span></a></nav>
@@ -3052,6 +3086,7 @@ COURSES['sens-lv1'].steps = [
         <div class="pbar-track"><div class="pbar-fill" style="width:${pct}%"></div></div>
       </div>
       ${introHTML}
+      ${extraHTML}
       ${sectionsHTML}`;
     window.scrollTo(0,0);
   }
@@ -3571,7 +3606,14 @@ COURSES['sens-lv1'].steps = [
               ['修護級', '處方膠囊修護 3,580 / EXO 益膚修護 4,280', '中度敏感（化妝水後明顯刺痛）· 膠囊客製對症 vs 外泌體自我修護 二選一'],
               ['急護級', '急護舒緩 2,080 / 時光煥膚 4,280', '正在過敏、急性泛紅、雷射/微針後 15 天內 — 急護舒緩＝純鎮靜（不去角質不清粉刺 · ⚠ 僅單次無包堂）；時光煥膚＝完整滅火＋修復']
             ]},
-            { type: 'note', text: '處方膠囊修護內含 2 支客製膠囊，第 3 支 +500 加購。急性期客人（急護級）穩定後再轉修護級，不要直接上膠囊或 MTS。' },
+            { type: 'note', text: '處方膠囊修護內含 2 支客製膠囊，第 3 支 +500 加購。' },
+            { type: 'sub-title', text: '🚦 課程是工具、燈號是狀態（同一堂課換燈換做法）' },
+            { type: 'tip-list', items: [
+              '🔴 紅燈通用規則（唯一要背的）：跳過去角質＋清粉刺、導入冰鎮／徒手（退紅可轉超聲波邊做邊觀察）、刺痛即停',
+              '時光煥膚／EXO／膠囊修護在紅燈都可做（照紅燈規則調整），<strong>價格照舊</strong>——跳的是刺激步驟、鎮靜用料更多',
+              '完整「課程 × 燈號」對照表在敏感肌課程頁最上方'
+            ]},
+            { type: 'script', text: '我們每次都會先看您今天皮膚的燈號，同一堂課、紅燈跟綠燈的做法不一樣，這就是為什麼每次都要先幫您看膚況。' },
 
             { type: 'sub-title', text: '一般肌：3 階分類 mental model' },
             { type: 'tip-list', title: '🎯 客人主訴對應路徑（諮詢時判斷用）', items: [
