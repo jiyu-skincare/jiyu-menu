@@ -1949,7 +1949,7 @@ const CATEGORIES = {
         </div>
       </div>` },
     sections: [
-      { title: 'Level 1 · 輕度敏感', num: '01', courses: ['sens-lv1'] },
+      { title: 'Level 1 · 輕度敏感', num: '01', courses: ['sens-lv1', 'sens-lv1b'] },
       { title: 'Level 2 · 中度敏感', num: '02', courses: ['sens-lv3', 'sens-lv4', 'sens-exo'] },
       { title: 'Level 3 · 過敏中／炎症／術後', num: '03', courses: ['post-procedure'] }
     ]
@@ -2693,6 +2693,10 @@ const COURSES = {
     generalNotes: '🚦 Level：🟢 Level 1 首選課程。🟡 Level 2 可做——清粉刺放輕即可。🔴 Level 3 不做，先轉急護舒緩。',
     productSummary: ['雙層維穩潔面乳', '水合清透化妝水', '清粉刺工具組', '氨基酸水漾凝露', '冰肌霜（冰鎮用）', '控制修復凝膠＋修護滋潤霜（敏感維養 4:1）', '微晶脂屏障霜', '皮脂膜精華油', '益菌平衡精華（微生態系列）'],
     instruments: ['冷溫儀（冷）', '超聲波導入儀']
+  },
+  'sens-lv1b': {
+    name: '定製膠囊單支管理', category: 'sensitive', level: 1, metaTc: 'Level 1 · 單支定製',
+    desc: '輕度敏感 · 單支定製膠囊加強對症｜$2,980', status: 'pending'
   },
   'sens-lv3': { name: '定製膠囊管理', category: 'sensitive', level: 3, metaTc: 'Level 2 · 定製膠囊', desc: '中度敏感（化妝水後明顯刺痛）· 含兩支客製膠囊｜第 3 支 +$500 加購｜膠囊需搭配 MTS 導入才有效，Level 3 急性期不安排', status: 'pending' },
   'sens-exo': {
@@ -3617,7 +3621,7 @@ COURSES['sens-lv1'].steps = [
 
             { type: 'sub-title', text: '敏感肌三級（2026-07 重組 · 依化妝水刺痛測試判級）' },
             { type: 'tag-table', rows: [
-              ['Level 1', '益菌修護 $2,580', '輕度敏感（化妝水正常用僅微刺）· 穩定期保養；基礎修護流程＋益菌平衡導入'],
+              ['Level 1', '益菌修護 $2,580 / 單支定製膠囊 $2,980', '輕度敏感（化妝水正常用僅微刺）· 穩定期保養；益菌＝基礎修護＋益菌導入，單支膠囊＝想加強對症可小升單'],
               ['Level 2', '定製膠囊 $3,580 / 時光煥膚 $4,080 / EXO 益膚平衡 $4,280', '中度敏感（化妝水後明顯刺痛）· 膠囊對症／時光完整滅火修復／EXO 適合反反覆覆的肌膚'],
               ['Level 3', '急護舒緩 $2,080（唯一安排）', '正在過敏、急性泛紅、雷射/微針後 7 天內 — 純鎮靜不去角質不清粉刺 · ⚠ 僅單次無包堂；退火後轉 Level 2（權益：7 天內免費檢視＋當日轉課 8 折須預約）']
             ]},
@@ -5539,6 +5543,7 @@ COURSES['sens-lv1'].steps = [
 
   const UPGRADE_SENSITIVE = [
     ['Level 1', '益菌修護管理', '$2,580', '輕度敏感（化妝水正常用、僅短暫微刺）、換季敏感、微生態失衡', '基礎修護完整流程<strong>＋益菌平衡導入</strong>，先把地基蓋好'],
+    ['Level 1', '定製膠囊單支管理', '$2,980', '輕度敏感、想比益菌更對症一點', '<strong>單支定製膠囊</strong>，比益菌更精準但還不到 Level 2 雙支的強度'],
     ['Level 2', '定製膠囊管理', '$3,580', '中度敏感（化妝水後明顯刺痛數秒）', '<strong>兩支定製膠囊</strong>MTS 導入對症處理；第 3 支 +$500'],
     ['Level 2', '時光煥膚管理', '$4,080', '慢性泛紅、玫瑰斑；想一堂完整滅火＋修復', '<strong>完整滅火＋修復</strong>：溫和煥膚＋彈力導入＋蛋白修復'],
     ['Level 2', 'EXO 益膚平衡管理', '$4,280', '反反覆覆、老是不穩定的肌膚；缺水型敏感', '<strong>外泌體＋乳酸菌</strong>幫皮膚補回自我修護力，敏感線天花板'],
