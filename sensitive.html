@@ -20,12 +20,23 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html { background: #e4dbc9; -webkit-text-size-adjust: 100%; }
+
   body {
     background: var(--cream);
     font-family: 'Noto Serif TC', serif;
     color: var(--brown-deep);
-    width: 390px;
+    width: 100%;
+    max-width: 412px;
     margin: 0 auto;
+  }
+  @media (min-width: 480px) {
+    body {
+      margin: 28px auto;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 12px 50px rgba(58,32,18,0.16);
+    }
   }
 
   /* ── HEADER ── */
@@ -289,6 +300,28 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 12px; letter-spacing: 0.15em; color: rgba(196,164,138,0.6); margin-top: 6px;
   }
+
+  /* ── 質感升級（景深／桌機互動／可讀性，內容與價格不變） ── */
+  .level-card, .barrier-card, .addon-card, .post-card, .intro-note, .notice {
+    box-shadow: 0 2px 10px rgba(58,32,18,0.05);
+  }
+  .level-card, .barrier-card, .addon-card, .post-card {
+    transition: box-shadow 220ms ease, transform 220ms ease;
+  }
+  @media (hover: hover) and (min-width: 480px) {
+    .level-card:hover, .barrier-card:hover, .addon-card:hover, .post-card:hover {
+      box-shadow: 0 10px 24px rgba(58,32,18,0.11);
+      transform: translateY(-2px);
+    }
+  }
+  /* 最淡的小標籤加深一階：維持淡雅但看得清（無障礙對比） */
+  .course-label, .pkg-label, .addon-label-top, .notice-title, .course-detail {
+    color: #7c5a44;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .level-card, .barrier-card, .addon-card, .post-card { transition: none; }
+    .level-card:hover, .barrier-card:hover, .addon-card:hover, .post-card:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -304,7 +337,7 @@
 <!-- INTRO -->
 <div class="intro-note">
   先看今天的 Level，再選今天的課<br>
-  <em>數字越大，越需要溫柔對待</em>
+  <em>等級越高，越需要溫柔對待</em>
 </div>
 
 <!-- 01 敏感肌修護課程 -->
@@ -339,7 +372,7 @@
     </div>
     <div class="course-row" style="border-top:1px dashed var(--divider); padding-bottom:16px;">
       <div>
-        <div class="course-label">加 購 選 項　單 次</div>
+        <div class="course-label">推 薦 課 程　單 次</div>
         <div class="course-name">定製膠囊管理</div>
         <div class="course-detail">單支・比益菌更對症一點</div>
       </div>
@@ -395,7 +428,7 @@
     <div class="symptoms">
       <span class="symptoms-highlight">幾乎擦什麼都刺痛、灼熱，</span><br>
       或剛做完雷射、微針、果酸換膚等醫美<br>
-      處置 7 天內，皮膚正處於最脆弱的急性期，<br>
+      療程 7 天內，皮膚正處於最脆弱的急性期，<br>
       這時候只做一件事：先讓它停火。
     </div>
     <div class="course-row" style="padding-bottom:16px;">

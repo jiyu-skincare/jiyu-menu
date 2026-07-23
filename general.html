@@ -18,12 +18,22 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html { background: #e4dbc9; -webkit-text-size-adjust: 100%; }
+
   body {
     background: var(--cream);
     font-family: 'Noto Serif TC', serif;
     color: var(--brown-deep);
     max-width: 480px;
     margin: 0 auto;
+  }
+  @media (min-width: 540px) {
+    body {
+      margin: 28px auto;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 12px 50px rgba(58,32,18,0.16);
+    }
   }
 
   /* HEADER */
@@ -235,6 +245,26 @@
     background: rgba(196,164,138,0.4);
   }
   .footer-text { font-size: 10px; letter-spacing: 0.2em; color: var(--brown-pale); }
+
+  /* ── 質感升級（景深／桌機互動／可讀性，內容與價格不變） ── */
+  .entry-card, .entry-card-full, .mgmt-wrap, .upgrade-card, .pkg-card, .aqua-card, .bundle-card, .addon-block {
+    box-shadow: 0 2px 10px rgba(58,32,18,0.05);
+  }
+  .entry-card, .entry-card-full, .upgrade-card, .pkg-card {
+    transition: box-shadow 220ms ease, transform 220ms ease;
+  }
+  @media (hover: hover) and (min-width: 540px) {
+    .entry-card:hover, .entry-card-full:hover, .upgrade-card:hover, .pkg-card:hover {
+      box-shadow: 0 10px 24px rgba(58,32,18,0.11);
+      transform: translateY(-2px);
+    }
+  }
+  /* 最淡的小字加深一階：維持淡雅但看得清（無障礙對比） */
+  .mdesc, .aqua-desc, .bundle-sub, .addon-block-title { color: #7c5a44; }
+  @media (prefers-reduced-motion: reduce) {
+    .entry-card, .entry-card-full, .upgrade-card, .pkg-card { transition: none; }
+    .entry-card:hover, .entry-card-full:hover, .upgrade-card:hover, .pkg-card:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
