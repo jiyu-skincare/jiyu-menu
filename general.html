@@ -226,6 +226,7 @@
   .addon-price { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: var(--brown-light); }
   .addon-price::before { content: '+'; font-size: 11px; margin-right: 1px; }
   .addon-price.no-plus::before { content: ''; }
+  .addon-price .from { font-family: 'Noto Serif TC', serif; font-size: 9px; color: var(--brown-light); opacity: 0.6; margin-left: 3px; letter-spacing: 0.05em; vertical-align: 1px; }
 
   /* DIVIDER */
   .divider { height: 1px; background: var(--divider); margin: 20px 16px 0; }
@@ -491,12 +492,8 @@
     <div class="addon-block-title">所有療程適用</div>
     <div class="addon-grid">
       <div>
-        <div class="addon-name">微生態平衡導入</div>
-        <div class="addon-price">$300</div>
-      </div>
-      <div>
         <div class="addon-name">藻針</div>
-        <div class="addon-price">$300 起</div>
+        <div class="addon-price">$300<span class="from">起</span></div>
       </div>
       <div>
         <div class="addon-name">等離子導入</div>
