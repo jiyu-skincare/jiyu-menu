@@ -3574,6 +3574,46 @@ COURSES['sens-lv1'].steps = [
               '【4. 伍氏燈下色斑區域】判斷色素深淺——燈下比表面「更明顯/範圍更大」=表皮層斑（淺，美白管理效果好）；「同於表面」=真皮層斑（深，改善慢，要拉長期程或搭配醫美）；「白色區塊」=色素脫失或角質異常（不是黑色素問題，另外評估）',
               '【5. 最小小孩年紀】判斷孕斑階段——懷孕會誘發黃褐斑；產後 1-3 年是荷爾蒙回穩期，斑有機會自己變淡（管理效果最好）；小孩三歲以上斑還在=穩定型黃褐斑，要長期管理不要承諾快速改善；未生育=排除孕斑因素'
             ]},
+            { type: 'sub-title', text: '「伍氏燈下色斑區域」看起來長怎樣（第 4 題示意圖）' },
+            { type: 'raw', html: `
+<div style="max-width:640px;margin:8px 0 4px;">
+<svg viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+  <style>.wl-t{font-family:sans-serif;font-size:13px;fill:#5a4636;}.wl-s{font-family:sans-serif;font-size:11px;fill:#8a7360;}.wl-h{font-family:sans-serif;font-size:13px;font-weight:700;fill:#5a4636;}</style>
+  <text x="150" y="20" text-anchor="middle" class="wl-h">自然光下</text>
+  <text x="420" y="20" text-anchor="middle" class="wl-h">伍氏燈下</text>
+
+  <!-- Row 1 表皮層斑 -->
+  <rect x="80" y="32" width="140" height="72" rx="8" fill="#e8c9a8"/>
+  <ellipse cx="150" cy="68" rx="34" ry="20" fill="#b98a5e" opacity="0.75"/>
+  <rect x="350" y="32" width="140" height="72" rx="8" fill="#5b4a8a"/>
+  <ellipse cx="420" cy="68" rx="36" ry="22" fill="#1f1533"/>
+  <text x="510" y="60" class="wl-t">表皮層斑</text>
+  <text x="510" y="78" class="wl-s">燈下變更黑、更明顯</text>
+  <text x="510" y="93" class="wl-s">→ 淺，美白管理有效</text>
+
+  <!-- Row 2 真皮層斑 -->
+  <rect x="80" y="130" width="140" height="72" rx="8" fill="#e8c9a8"/>
+  <ellipse cx="150" cy="166" rx="34" ry="20" fill="#9b8574" opacity="0.6"/>
+  <rect x="350" y="130" width="140" height="72" rx="8" fill="#5b4a8a"/>
+  <ellipse cx="420" cy="166" rx="34" ry="20" fill="#4a3c72" opacity="0.85"/>
+  <text x="510" y="158" class="wl-t">真皮層斑</text>
+  <text x="510" y="176" class="wl-s">燈下幾乎沒變、模糊</text>
+  <text x="510" y="191" class="wl-s">→ 深，要長期或醫美</text>
+
+  <!-- Row 3 色素脫失 -->
+  <rect x="80" y="228" width="140" height="72" rx="8" fill="#e8c9a8"/>
+  <ellipse cx="150" cy="264" rx="34" ry="20" fill="#f4e3cf"/>
+  <rect x="350" y="228" width="140" height="72" rx="8" fill="#5b4a8a"/>
+  <ellipse cx="420" cy="264" rx="34" ry="20" fill="#dfe8ff"/>
+  <ellipse cx="420" cy="264" rx="40" ry="25" fill="#dfe8ff" opacity="0.35"/>
+  <text x="510" y="256" class="wl-t">色素脫失</text>
+  <text x="510" y="274" class="wl-s">燈下發亮白光</text>
+  <text x="510" y="289" class="wl-s">→ 非黑色素，另外評估</text>
+</svg>
+<div style="font-size:11px;color:#8a7360;font-family:sans-serif;margin-top:4px;">示意圖 · 原理：表皮的黑色素會吸收紫外光所以對比變強；色素在真皮層深處，紫外光照不到所以看起來沒變；沒有色素的地方光直接反射回來所以發亮。</div>
+</div>` },
+            { type: 'note', text: '想看真實案例照可搜尋「wood lamp melasma」參考（DermNet 等皮膚科網站）。最準的做法：之後幫客人照伍氏燈時把典型案例拍下來（去識別化），累積自己的對照圖庫替換示意圖。' },
+
             { type: 'sub-title', text: '「按壓後變化」怎麼跟客人解釋（第 3 題）' },
             { type: 'note', text: '背景：臉上看起來深深的一塊，其實分兩種——「紅印」和「黑印」。痘痘或發炎消掉後，有的留下紅印（微血管還在充血，是血的顏色），有的留下黑印（黑色素沉澱，是染上去的顏色）。遠看都像斑，但成因和處理方式完全不同，按壓就能分辨。' },
             { type: 'tip-list', items: [
@@ -4023,6 +4063,7 @@ COURSES['sens-lv1'].steps = [
         if (s.type === 'tip-list') {
           return `${s.title ? `<h4 class="hb-subt">${esc(s.title)}</h4>` : ''}<ul class="hb-list">${s.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>`;
         }
+        if (s.type === 'raw') return s.html;
         if (s.type === 'sub-title') return `<h4 class="hb-subt">${esc(s.text)}</h4>`;
         if (s.type === 'note') return `<div class="hb-note">${esc(s.text)}</div>`;
         if (s.type === 'warn') return `<div class="hb-warn">${esc(s.text)}</div>`;
