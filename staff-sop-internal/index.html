@@ -279,6 +279,8 @@
       padding: 8px 10px; border-bottom: 1px solid var(--line-soft);
       color: var(--ink); vertical-align: top;
     }
+    /* 第 2 欄（題目名）保底寬度，避免長解釋把它擠成一字一行的直排 */
+    .hb-table th:nth-child(2), .hb-table td:nth-child(2) { min-width: 7em; }
     .hb-table tbody tr:last-child td { border-bottom: none; }
     .hb-flow-table .hb-tdr-step {
       font-family: var(--en); font-weight: 600; color: var(--ink-mid);
@@ -3664,9 +3666,9 @@ COURSES['sens-lv1'].steps = [
             { type: 'script', text: '根據前面的問答，系統判斷您是〔某型敏感〕，建議從〔某級〕開始。這個判斷您覺得符合嗎？' },
             { type: 'sub-title', text: '⭐ 快速判級：化妝水刺痛測試' },
             { type: 'tip-list', items: [
-              '擦<strong>任何</strong>產品都刺痛灼熱 → <strong>Level 3 極度</strong>（先滅火、不導入）',
-              '化妝水後<strong>明顯刺痛數秒</strong> → <strong>Level 2 中度</strong>（定製膠囊 / EXO）',
-              '化妝水正常用、僅短暫微刺 → <strong>Level 1 輕度</strong>（益菌修護）'
+              '擦「任何」產品都刺痛灼熱 →【Level 3 極度】先滅火、不導入',
+              '化妝水後明顯刺痛數秒 →【Level 2 中度】定製膠囊 / EXO',
+              '化妝水正常用、僅短暫微刺 →【Level 1 輕度】益菌修護'
             ]},
             { type: 'note', text: '如果客人說「我覺得不像」，底下有「切換診斷」按鈕，可以手動改其他類型。員工的判斷比系統優先。' }
           ]
