@@ -2975,6 +2975,26 @@ COURSES['sens-lv1'].steps = [
             <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--brown-light);">→</span>
           </div>
         </a>
+        <a href="print-包堂速查.html" target="_blank" class="entry" style="margin-bottom:10px;padding:18px 22px;">
+          <div class="entry-grid">
+            <div>
+              <div class="entry-en">Package & Card Price Sheet · 可列印</div>
+              <div class="entry-title" style="font-size:16px;margin-bottom:6px;">包 堂 與 會 員 速 查 表</div>
+              <div class="entry-desc">全課程 3／6／9 堂價格對照 + 會員卡福利表<br>對客報價直接看，不用算（銅 95・銀 9・金 85）</div>
+            </div>
+            <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--brown-light);">→</span>
+          </div>
+        </a>
+        <a href="print-會員話術.html" target="_blank" class="entry" style="margin-bottom:10px;padding:18px 22px;background:rgba(184,128,74,0.06);border-color:var(--accent);">
+          <div class="entry-grid">
+            <div>
+              <div class="entry-en">Membership Scripts & Journeys · 可列印</div>
+              <div class="entry-title" style="font-size:16px;margin-bottom:6px;">會 員 升 等 話 術 與 客 人 路 徑</div>
+              <div class="entry-desc">五個關鍵時刻照唸話術 · 五種客人的路 · 常見問答<br>新人先讀這張，腦中就有整套會員制的輪廓</div>
+            </div>
+            <span class="ref-arr" style="font-family:var(--en);font-size:18px;color:var(--accent);">→</span>
+          </div>
+        </a>
         <a href="#/upgrade-script" class="entry" style="margin-bottom:10px;padding:18px 22px;background:rgba(184,128,74,0.06);border-color:var(--accent);">
           <div class="entry-grid">
             <div>
@@ -5658,23 +5678,28 @@ COURSES['sens-lv1'].steps = [
 
   const UPGRADE_EXTRA = [
     ['經典管理 4 堂包堂', '不知要什麼、想建立節奏', '4 堂', '先建節奏，做的過程依膚況調整'],
-    ['超清秀 · 單次', '想深層清潔毛孔、敏感可用', '3,000', '英國水飛梭，水流真空吸附深層清潔'],
-    ['超清秀 · 4 堂包堂', '持續保養型', '10,000', '均價 2,500，<strong>贈手清粉刺</strong>'],
-    ['超清秀 + 空氣水光', '毛孔粗糙 + 外油內乾', '3,380', '清潔+補水組合，贈手清粉刺+保濕導入'],
-    ['超清秀 + 緊緻 V 臉', '毛孔 + 輪廓鬆散', '3,880', '清潔+提拉組合'],
-    ['超清秀 + 韓國水光', '想一次到位的完整管理', '4,980', '最高 C/P 值組合'],
+    ['超清秀 · 單次', '想深層清潔毛孔、敏感可用', '3,000', '英國水飛梭，<strong>含手清粉刺</strong>；首次體驗價 2,500，保濕導入加購 +$400'],
+    ['超清秀 · 4 堂包堂', '持續保養型', '11,000', '均價 2,750，<strong>每堂含手清粉刺</strong>'],
+    ['超清秀 + 空氣水光', '毛孔粗糙 + 外油內乾', '3,380', '清潔+補水組合，含手清粉刺、贈保濕導入'],
+    ['超清秀 + 緊緻 V 臉', '毛孔 + 輪廓鬆散', '4,580', '清潔+提拉組合（儀器拉提），含手清粉刺、贈保濕導入'],
+    ['超清秀 + 韓國水光', '想一次到位的完整管理', '6,080', '含手清粉刺、贈保濕導入；另有超清秀+無創水光同價'],
     ['韓國水光 · 單次', '已穩定、想嘗試微針水光', '5,080', '4 種專屬配方任選（OCTA/MELA/CICA/V-fit）'],
     ['極致水光澎潤課程', '系統性補水', '18,000 / 4 堂', '光感肌的完整療程'],
     ['全效肌底煥活課程', '最完整水光管理', '33,000 / 8 堂', '水光系統性管理的天花板']
   ];
 
+  /* 對齊價目表 07 附加管理（最後更新 2026-08-18）*/
   const UPGRADE_ADDON = [
-    ['🌿 微生態平衡導入', '300', '反覆泛紅 / 慢性敏感 / 痘痘'],
+    ['🌿 藻針', '300 起', '反覆泛紅 / 慢性敏感 / 痘痘'],
     ['⚡ 等離子導入', '380', '發炎粉刺痘痘'],
-    ['💆 小臉撥筋', '400', '輪廓鬆散 / 想要 V 感'],
+    ['💧 季銨鹽安瓶', '380', '控油抗菌 / 痘痘期'],
+    ['🧖 頭療', '400', '想放鬆 / 頭皮緊繃'],
+    ['💆 小臉撥筋', '500', '輪廓鬆散 / 想要 V 感'],
     ['💉 MTS 微針', '480', '想加強吸收（<strong style="color:#c9621f">敏感期禁用</strong>）'],
     ['🌸 益菌修護', '480', '微生態失衡 / 敏感肌 / 色素'],
-    ['💎 尊翼細胞安瓶', '700', '高端客人想強化效果'],
+    ['💎 外泌體精華', '700', '高端客人想強化效果（四精華：補水／抗痘／亮白／修復）'],
+    ['🦢 脖子護理', '700', '頸紋 / 想整體一起顧'],
+    ['💫 輪廓淋巴按摩', '800', '想消水腫 / 放鬆（<strong style="color:#c9621f">痘痘發炎期、敏感不適期禁用，改舒緩敷療</strong>）'],
     ['🥚 拋光蛋肌', '900', '想上妝服貼 / 細毛多（<strong style="color:#c9621f">敏感期禁用</strong>）'],
     ['💧 空氣水光', '1,000', '即時補水'],
     ['✨ 拉提管理', '1,500', '鬆散、想要拉提儀效果']
@@ -5777,6 +5802,54 @@ COURSES['sens-lv1'].steps = [
         三層定價統一：基礎 <strong>NT$ 2,880</strong> / 進階 <strong>NT$ 3,580</strong> / 高端 <strong>NT$ 4,280</strong><br>
         ⚠️ <strong style="color:var(--warn);">高端管理 ≠ 韓國水光</strong> — 韓國水光是<strong>獨立主課</strong>（不是加值），客人想要<strong>明顯效果</strong>就直接推韓國水光（見 05 區）。
       </div>
+      <div class="us-special" style="border-left-color:var(--accent);background:rgba(184,128,74,0.04);">
+        <div class="us-special-head">三 層 級 一 句 話 定 義（客人問「基礎跟進階差在哪」照這個答）</div>
+        <table class="us-mat-table">
+          <thead><tr><th>層級</th><th>價</th><th>對客這樣說</th><th>聽到這個字＝這一級</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="us-mat-lv">基礎</td><td class="us-price">2,880</td>
+              <td>單層處理，先把當下的狀況照顧好<br><span style="opacity:.72">適合狀況輕微、偶爾出現，或想先體驗看看</span></td>
+              <td><strong>「偶爾」</strong></td>
+            </tr>
+            <tr>
+              <td class="us-mat-lv">進階</td><td class="us-price">3,580</td>
+              <td>多一層源頭調理，效果會一次一次累積下來<br><span style="opacity:.72">適合同一個問題反覆出現，好一陣子又回來</span></td>
+              <td><strong>「常常」「又來了」</strong></td>
+            </tr>
+            <tr>
+              <td class="us-mat-lv">高端</td><td class="us-price">4,280</td>
+              <td>多層次完整處理，把肌膚的底子整體帶上來<br><span style="opacity:.72">適合這個困擾一直都在，已經持續一段時間</span></td>
+              <td><strong>「一直」「從以前就」</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="us-sens-noway" style="margin-bottom:14px;">
+        <div class="us-sens-noway-head">🚫 停用這句：「越高端效果越好、儀器越高級、產品也更高端」</div>
+        <ul class="us-sens-noway-list">
+          <li>客人聽不懂儀器，講完他只會拿去跟別家比機器</li>
+          <li>三級聽起來只剩價差，客人沒辦法把自己對號入座，只好一直問「差在哪」</li>
+        </ul>
+      </div>
+
+      <div class="us-script-frame">
+        <div class="us-script-frame-tag">SCRIPT TEMPLATE · 分級話術（理由講在客人身上，不講儀器）</div>
+        你這個狀況已經 <em>「____（持續多久 / 多常發生）____」</em> 了。<br><br>
+        基礎做完當下一定會好，但大概 <em>「____（多久）____」</em> 會回到原點，<br>
+        因為它處理的是當下這一層。<br><br>
+        你要的如果是 <em>「____（客人真正想要的）____」</em>，那要走 <em>「____（進階 / 高端）____」</em>。<br><br>
+        <em>你看你想先做哪一個，這個你自己選喔。</em>
+      </div>
+      <div class="us-tip3">
+        <div class="us-tip3-head">FILLED EXAMPLE · 填好長這樣</div>
+        <ul class="us-tip3-list">
+          <li>「你這個<strong>痘痘反覆快三個月</strong>了。基礎做完當下一定會好，但大概<strong>兩、三週</strong>會回到原點，因為它處理的是當下這一層。你要的如果是<strong>不要再一直循環</strong>，那要走<strong>進階</strong>。你看你想先做哪一個，這個你自己選喔。」</li>
+          <li>時間數字依實際課後回訪經驗填，不要背死一個數字講給所有人聽</li>
+        </ul>
+      </div>
+
       <div class="us-matrix">${matrixHTML}</div>
 
       <!-- 敏感系列獨立 -->
@@ -5816,8 +5889,8 @@ COURSES['sens-lv1'].steps = [
           <tbody>
             <tr><td class="us-mat-lv">經典管理</td><td class="us-price">1,880 / 2,080</td><td>首訪優惠 / 回客單堂；<strong>清粉刺 + 保濕導入 + 基礎面膜</strong></td></tr>
             <tr><td class="us-mat-lv">經典 4 堂包堂</td><td class="us-price">4 堂</td><td>建立保養節奏；可搭包堂 9 折</td></tr>
-            <tr><td class="us-mat-lv">超清秀 · 單次</td><td class="us-price">3,000</td><td>英國水飛梭、<strong>敏感肌可用</strong>；可加手清 +600 / 保濕導入 +400</td></tr>
-            <tr><td class="us-mat-lv">超清秀 · 4 堂包堂</td><td class="us-price">10,000</td><td>均價 2,500，<strong>贈手清粉刺</strong></td></tr>
+            <tr><td class="us-mat-lv">超清秀 · 單次</td><td class="us-price">3,000</td><td>英國水飛梭、<strong>敏感肌可用</strong>；<strong>含手清粉刺</strong>，首次體驗價 2,500，保濕導入加購 +$400</td></tr>
+            <tr><td class="us-mat-lv">超清秀 · 4 堂包堂</td><td class="us-price">11,000</td><td>均價 2,750，<strong>每堂含手清粉刺</strong></td></tr>
           </tbody>
         </table>
       </div>
@@ -5877,29 +5950,88 @@ COURSES['sens-lv1'].steps = [
         <div class="us-special-body">大面積化膿 / 嚴重急性過敏 / 開放性傷口 → 走 Step 0 醫療分流篩查、轉診皮膚科。<br>非屬上述狀況 → 都有對應方案可做，<strong>不要輕易拒做客人</strong>。</div>
       </div>
 
-      <!-- 包堂 + 儲值 -->
-      <div class="sec-hd"><span class="sec-num">08</span><span class="sec-title">包 堂 + 儲 值（成 交 階 段 才 講）</span><span class="sec-line"></span></div>
-      <div class="us-intro" style="margin-bottom:10px;">💡 升級話術裡<strong>先講單堂價</strong>。包堂折扣留到《服務後成交》階段才提，避免一開始壓力太大。</div>
+      <!-- 包堂 + 會員卡 v4 -->
+      <div class="sec-hd"><span class="sec-num">08</span><span class="sec-title">包 堂 與 會 員 卡（成 交 階 段 才 講）</span><span class="sec-line"></span></div>
+      <div class="us-intro" style="margin-bottom:10px;">💡 升級話術裡<strong>先講單堂價</strong>，包堂與卡留到《服務後成交》才提。<br>
+      <strong>兩件事分開記：包堂＝折數＋皮膚檢測；會員卡＝看一年內累計消費，跟有沒有包堂無關。</strong>包堂的錢會算進累計，所以買包堂通常會順便升卡。</div>
+
       <table class="us-list-table">
-        <thead><tr><th>包堂</th><th>折扣</th><th colspan="2">加贈</th></tr></thead>
+        <thead><tr><th>包堂</th><th>折扣</th><th colspan="2">內含</th></tr></thead>
         <tbody>
-          <tr><td>3 堂</td><td class="us-price">9 折</td><td colspan="2">1 堂皮膚檢測 + 保養品 95 折</td></tr>
-          <tr><td>6 堂</td><td class="us-price">8.5 折</td><td colspan="2">2 堂皮膚檢測 + 保養品 9 折</td></tr>
-          <tr><td>9 堂</td><td class="us-price">8 折</td><td colspan="2">3 堂皮膚檢測 + 保養品 85 折</td></tr>
+          <tr><td>3 堂</td><td class="us-price">92 折</td><td colspan="2">皮膚檢測 1 次（第 3 堂）</td></tr>
+          <tr><td>6 堂</td><td class="us-price">88 折</td><td colspan="2">皮膚檢測 2 次（第 3、6 堂）</td></tr>
+          <tr><td>9 堂</td><td class="us-price">85 折</td><td colspan="2">皮膚檢測 3 次（第 3、6、9 堂）</td></tr>
         </tbody>
       </table>
-      <table class="us-list-table">
-        <thead><tr><th>儲值</th><th colspan="3">折扣</th></tr></thead>
-        <tbody>
-          <tr><td>NT$ 5,000</td><td colspan="3" class="us-price">95 折</td></tr>
-          <tr><td>NT$ 10,000</td><td colspan="3" class="us-price">9 折</td></tr>
-          <tr><td>NT$ 20,000</td><td colspan="3" class="us-price">85 折</td></tr>
-          <tr><td>NT$ 30,000</td><td colspan="3" class="us-price">8 折</td></tr>
-        </tbody>
-      </table>
-      <div class="us-intro" style="background:rgba(217,119,87,0.05);border-left-color:var(--warn);">
-        ⚠️ <strong style="color:var(--warn);">包堂、儲值：僅接受現金或轉帳，不可刷卡分期</strong>
+      <div class="us-intro" style="margin-bottom:10px;">
+        全部課程統一這三檔（各項目價格見 <a href="print-包堂速查.html" target="_blank">包堂速查表</a>，可列印貼櫃台）。同層級四種管理任選、水光四配方任選。<br>
+        <strong>不能包堂</strong>：經典管理（體驗課，要往管理課帶）、急護舒緩、<strong>輕塑拉提</strong>（金卡年度禮，維持單次）、超清秀組合。<br>
+        建議使用期間 3／6／9 個月（對客講「請於期間內使用完畢」，<strong>絕不講「作廢」</strong>）。親友 1 位共用（敏感線除外，金額計入購買人）。換課：往上補定價差、往下差額折當日加購，不退現金。
       </div>
+
+      <table class="us-list-table">
+        <thead><tr><th>會員卡</th><th>銅 · 累計 1 萬</th><th>銀 · 累計 3 萬</th><th>金 · 累計 5 萬</th></tr></thead>
+        <tbody>
+          <tr><td>課程單次＋保養品</td><td class="us-price">95 折</td><td class="us-price">9 折</td><td class="us-price">85 折</td></tr>
+          <tr><td>升等禮：單筆跨線</td><td>保養禮 $1,000</td><td>保養禮 $2,000</td><td>$3,000（不分路徑）</td></tr>
+          <tr><td>升等禮：分次到</td><td>加購體驗 $300 內</td><td>加購體驗 $500 內</td><td>同左</td></tr>
+          <tr><td>生日當月（搭課程）</td><td>頭療＋客製保養禮</td><td>撥筋＋客製保養禮</td><td>輪廓淋巴＋尊寵保養禮</td></tr>
+          <tr><td>年度禮</td><td>—</td><td>—</td><td>輕塑拉提 1200 發（不適儀器改提拉基礎）</td></tr>
+        </tbody>
+      </table>
+      <div class="us-intro" style="margin-bottom:10px;">
+        升卡當次加贈<strong>皮膚檢測一次</strong>（建檔＋儀式感）。卡效期一年，期滿依近 12 個月消費重新核定——對客講「<strong>期滿依這一年的消費重新核定</strong>」，不講「降級」。<br>
+        <strong>退費規則</strong>：卡別看「實際付了且沒退的錢」。例：買 9 堂 32,700 拿銀卡，用 2 堂退費退約 25,400 → 累計剩 7,300 → 卡取消；已拆封保養禮可從退費扣。<br>
+        <strong>保養禮由店內決定</strong>（優先出「待出清品項清單」，Becky 另表維護），對客一律講「這是依你的膚況幫你配的」，不講「我們選的／剛好有／庫存」。效期至少剩半年。
+      </div>
+
+      <div class="us-special" style="border-left-color:var(--accent);background:rgba(184,128,74,0.04);">
+        <div class="us-special-head">券 與 優 惠（一 筆 一 優 惠 擇 優，推 薦 券 唯 一 可 疊）</div>
+        <table class="us-mat-table">
+          <tbody>
+            <tr><td class="us-mat-lv">註冊禮</td><td>加 LINE → <strong>85 折券</strong>（60 天、任一單堂課、用一次）。<strong>經典不適用</strong>（首訪固定 1,880）。經典客的券留到第二次做管理課用——<strong>這是經典客往上走的入口，第一次離店一定要講</strong>。</td></tr>
+            <tr><td class="us-mat-lv">推薦碼</td><td>美業改巴推薦碼（一人只能被推薦一次）。朋友綁碼＋完成第一堂 → 朋友 <strong>$500 券</strong>、推薦人 <strong>$300 券</strong>（60 天、只折單堂課）。<strong>唯一可與卡折／85 折券併用的券</strong>——它是獲客成本，不是折扣。後台觸發條件設「被推薦人首次消費」。</td></tr>
+            <tr><td class="us-mat-lv">散客集點</td><td>LINE 集點卡（結帳秀 QR 客人自己掃）。單堂 1 點：3 點 → 9 折券、6 點 → 85 折券（限單堂、60 天、6 點歸零）。包堂不集點。3、6 點剛好是講包堂的時機。</td></tr>
+            <tr><td class="us-mat-lv">生日</td><td>LINE 圖文卡人人有（系統自動發）。舒壓服務＋保養禮只給<strong>有卡</strong>的人，生日當月搭課程使用，看卡效期不看堂數。淋巴遇痘痘發炎／敏感不適改舒緩敷療。<br>
+            <strong>保養禮怎麼準備</strong>（前一天備好，對外一律講「客製保養禮」不講內容清單）：<br>
+            銅＝客製試用包 10 包＋面膜 1 片｜銀＝客製試用包 10 包＋面膜 2 片｜金＝客製試用包 10 包＋面膜 2 片＋<strong>尊翼精華 1 支</strong>。試用包依客人膚況配（補水／敏感／美白線）。</td></tr>
+            <tr><td class="us-mat-lv">付款</td><td>包堂可刷卡、<strong>不可分期分刷</strong>（不可限制只收現金）。單筆逾 1 萬：書面契約＋3 日審閱期（契約先 LINE 給客人，3 天後簽）。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 升等話術與路徑 -->
+      <div class="sec-hd"><span class="sec-num">09</span><span class="sec-title">升 等 話 術 與 客 人 路 徑（背 這 五 條）</span><span class="sec-line"></span></div>
+      <div class="us-intro" style="margin-bottom:10px;">核心心法：<strong>每個升等時刻都是成交時刻</strong>。看累計、講差多少、給一條最短的路。金額在美業改巴會員資料看，不用心算。</div>
+
+      <div class="us-script-frame">
+        <div class="us-script-frame-tag">五 個 關 鍵 時 刻 · 照 唸</div>
+        ① 新客第一次離店（用了 85 折券）：<br>
+        <em>「幫你把下次先排好，不用等 20 號開放。」</em><br><br>
+        ② 經典客第一次離店（券還沒用）：<br>
+        <em>「你的 85 折券 60 天內有效，下次可以用它試管理課，我幫你留著。」</em><br><br>
+        ③ 客人累計快到 1 萬（差幾百到幾千）：<br>
+        <em>「你再帶一組居家保養品剛好破一萬升銅卡，之後一整年課程保養品都 95 折。」</em><br><br>
+        ④ 銅卡客累計 2 萬多：<br>
+        <em>「你差 X 就銀卡了。你這個頻率，直接拿 9 堂──累計會直接衝過五萬，跳過銀卡直接金卡，送 $3,000 保養禮加輕塑拉提體驗，之後一整年 85 折。」</em><br><br>
+        ⑤ 升等當天（任何一級）：<br>
+        <em>「恭喜升〇卡！今天加做一次皮膚檢測幫你記錄，這是你的升等禮。」</em>
+      </div>
+
+      <table class="us-mat-table" style="margin-top:12px;">
+        <thead><tr><th>客人長怎樣</th><th>她的路（記輪廓就好）</th><th>你要做的事</th></tr></thead>
+        <tbody>
+          <tr><td class="us-mat-lv">學生／經典客</td><td>首訪 1,880 → 第 2 次用 85 折券做基礎 2,448 → 帶朋友（她 −500、自己拿 300 券）→ 累計破萬升銅 → 經典變 1,976</td><td>第一次離店講②；她是最容易漏掉的一群</td></tr>
+          <tr><td class="us-mat-lv">上班族／單堂客</td><td>85 折券 → 單堂×3（集點）→ 破萬升銅 95 折 → 累計 2 萬多時＝關鍵時刻④</td><td>看到累計 25,000 上下就講④，9 堂直上金卡</td></tr>
+          <tr><td class="us-mat-lv">媽媽／包堂客</td><td>6 堂 18,900 單筆跨萬 → 銅＋保養禮 $1,000 → 續 6 堂 → 累計 4 萬升銀（分次：加購體驗）</td><td>續包那天講「這包用完剛好升銀，之後單次都 9 折」</td></tr>
+          <tr><td class="us-mat-lv">貴婦／大單</td><td>水光 9 堂 38,800 單筆直接銀＋$2,000 → 加保養品過 5 萬 → 金＋$3,000＋輕塑拉提</td><td>升金當天幫她約輕塑拉提；她的重點是被記得，不是折扣</td></tr>
+          <tr><td class="us-mat-lv">低頻男生</td><td>被推薦進來 1,380 → 一年 3-4 次 → 沒卡也沒關係</td><td>不推銷。生日圖文卡維持存在感就好</td></tr>
+        </tbody>
+      </table>
+      <div class="us-intro" style="margin-top:10px;">
+        <strong>銀卡之後怎麼推</strong>：銀卡單次已 9 折，3 堂包（92 折）對她沒意義——只推 <strong>6 堂 88 或 9 堂 85</strong>，或讓她自由單次。金卡客不用推包，她單次就是 85 折，重點轉向保養品與加購。
+      </div>
+      <div class="us-intro" style="margin-top:10px;opacity:.72;font-size:12px;">最後更新 2026-08-19（v4：包堂 92/88/85 與會員卡累計制分離）</div>
 
     `;
     window.scrollTo(0, 0);
