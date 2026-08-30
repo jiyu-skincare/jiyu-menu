@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>第一次來｜肌·癒皮膚管理中心</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf6f1;
+    --blush: #e8c4b0;
+    --rose: #c97b63;
+    --deep-rose: #a05a44;
+    --sage: #b5c4b1;
+    --warm-brown: #5c3d2e;
+    --light-text: #9a8478;
+    --card-bg: rgba(255,255,255,0.78);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--cream); min-height: 100vh; overflow-x: hidden; color: var(--warm-brown); }
+  body::before { content: ''; position: fixed; top: -30%; right: -20%; width: 60vw; height: 60vw; background: radial-gradient(circle, #f0d9cc 0%, transparent 65%); pointer-events: none; z-index: 0; }
+  body::after { content: ''; position: fixed; bottom: -20%; left: -15%; width: 50vw; height: 50vw; background: radial-gradient(circle, #d6e0d3 0%, transparent 65%); pointer-events: none; z-index: 0; }
+  .container { position: relative; z-index: 1; width: 100%; max-width: 420px; margin: 0 auto; padding: 0 20px 60px; }
+
+  .hero { text-align: center; padding-top: 52px; margin-bottom: 30px; }
+  .brand-tag { display: inline-block; font-size: 10px; letter-spacing: 3px; color: var(--rose); border: 1px solid var(--blush); padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; }
+  .hero h1 { font-family: 'Noto Serif TC', serif; font-size: 27px; font-weight: 400; line-height: 1.5; }
+  .hero h1 strong { font-weight: 600; }
+  .hero p { font-size: 13px; color: var(--light-text); margin-top: 10px; line-height: 1.8; }
+
+  .card { background: var(--card-bg); border: 1px solid rgba(232,196,176,0.5); border-radius: 18px; padding: 20px; margin-bottom: 14px; }
+  .card-title { font-family: 'Noto Serif TC', serif; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .card-title::after { content: ''; flex: 1; height: 1px; background: rgba(232,196,176,0.4); }
+
+  .price-grid { display: flex; gap: 10px; }
+  .price-box { flex: 1; border: 1.5px solid rgba(232,196,176,0.4); border-radius: 14px; padding: 15px 12px; text-align: center; }
+  .price-box.highlight { border-color: var(--blush); background: linear-gradient(135deg, rgba(232,196,176,0.15), rgba(201,123,99,0.06)); }
+  .price-tag { display: inline-block; font-size: 10px; color: var(--rose); border: 1px solid var(--blush); border-radius: 12px; padding: 2px 10px; margin-bottom: 8px; }
+  .price-name { font-family: 'Noto Serif TC', serif; font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .price-num { font-size: 21px; font-weight: 500; color: var(--deep-rose); margin: 4px 0; }
+  .price-num span { font-size: 12px; }
+  .price-desc { font-size: 11px; color: var(--light-text); line-height: 1.6; }
+  .price-note { font-size: 11.5px; color: var(--light-text); line-height: 1.7; margin-top: 12px; text-align: center; }
+
+  .flow { list-style: none; }
+  .flow li { display: flex; gap: 13px; padding: 10px 0; }
+  .flow .num { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: rgba(232,196,176,0.35); color: var(--deep-rose); font-size: 13px; display: flex; align-items: center; justify-content: center; font-weight: 500; }
+  .flow .t { font-size: 13.5px; font-weight: 500; margin-bottom: 2px; }
+  .flow .d { font-size: 12px; color: var(--light-text); line-height: 1.7; }
+  .flow-note { background: rgba(181,196,177,0.18); border-left: 3px solid var(--sage); padding: 11px 13px; border-radius: 0 9px 9px 0; font-size: 11.5px; line-height: 1.7; margin-top: 12px; }
+
+  details { border-bottom: 1px solid rgba(232,196,176,0.35); }
+  details:last-of-type { border-bottom: none; }
+  summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 13px 2px; font-size: 13.5px; font-weight: 500; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '＋'; color: var(--rose); font-size: 15px; flex-shrink: 0; }
+  details[open] summary::after { content: '－'; }
+  .qa-a { font-size: 12.5px; color: var(--light-text); line-height: 1.9; padding: 0 2px 14px; }
+
+  .review-banner { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: linear-gradient(135deg, rgba(232,196,176,0.25), rgba(181,196,177,0.18)); border: 1px solid rgba(232,196,176,0.5); border-radius: 14px; padding: 15px 17px; margin-bottom: 14px; cursor: pointer; }
+  .review-banner .t { font-size: 13.5px; font-weight: 500; margin-bottom: 3px; }
+  .review-banner .d { font-size: 11.5px; color: var(--light-text); }
+  .review-banner .arrow { font-size: 18px; flex-shrink: 0; }
+
+  .btn-primary { display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, var(--rose), var(--deep-rose)); color: #fff; border: none; border-radius: 14px; font-family: 'Noto Sans TC', sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 2px; cursor: pointer; text-align: center; text-decoration: none; margin-bottom: 10px; }
+  .btn-ghost { display: block; width: 100%; padding: 13px; background: transparent; color: var(--light-text); border: 1px solid rgba(232,196,176,0.4); border-radius: 12px; font-family: 'Noto Sans TC', sans-serif; font-size: 13px; cursor: pointer; text-align: center; text-decoration: none; margin-bottom: 10px; }
+  .addr { text-align: center; font-size: 11.5px; color: var(--light-text); line-height: 1.8; margin-top: 16px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="brand-tag">✦ 肌·癒皮膚管理中心</div>
+    <h1>第一次來<br><strong>看這一頁就夠了</strong></h1>
+    <p>價格、流程、常見問題<br>都幫你整理好了</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">💰 第一次的價格</div>
+    <div class="price-grid">
+      <div class="price-box highlight">
+        <div class="price-tag">入門首選</div>
+        <div class="price-name">經典管理</div>
+        <div class="price-num"><span>$</span>1,880</div>
+        <div class="price-desc">清粉刺＋保濕導入<br>完整體驗基礎清潔保養</div>
+      </div>
+      <div class="price-box">
+        <div class="price-tag">想直接對症</div>
+        <div class="price-name">任一課程</div>
+        <div class="price-num">85<span> 折</span></div>
+        <div class="price-desc">價目表任選<br>首次來店現場直接折</div>
+      </div>
+    </div>
+    <div class="price-note">兩種擇一，結帳直接給、不用先買券</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🌿 第一次來會發生什麼</div>
+    <ul class="flow">
+      <li><div class="num">1</div><div><div class="t">肌膚檢測</div><div class="d">高級肌膚檢測儀全臉分析，先看懂你的肌膚現在的狀態</div></div></li>
+      <li><div class="num">2</div><div><div class="t">專屬諮詢</div><div class="d">依檢測結果聊聊你的困擾與目標，說明適合的方向</div></div></li>
+      <li><div class="num">3</div><div><div class="t">進行課程</div><div class="d">檢測、諮詢、課程同一次完成，不用先跑一趟</div></div></li>
+    </ul>
+    <div class="flow-note">🕒 建議預留約 2.5 小時，讓每個步驟都不趕</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">💬 你可能想問</div>
+    <details>
+      <summary>會被推銷嗎？</summary>
+      <div class="qa-a">不會。所有建議都以檢測結果為依據，不推銷、不強迫購課——覺得適合再繼續就好。</div>
+    </details>
+    <details>
+      <summary>敏感肌可以做嗎？</summary>
+      <div class="qa-a">可以，敏感肌照顧正是我們的專長。每次到店都會先確認當天的肌膚狀態，再決定做法；正在過敏中也有專門的舒緩課程。</div>
+    </details>
+    <details>
+      <summary>需要特別準備什麼嗎？</summary>
+      <div class="qa-a">不用特別準備，帶妝來也可以，到店我們會協助完成清潔。</div>
+    </details>
+    <details>
+      <summary>清粉刺會不會很痛？</summary>
+      <div class="qa-a">每個人的耐受度不同，我們會依你的肌膚狀態調整力道；過程中有任何不適，隨時說、隨時調整。</div>
+    </details>
+    <details>
+      <summary>不知道自己適合哪堂課？</summary>
+      <div class="qa-a">可以先做 <a href="index-2.html" style="color:var(--rose)">1 分鐘肌膚測驗</a> 找方向；到店的檢測與諮詢也會給你更精準的建議。</div>
+    </details>
+  </div>
+
+  <div class="review-banner" onclick="window.open('https://maps.app.goo.gl/JAcLngXrUneg1AyRA','_blank')">
+    <div><div class="t">⭐ 看看大家怎麼說</div><div class="d">Google 評論・真實客人的體驗分享</div></div>
+    <div class="arrow">→</div>
+  </div>
+
+  <a class="btn-primary" href="https://url.ohbot.cc/2jtRKKFZR" target="_blank">預約第一次體驗 →</a>
+  <a class="btn-ghost" href="index.html" target="_blank">查看完整價目表</a>
+
+  <div class="addr">📍 台北中山｜捷運中山站 2 號出口步行五分鐘</div>
+
+</div>
+<!-- 最後更新 2026-08-31 -->
+</body>
+</html>
