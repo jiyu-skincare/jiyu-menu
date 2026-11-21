@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex">
+<title>消費方式說明｜肌·癒皮膚管理中心</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  /* 形狀規則：面板圓角 14px，可點按的按鈕與選項一律膠囊形 */
+  :root {
+    --paper: #F7F2EA;
+    --paper-2: #F0E8DA;
+    --panel: #FDFBF7;
+    --ink: #3D2B1F;
+    --ink-2: #6B5A4E;
+    --gold: #B89A6A;
+    --gold-ink: #846539;
+    --line: rgba(184,154,106,0.42);
+    --line-soft: rgba(184,154,106,0.22);
+    --r: 14px;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --serif: 'Noto Serif TC', 'Songti TC', serif;
+    --sans: 'Noto Sans TC', 'PingFang TC', system-ui, sans-serif;
+    --num: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html { background: var(--paper); -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--ink);
+    background: var(--paper);
+    overflow-x: hidden;
+  }
+  a { color: inherit; }
+  .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding-inline: clamp(20px, 4.5vw, 48px); }
+  section { padding-block: clamp(56px, 9vw, 104px); scroll-margin-top: 68px; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: 0.06em; }
+  h2 { font-size: clamp(25px, 3.6vw, 34px); line-height: 1.5; }
+  .lead { color: var(--ink-2); max-width: 34em; margin-top: 12px; }
+  .num { font-family: var(--num); font-weight: 600; letter-spacing: 0.01em; font-variant-numeric: lining-nums; }
+
+  /* 頂部導覽 */
+  .nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(247,242,234,0.9);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; }
+  .brand { font-family: var(--serif); font-weight: 600; font-size: 19px; letter-spacing: 0.22em; text-decoration: none; white-space: nowrap; }
+  .chips { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chips a {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px;
+    border-radius: 999px; font-size: 15px; color: var(--ink-2); text-decoration: none; white-space: nowrap;
+    transition: background-color .3s var(--ease), color .3s var(--ease);
+  }
+  .chips a.on { background: var(--ink); color: var(--paper); }
+
+  /* 按鈕 */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 54px; padding: 0 30px; border-radius: 999px;
+    font-family: var(--sans); font-size: 17px; font-weight: 500; letter-spacing: 0.12em;
+    text-decoration: none; white-space: nowrap; border: 1px solid var(--ink);
+    transition: transform .2s var(--ease), background-color .3s var(--ease);
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn--solid { background: var(--ink); color: var(--paper); }
+  .btn--ghost { background: transparent; color: var(--ink); }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  /* 開場 */
+  .hero { padding-block: clamp(40px, 7vw, 84px) clamp(48px, 8vw, 96px); }
+  .hero .wrap { display: grid; gap: clamp(32px, 6vw, 64px); align-items: center; }
+  .eyebrow { font-size: 14px; letter-spacing: 0.34em; color: var(--gold-ink); margin-bottom: 18px; }
+  h1 { font-size: clamp(32px, 5.6vw, 54px); line-height: 1.4; }
+  .hero .lead { margin-top: 20px; margin-bottom: 32px; }
+  .stack { position: relative; width: 100%; max-width: 470px; aspect-ratio: 1.52; margin-inline: auto; transform: rotate(-3deg); }
+  .stack .face { position: absolute; width: 76%; }
+  .stack .face--gold   { top: 0;     left: 24%; }
+  .stack .face--silver { top: 14.5%; left: 12%; }
+  .stack .face--bronze { top: 29%;   left: 0; }
+
+  /* 會員卡卡面（實際卡面圖） */
+  .face {
+    display: block; aspect-ratio: 1000 / 612; border-radius: var(--r); overflow: hidden; background: #F3EADB;
+    box-shadow: 0 22px 44px -26px rgba(61,43,31,0.5), 0 0 0 1px rgba(184,154,106,0.3);
+  }
+  .face img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  /* 兩種消費方式 */
+  .ways { display: grid; gap: 14px; margin-top: clamp(28px, 5vw, 48px); }
+  .way { border-radius: var(--r); padding: clamp(24px, 4vw, 40px); background: var(--panel); box-shadow: inset 0 0 0 1px var(--line-soft); }
+  .way--pack { background: var(--paper-2); box-shadow: inset 0 0 0 1px var(--line); }
+  .way h3 { font-size: clamp(26px, 3.6vw, 34px); letter-spacing: 0.2em; }
+  .way > p { margin-top: 10px; color: var(--ink-2); }
+  .way dl { margin-top: 22px; display: grid; gap: 14px; }
+  .way dl div { display: grid; grid-template-columns: 3.4em 1fr; gap: 14px; align-items: baseline; }
+  .way dt { font-size: 14px; letter-spacing: 0.2em; color: var(--gold-ink); }
+  .way dd { line-height: 1.75; }
+  .or {
+    justify-self: center; align-self: center; display: grid; place-items: center;
+    width: 48px; height: 48px; border-radius: 50%;
+    font-family: var(--serif); font-size: 17px; color: var(--gold-ink); box-shadow: inset 0 0 0 1px var(--line);
+  }
+  .aside-note { margin-top: 24px; color: var(--ink-2); font-size: 16px; }
+
+  /* 單堂集點 */
+  #points { background: linear-gradient(180deg, var(--paper), var(--paper-2) 45%, var(--paper)); }
+  .stamps {
+    list-style: none; position: relative; display: grid; grid-template-columns: repeat(6, 1fr);
+    margin-top: clamp(36px, 6vw, 56px); padding-bottom: 44px;
+  }
+  .stamps::before {
+    content: ''; position: absolute; left: 8.33%; right: 8.33%; top: calc(var(--d) / 2); height: 1px; background: var(--line);
+  }
+  .stamps { --d: clamp(46px, 9.5vw, 78px); }
+  .stamps li { position: relative; display: grid; justify-items: center; }
+  .dot {
+    display: grid; place-items: center; width: var(--d); height: var(--d); border-radius: 50%;
+    font-family: var(--num); font-weight: 600; font-size: calc(var(--d) * 0.42); font-variant-numeric: lining-nums;
+    background: var(--ink); color: var(--paper); position: relative;
+  }
+  .gift .dot { background: var(--gold); color: var(--ink); box-shadow: 0 0 0 6px rgba(184,154,106,0.2); }
+  .stamps em {
+    position: absolute; top: calc(var(--d) + 14px); font-style: normal; white-space: nowrap;
+    font-family: var(--serif); font-weight: 600; font-size: clamp(15px, 2.2vw, 19px); letter-spacing: 0.08em;
+  }
+  .js .stamps .dot { opacity: 0.16; transform: scale(0.82); transition: opacity .5s var(--ease), transform .6s var(--ease); }
+  .js .stamps.in .dot { opacity: 1; transform: none; }
+  .js .stamps li:nth-child(2) .dot { transition-delay: .12s; }
+  .js .stamps li:nth-child(3) .dot { transition-delay: .24s; }
+  .js .stamps li:nth-child(4) .dot { transition-delay: .36s; }
+  .js .stamps li:nth-child(5) .dot { transition-delay: .48s; }
+  .js .stamps li:nth-child(6) .dot { transition-delay: .60s; }
+  .facts { display: grid; gap: 0; margin-top: clamp(20px, 4vw, 36px); }
+  .facts p { padding: 14px 0; color: var(--ink-2); border-top: 1px solid var(--line-soft); }
+
+  /* 包堂方案 */
+  .rail { display: grid; margin-top: clamp(28px, 5vw, 48px); border-radius: var(--r); background: var(--panel); box-shadow: inset 0 0 0 1px var(--line); }
+  .rail > div { padding: clamp(24px, 4vw, 40px) clamp(20px, 3vw, 36px); }
+  .rail > div + div { border-top: 1px solid var(--line-soft); }
+  .rail h3 { font-size: 18px; letter-spacing: 0.3em; color: var(--gold-ink); font-weight: 500; }
+  .rail .big { display: flex; align-items: baseline; gap: 8px; margin: 6px 0 14px; font-family: var(--serif); font-size: 22px; font-weight: 600; }
+  .rail .big .num { font-size: clamp(64px, 9vw, 92px); line-height: 1; }
+  .rail p { color: var(--ink-2); line-height: 1.8; }
+  .rules { display: grid; gap: 0 clamp(28px, 5vw, 56px); margin-top: clamp(24px, 4vw, 40px); }
+  .rules p { padding: 13px 0 13px 1.3em; position: relative; color: var(--ink-2); line-height: 1.8; }
+  .rules p::before { content: ''; position: absolute; left: 0; top: 1.55em; width: 0.6em; height: 1px; background: var(--gold); }
+
+  /* 會員卡 */
+  .steps { display: grid; gap: 16px; margin-top: clamp(32px, 5vw, 52px); }
+  .step { border-radius: var(--r); padding: clamp(18px, 2.6vw, 28px); background: var(--panel); box-shadow: inset 0 0 0 1px var(--line-soft); display: flex; flex-direction: column; }
+  .step .face { width: 100%; max-width: 320px; margin-bottom: 22px; }
+  .step h3 { font-size: 26px; letter-spacing: 0.24em; }
+  .cond { margin-top: 8px; color: var(--ink-2); line-height: 1.8; font-size: 15px; }
+  .cond strong { color: var(--ink); font-weight: 500; }
+  .rate { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 8px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line-soft); font-family: var(--serif); font-size: 20px; font-weight: 600; }
+  .rate .num { font-size: 60px; line-height: 1; }
+  .rate small { flex-basis: 100%; font-family: var(--sans); font-size: 15px; font-weight: 400; color: var(--ink-2); }
+  .perks { list-style: none; margin-top: 14px; display: grid; gap: 8px; }
+  .perks li { padding-left: 1.3em; position: relative; line-height: 1.75; font-size: 16px; }
+  .perks li::before { content: ''; position: absolute; left: 0; top: 0.85em; width: 0.6em; height: 1px; background: var(--gold); }
+
+  /* 試算 */
+  .calc { display: grid; gap: 16px; margin-top: clamp(28px, 5vw, 48px); }
+  .picker { border-radius: var(--r); padding: clamp(22px, 3.4vw, 34px); background: var(--panel); box-shadow: inset 0 0 0 1px var(--line-soft); display: flex; flex-direction: column; justify-content: space-between; gap: 28px; }
+  .picker form { display: grid; gap: 28px; }
+  fieldset { border: 0; min-width: 0; }
+  legend { font-size: 14px; letter-spacing: 0.24em; color: var(--gold-ink); margin-bottom: 12px; }
+  .seg { display: grid; gap: 8px; }
+  .seg--3 { grid-template-columns: repeat(3, 1fr); }
+  .seg--4 { grid-template-columns: repeat(4, 1fr); }
+  .seg input { position: absolute; opacity: 0; pointer-events: none; }
+  .seg label {
+    display: grid; place-items: center; align-content: center; gap: 2px; min-height: 64px; padding: 8px 6px;
+    border-radius: 999px; text-align: center; cursor: pointer; line-height: 1.35;
+    box-shadow: inset 0 0 0 1px var(--line);
+    font-family: var(--serif); font-weight: 600; font-size: 18px; letter-spacing: 0.08em;
+    transition: background-color .3s var(--ease), color .3s var(--ease), transform .2s var(--ease);
+  }
+  .seg label small { font-family: var(--num); font-size: 16px; font-weight: 500; letter-spacing: 0.02em; font-variant-numeric: lining-nums; color: var(--ink-2); transition: color .3s var(--ease); }
+  .seg label:active { transform: scale(0.98); }
+  .seg input:checked + label { background: var(--ink); color: var(--paper); box-shadow: none; }
+  .seg input:checked + label small { color: rgba(247,242,234,0.78); }
+  .seg input:focus-visible + label { outline: 2px solid var(--gold-ink); outline-offset: 3px; }
+  .result { border-radius: var(--r); padding: clamp(24px, 3.6vw, 38px); background: var(--ink); color: var(--paper); }
+  .result .k { font-size: 14px; letter-spacing: 0.24em; color: var(--gold); }
+  .total { display: flex; align-items: baseline; gap: 10px; margin-top: 4px; font-family: var(--serif); font-size: 22px; }
+  .total .num { font-size: clamp(60px, 9vw, 84px); line-height: 1.05; }
+  .sum { margin-top: 6px; color: rgba(247,242,234,0.8); font-size: 16px; }
+  .rows { margin-top: 20px; }
+  .rows div { display: grid; grid-template-columns: 5.2em 1fr; gap: 14px; padding: 13px 0; border-top: 1px solid rgba(184,154,106,0.3); align-items: baseline; }
+  .rows dd { line-height: 1.75; font-size: 16px; }
+  .rows div[hidden] { display: none; }
+  .fine { padding-top: 16px; border-top: 1px solid var(--line-soft); font-size: 15px; color: var(--ink-2); line-height: 1.8; }
+
+  /* 第一次來店 */
+  #first { padding-bottom: clamp(48px, 8vw, 88px); }
+  .first { display: grid; gap: 14px; margin-top: clamp(28px, 5vw, 48px); }
+  .first article { border-radius: var(--r); padding: clamp(24px, 4vw, 40px); }
+  .first .a { background: var(--paper-2); box-shadow: inset 0 0 0 1px var(--line); }
+  .first .b { background: var(--panel); box-shadow: inset 0 0 0 1px var(--line-soft); }
+  .first h3 { font-size: 22px; letter-spacing: 0.14em; }
+  .first .price { display: flex; align-items: baseline; gap: 8px; margin: 10px 0 6px; font-family: var(--serif); font-size: 20px; font-weight: 600; }
+  .first .price .num { font-size: clamp(58px, 8vw, 80px); line-height: 1; }
+  .first p { color: var(--ink-2); margin-top: 8px; }
+  #first .btns { margin-top: clamp(28px, 5vw, 44px); }
+  footer { padding: 28px 0 44px; border-top: 1px solid var(--line-soft); color: var(--ink-2); font-size: 15px; }
+  footer strong { font-family: var(--serif); font-weight: 600; letter-spacing: 0.2em; color: var(--ink); display: block; margin-bottom: 2px; }
+
+  /* 進場 */
+  .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  @media (min-width: 720px) {
+    .hero .wrap { grid-template-columns: 1.08fr 0.92fr; }
+    .ways { grid-template-columns: 1fr auto 1fr; }
+    .facts { grid-template-columns: repeat(3, 1fr); gap: 0 clamp(20px, 4vw, 40px); }
+    .rail { grid-template-columns: repeat(3, 1fr); }
+    .rail > div + div { border-top: 0; border-left: 1px solid var(--line-soft); }
+    .rules { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+    .step--bronze { margin-top: 88px; }
+    .step--silver { margin-top: 44px; }
+    .calc { grid-template-columns: 1fr 1fr; }
+    .first { grid-template-columns: 1.15fr 0.85fr; }
+  }
+  @media (max-width: 719px) {
+    .brand { display: none; }
+    .nav .wrap { padding-inline: 10px; }
+    .or { margin-block: -2px; }
+    .btns .btn { flex: 1 1 auto; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal, .js .stamps .dot { opacity: 1; transform: none; transition: none; }
+    .btn, .seg label, .chips a { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">肌·癒</a>
+    <nav class="chips" aria-label="本頁內容">
+      <a href="#ways">消費方式</a>
+      <a href="#points">單堂集點</a>
+      <a href="#package">包堂方案</a>
+      <a href="#member">會員卡</a>
+      <a href="#calc">試算</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">第一次來店</p>
+        <h1>可以單堂，<br>也可以包堂</h1>
+        <p class="lead">兩種方式的消費，都會累積您的會員資格。這一頁為您說明集點、包堂與會員卡，約兩分鐘可以看完。</p>
+        <div class="btns">
+          <a class="btn btn--solid" href="#ways">開始了解</a>
+          <a class="btn btn--ghost" href="#calc">直接試算</a>
+        </div>
+      </div>
+      <div class="stack" aria-hidden="true">
+        <div class="face face--gold"><img src="assets/card-gold.jpg" alt="" width="1000" height="612"></div>
+        <div class="face face--silver"><img src="assets/card-silver.jpg" alt="" width="1000" height="612"></div>
+        <div class="face face--bronze"><img src="assets/card-bronze.jpg" alt="" width="1000" height="612"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ways">
+    <div class="wrap">
+      <h2 class="reveal">兩種消費方式</h2>
+      <p class="lead reveal">依照您的保養節奏選擇，兩種方式也可以隨時轉換。</p>
+      <div class="ways">
+        <article class="way reveal">
+          <h3>單堂</h3>
+          <p>每次來店依當日的肌膚狀態選擇課程，當次結帳。</p>
+          <dl>
+            <div><dt>適合</dt><dd>想先體驗，或保養時間不固定</dd></div>
+            <div><dt>回饋</dt><dd>每堂集 1 點，集滿兌換折價券</dd></div>
+            <div><dt>會員</dt><dd>每次消費金額計入會員累計</dd></div>
+          </dl>
+        </article>
+        <div class="or reveal" aria-hidden="true">或</div>
+        <article class="way way--pack reveal">
+          <h3>包堂</h3>
+          <p>一次規劃 3、6 或 9 堂，以較優惠的折數完成一個保養週期。</p>
+          <dl>
+            <div><dt>適合</dt><dd>希望規律保養，並追蹤肌膚變化</dd></div>
+            <div><dt>回饋</dt><dd>92 折至 85 折，內含肌膚檢測</dd></div>
+            <div><dt>會員</dt><dd>整筆金額一次計入會員累計</dd></div>
+          </dl>
+        </article>
+      </div>
+      <p class="aside-note reveal">不確定如何選擇時，管理師會依檢測結果與您討論合適的節奏。</p>
+    </div>
+  </section>
+
+  <section id="points">
+    <div class="wrap">
+      <h2 class="reveal">單堂集點</h2>
+      <p class="lead reveal">每完成一堂單堂課程，集 1 點。集滿 3 點與 6 點時，各贈一張折價券。</p>
+      <ol class="stamps" aria-label="集點卡共 6 點，第 3 點贈 9 折券，第 6 點贈 85 折券">
+        <li><span class="dot">1</span></li>
+        <li><span class="dot">2</span></li>
+        <li class="gift"><span class="dot">3</span><em>9 折券</em></li>
+        <li><span class="dot">4</span></li>
+        <li><span class="dot">5</span></li>
+        <li class="gift"><span class="dot">6</span><em>85 折券</em></li>
+      </ol>
+      <div class="facts reveal">
+        <p>折價券限單堂課程使用</p>
+        <p>集滿 6 點後，點數重新計算</p>
+        <p>包堂已享折數，不另集點</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="package">
+    <div class="wrap">
+      <h2 class="reveal">包堂方案</h2>
+      <p class="lead reveal">堂數越多，折數越優惠。每個方案皆內含肌膚檢測，記錄保養前後的變化。</p>
+      <div class="rail reveal">
+        <div>
+          <h3>3 堂</h3>
+          <p class="big"><span class="num">92</span>折</p>
+          <p>內含肌膚檢測 1 次<br>建議 3 個月內使用</p>
+        </div>
+        <div>
+          <h3>6 堂</h3>
+          <p class="big"><span class="num">88</span>折</p>
+          <p>內含肌膚檢測 2 次<br>建議 6 個月內使用</p>
+        </div>
+        <div>
+          <h3>9 堂</h3>
+          <p class="big"><span class="num">85</span>折</p>
+          <p>內含肌膚檢測 3 次<br>建議 9 個月內使用</p>
+        </div>
+      </div>
+      <div class="rules reveal">
+        <p>同一層級內的管理課程，可任選搭配使用</p>
+        <p>可與一位指定親友共用</p>
+        <p>建議於期間內使用完畢，讓保養維持連續</p>
+        <p>包堂金額整筆計入會員累計</p>
+        <p>經典管理、急護舒緩與部分組合課程不適用包堂，詳見價目表</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="member">
+    <div class="wrap">
+      <h2 class="reveal">會員卡</h2>
+      <p class="lead reveal">加入 LINE 會員後，消費自動累計。依近 12 個月的累計金額核定卡別，卡片效期一年。</p>
+      <div class="steps">
+        <article class="step step--bronze reveal">
+          <div class="face"><img src="assets/card-bronze.jpg" alt="肌·癒銅卡卡面" width="1000" height="612" loading="lazy"></div>
+          <h3>銅卡</h3>
+          <p class="cond">累計滿 <strong>10,000 元</strong><br>或單筆滿 6,000 元直升</p>
+          <p class="rate"><span class="num">95</span>折<small>單堂課程與居家保養品</small></p>
+          <ul class="perks">
+            <li>生日當月 9 折</li>
+            <li>專屬生日禮</li>
+          </ul>
+        </article>
+        <article class="step step--silver reveal">
+          <div class="face"><img src="assets/card-silver.jpg" alt="肌·癒銀卡卡面" width="1000" height="612" loading="lazy"></div>
+          <h3>銀卡</h3>
+          <p class="cond">累計滿 <strong>30,000 元</strong><br>或單筆滿 20,000 元直升</p>
+          <p class="rate"><span class="num">9</span>折<small>單堂課程與居家保養品</small></p>
+          <ul class="perks">
+            <li>優先預約，提早 3 天</li>
+            <li>生日當月 85 折</li>
+            <li>專屬生日禮</li>
+          </ul>
+        </article>
+        <article class="step step--gold reveal">
+          <div class="face"><img src="assets/card-gold.jpg" alt="肌·癒金卡卡面" width="1000" height="612" loading="lazy"></div>
+          <h3>金卡</h3>
+          <p class="cond">累計滿 <strong>50,000 元</strong></p>
+          <p class="rate"><span class="num">85</span>折<small>單堂課程與居家保養品</small></p>
+          <ul class="perks">
+            <li>優先預約，提早 5 天</li>
+            <li>生日當月 8 折</li>
+            <li>尊寵生日禮</li>
+            <li>年度輕塑拉提一次</li>
+          </ul>
+        </article>
+      </div>
+      <div class="rules reveal">
+        <p>升等當次贈肌膚檢測一次，並依卡別準備升等禮</p>
+        <p>會員折扣適用於單堂課程與居家保養品，包堂已享折數，不重複折扣</p>
+        <p>達成條件後，卡別於次日更新</p>
+        <p>卡片效期一年，期滿依近一年消費重新核定，持續回來保養，會籍自然延續</p>
+        <p>各項優惠不併用，結帳時以對您最有利的方式計算，生日禮遇需搭配當日課程</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="calc">
+    <div class="wrap">
+      <h2 class="reveal">試算一次看看</h2>
+      <p class="lead reveal">選擇課程層級與堂數，了解金額與會員卡的變化。</p>
+      <div class="calc reveal">
+        <div class="picker">
+        <form id="picker">
+          <fieldset>
+            <legend>課程層級</legend>
+            <div class="seg seg--3">
+              <input type="radio" name="tier" id="t1" value="2880"><label for="t1">基礎<small>2,880</small></label>
+              <input type="radio" name="tier" id="t2" value="3580" checked><label for="t2">進階<small>3,580</small></label>
+              <input type="radio" name="tier" id="t3" value="4280"><label for="t3">高端<small>4,280</small></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>堂數</legend>
+            <div class="seg seg--4">
+              <input type="radio" name="n" id="n1" value="1"><label for="n1">單堂</label>
+              <input type="radio" name="n" id="n3" value="3"><label for="n3">3 堂</label>
+              <input type="radio" name="n" id="n6" value="6" checked><label for="n6">6 堂</label>
+              <input type="radio" name="n" id="n9" value="9"><label for="n9">9 堂</label>
+            </div>
+          </fieldset>
+        </form>
+        <p class="fine">試算以韓國皮膚管理課程的原價計算，首次來店禮遇另計。實際金額以價目表與現場說明為準。</p>
+        </div>
+        <div class="result" aria-live="polite">
+          <p class="k">應付金額</p>
+          <p class="total"><span class="num" id="o-total">18,900</span>元</p>
+          <p class="sum" id="o-sum">原價 21,480 元，包堂 88 折，共節省 2,580 元</p>
+          <dl class="rows">
+            <div id="r-avg"><dt class="k">平均每堂</dt><dd id="o-avg">約 3,150 元</dd></div>
+            <div id="r-test"><dt class="k">肌膚檢測</dt><dd id="o-test">內含 2 次</dd></div>
+            <div><dt class="k">單堂集點</dt><dd id="o-point">包堂已享折數，不另集點</dd></div>
+            <div><dt class="k">會員卡</dt><dd id="o-card">單筆滿 6,000 元，直接升等為銅卡。之後的單堂課程與居家保養品享 95 折。</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="first">
+    <div class="wrap">
+      <h2 class="reveal">第一次來店的禮遇</h2>
+      <div class="first">
+        <article class="a reveal">
+          <h3>首次體驗，二擇一</h3>
+          <p class="price"><span class="num">1,880</span>元</p>
+          <p>經典管理首次體驗價，或其他任一課程 85 折。結帳時直接折抵，限第一次來店。</p>
+        </article>
+        <article class="b reveal">
+          <h3>課程升級券</h3>
+          <p>完成會員註冊與 LINE 綁定後獲得。下次來店可免費升一階，付基礎做進階、付進階做高端，適用於分階管理課程。</p>
+        </article>
+      </div>
+      <div class="btns reveal">
+        <a class="btn btn--solid" href="general.html">查看價目表</a>
+        <a class="btn btn--ghost" href="sensitive.html">敏感肌價目表</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>肌·癒皮膚管理中心</strong>
+    台北中山，捷運中山站 2 號出口步行五分鐘
+  </div>
+</footer>
+
+<script>
+(function () {
+  // 價格來源：general.html「韓國皮膚管理」統一價位。改價時同步上方三個選項的 value 與顯示數字。
+  // 包堂算法：單價 × 堂數 × 折數，捨去到百位（與價目表一致）。
+  var PCT = { 3: 92, 6: 88, 9: 85 };
+  var TESTS = { 3: 1, 6: 2, 9: 3 };
+  var fmt = function (v) { return Math.round(v).toLocaleString('en-US'); };
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $('picker');
+
+  function update() {
+    var unit = Number(form.elements.tier.value);
+    var n = Number(form.elements.n.value);
+    var gross = unit * n;
+    var isPack = n > 1;
+    var total = isPack ? Math.floor(unit * n * PCT[n] / 10000) * 100 : unit;
+
+    $('o-total').textContent = fmt(total);
+    $('r-avg').hidden = !isPack;
+    $('r-test').hidden = !isPack;
+
+    if (isPack) {
+      $('o-sum').textContent = '原價 ' + fmt(gross) + ' 元，包堂 ' + PCT[n] + ' 折，共節省 ' + fmt(gross - total) + ' 元';
+      $('o-avg').textContent = '約 ' + fmt(total / n) + ' 元';
+      $('o-test').textContent = '內含 ' + TESTS[n] + ' 次';
+      $('o-point').textContent = '包堂已享折數，不另集點';
+    } else {
+      $('o-sum').textContent = '單堂課程原價';
+      $('o-point').textContent = '本次集 1 點';
+    }
+
+    var card;
+    if (total >= 20000) {
+      card = '單筆滿 20,000 元，直接升等為銀卡。之後的單堂課程與居家保養品享 9 折。';
+    } else if (total >= 6000) {
+      card = '單筆滿 6,000 元，直接升等為銅卡。之後的單堂課程與居家保養品享 95 折。';
+    } else {
+      card = '金額計入會員累計，累計滿 10,000 元升等為銅卡。';
+    }
+    $('o-card').textContent = card;
+  }
+  form.addEventListener('change', update);
+  update();
+
+  if (!('IntersectionObserver' in window)) {
+    document.documentElement.classList.remove('js');
+    return;
+  }
+
+  // 進場與集點動畫
+  var seen = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); }
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.reveal, .stamps').forEach(function (el) { seen.observe(el); });
+
+  // 導覽目前位置
+  var links = {};
+  var chips = document.querySelector('.chips');
+  document.querySelectorAll('.chips a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      Object.keys(links).forEach(function (k) { links[k].classList.toggle('on', k === e.target.id); });
+      var on = links[e.target.id];
+      if (on && chips.scrollWidth > chips.clientWidth) {
+        chips.scrollLeft = on.offsetLeft - (chips.clientWidth - on.offsetWidth) / 2;
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  Object.keys(links).forEach(function (k) { var s = document.getElementById(k); if (s) spy.observe(s); });
+})();
+</script>
+<!-- 最後更新 2026-11-21 -->
+</body>
+</html>
