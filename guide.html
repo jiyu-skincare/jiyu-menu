@@ -203,8 +203,8 @@
   .rows div[hidden] { display: none; }
   .fine { padding-top: 16px; border-top: 1px solid var(--line-soft); font-size: 15px; color: var(--ink-2); line-height: 1.8; }
 
-  /* 第一次來店 */
-  #first { padding-bottom: clamp(48px, 8vw, 88px); }
+  /* 不分卡別的禮遇 */
+  #gifts { padding-bottom: clamp(48px, 8vw, 88px); }
   .first { display: grid; gap: 14px; margin-top: clamp(28px, 5vw, 48px); }
   .first article { border-radius: var(--r); padding: clamp(24px, 4vw, 40px); }
   .first .a { background: var(--paper-2); box-shadow: inset 0 0 0 1px var(--line); }
@@ -213,7 +213,16 @@
   .first .price { display: flex; align-items: baseline; gap: 8px; margin: 10px 0 6px; font-family: var(--serif); font-size: 20px; font-weight: 600; }
   .first .price .num { font-size: clamp(58px, 8vw, 80px); line-height: 1; }
   .first p { color: var(--ink-2); margin-top: 8px; }
-  #first .btns { margin-top: clamp(28px, 5vw, 44px); }
+  #gifts .btns { margin-top: clamp(28px, 5vw, 44px); }
+  .first .refer { background: var(--ink); color: var(--paper); }
+  .first .refer p { color: rgba(247,242,234,0.84); }
+  .first .refer .price { color: var(--paper); margin: 4px 0 2px; }
+  .refer-pair { display: grid; grid-template-columns: 1fr 1fr; margin-top: 20px; }
+  .refer-pair > div + div { border-left: 1px solid rgba(184,154,106,0.35); padding-left: clamp(18px, 4vw, 40px); }
+  .refer-pair p { margin-top: 0; }
+  .who { font-size: 14px; letter-spacing: 0.24em; color: var(--gold); }
+  .first .refer .refer-how { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(184,154,106,0.3); font-size: 16px; }
+  .first .bday { background: var(--panel); box-shadow: inset 0 0 0 1px var(--line-soft); }
   footer { padding: 28px 0 44px; border-top: 1px solid var(--line-soft); color: var(--ink-2); font-size: 15px; }
   footer strong { font-family: var(--serif); font-weight: 600; letter-spacing: 0.2em; color: var(--ink); display: block; margin-bottom: 2px; }
 
@@ -233,6 +242,9 @@
     .step--silver { margin-top: 44px; }
     .calc { grid-template-columns: 1fr 1fr; }
     .first { grid-template-columns: 1.15fr 0.85fr; }
+    .first .refer, .first .bday { grid-column: 1 / -1; }
+    .first .bday { display: grid; grid-template-columns: 7.5em 1fr; gap: 24px; align-items: baseline; }
+    .first .bday p { margin-top: 0; }
   }
   @media (max-width: 719px) {
     .brand { display: none; }
@@ -260,6 +272,7 @@
       <a href="#package">包堂方案</a>
       <a href="#member">會員卡</a>
       <a href="#calc">試算</a>
+      <a href="#gifts">禮遇</a>
     </nav>
   </div>
 </header>
@@ -456,9 +469,10 @@
     </div>
   </section>
 
-  <section id="first">
+  <section id="gifts">
     <div class="wrap">
-      <h2 class="reveal">第一次來店的禮遇</h2>
+      <h2 class="reveal">不分卡別的禮遇</h2>
+      <p class="lead reveal">還沒有會員卡也能享有，從第一次見面開始。</p>
       <div class="first">
         <article class="a reveal">
           <h3>首次體驗，二擇一</h3>
@@ -468,6 +482,27 @@
         <article class="b reveal">
           <h3>課程升級券</h3>
           <p>完成會員註冊與 LINE 綁定後獲得。下次來店可免費升一階，付基礎做進階、付進階做高端，適用於分階管理課程。</p>
+        </article>
+        <article class="refer reveal">
+          <h3>好友推薦</h3>
+          <p>喜歡肌·癒的話，歡迎介紹給重要的人。好友與您都有一份禮遇。</p>
+          <div class="refer-pair">
+            <div>
+              <span class="who">您的好友</span>
+              <p class="price"><span class="num">500</span>元</p>
+              <p>首次課程折抵</p>
+            </div>
+            <div>
+              <span class="who">您</span>
+              <p class="price"><span class="num">300</span>元</p>
+              <p>回饋金，可於之後的消費折抵</p>
+            </div>
+          </div>
+          <p class="refer-how">在會員中心分享您的專屬推薦連結，好友完成會員註冊與 LINE 綁定後生效。好友的折抵券限單堂課程，與其他優惠擇一使用。</p>
+        </article>
+        <article class="bday reveal">
+          <h3>生日當月</h3>
+          <p>加入 LINE 會員後，即使尚未持卡，生日當月單堂課程也享 95 折，並有一份生日禮遇，需搭配當日課程使用。持卡會員的生日折扣請見會員卡。</p>
         </article>
       </div>
       <div class="btns reveal">
@@ -560,6 +595,6 @@
   Object.keys(links).forEach(function (k) { var s = document.getElementById(k); if (s) spy.observe(s); });
 })();
 </script>
-<!-- 最後更新 2026-11-21 -->
+<!-- 最後更新 2026-11-22 -->
 </body>
 </html>
